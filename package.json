@@ -1,0 +1,34 @@
+{
+  "name": "composure-css",
+  "version": "1.0.0",
+  "description": "A semantic CSS framework for developers on a time crunch.",
+  "main": "src/css/extended.css",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && npm run build:postcss",
+    "build:postcss": "postcss --config postcss.config.js --dir dist/css --base src/css src/**/*.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parkerbrown98/composure-css.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/parkerbrown98/composure-css/issues"
+  },
+  "homepage": "https://github.com/parkerbrown98/composure-css#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.8",
+    "cssnano": "^5.1.13",
+    "postcss": "^8.4.16",
+    "postcss-cli": "^10.0.0",
+    "postcss-reporter": "^7.0.5",
+    "rimraf": "^3.0.2",
+    "stylelint": "^14.11.0",
+    "stylelint-config-recommended": "^9.0.0"
+  }
+}

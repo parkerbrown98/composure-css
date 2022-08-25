@@ -1,0 +1,317 @@
+header>alert-banner {
+    display: block;
+    margin-left: calc(0px - var(--section-gutters));
+    margin-right: calc(0px - var(--section-gutters));
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    text-align: center;
+}
+
+/* || button links */
+
+article-list header a,
+product-section>ul>li>h2~a,
+poster-copy>a {
+    font-weight: var(--button-font-weight);
+    color: var(--color-secondary);
+    display: block;
+    max-width: max-content;
+    background-color: var(--color-primary);
+    padding: var(--space-xxxs) var(--space-sm);
+    box-shadow: var(--box-shadow-sm);
+    margin-bottom: var(--space-xxs);
+}
+
+poster-media {
+    position:relative;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+}
+
+poster-media > :is(img, video) {
+    position: absolute;
+    object-fit: fill;
+    width:100%;
+    height:100%;
+}
+
+/* || product-section */
+
+product-section {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding-top: var(--space-lg);
+}
+
+article-section article >a,
+article-section article >a:hover,
+product-section ul li a,
+product-section ul li a:hover {
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+product-section>ul {
+    --article-width: min(70vw, 400px); /* set a variable to use as column width so the img height can be a calculated ratio */
+    display: grid;
+    grid-auto-columns: var(--article-width);
+    grid-auto-flow: column;
+    column-gap: var(--space-xs);
+    overflow: auto hidden;
+}
+
+product-section ul li a img {
+    --img-ratio: var(--text-scale-ratio);
+    height: calc(var(--article-width) * var(--img-ratio)); /* use the variable for grid column width to calculate height based on a fixed ratio */
+    object-fit: cover;
+}
+
+product-section>ul h3 {
+    font-size: var(--text-lg);
+    margin: var(--space-xxs) 0 var(--space-xxxs) 0;
+}
+
+
+/* || article-section */
+
+article-section {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding-top: var(--space-lg);
+}
+
+article-section[alt-background] {
+    background-color: var(--background-alt);
+}
+
+article-list {
+    --article-width: min(70vw, 400px); /* set a variable to use as column width so the img height can be a calculated ratio */
+    display: grid;
+    grid-auto-columns: var(--article-width);
+    grid-auto-flow: column;
+    column-gap: var(--space-xs);
+    overflow: auto hidden;
+}
+
+article-list a>img {
+    --img-ratio: var(--text-scale-ratio);
+    width: 100%;
+    height: calc(var(--article-width) * var(--img-ratio)); /* use the variable for grid column width to calculate height based on a fixed ratio */
+    object-fit: cover;
+}
+
+article-list article h3 {
+    font-size: var(--text-lg);
+    margin: var(--space-xxs) 0 var(--space-xxxs) 0;
+}
+
+
+/* || poster section */
+
+poster-section {
+    position: relative;
+    overflow: hidden;
+    height: clamp(600px, 35vw, 720px); /* this makes it where the image is horizontal on desktop and vertical on mobile */ 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
+}
+
+poster-section[inverted] {
+    background: linear-gradient(
+        to left,
+        hsl(0 0% 0% / 0),
+        hsl(0 0% 0% / 0.2) 70%,
+        hsl(0 0% 0% / 0.5)
+    );
+}
+
+poster-section[inverted] h1,
+poster-section[inverted] h2,
+poster-section[inverted] p {
+    color: var(--color-primary);
+}
+
+
+/* poster-section + poster-section {
+    border-top: 4px solid var(--background);
+} */
+
+/* poster-section h1 {
+    grid-area: a;
+} */
+
+/* poster-section h1,
+poster-section h2,
+poster-section p,
+poster-section footer,
+poster-section footer a {
+    color: var(--color-primary);
+} */
+
+poster-section footer {
+    border: none;
+    position: absolute;
+    bottom: var(--space-xxs);
+    text-align: center;
+    width: 100%;
+}
+
+poster-section footer > ul {
+    display: flex;
+    justify-content: center;
+    column-gap: var(--space-xs);
+}
+
+poster-section > img,
+poster-section > iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    object-fit: cover;
+}
+
+poster-section > iframe {
+    z-index: unset;
+}
+
+
+/* || aside-section */
+
+aside-section {
+    display: grid;
+    gap: var(--space-lg);
+    grid-template-areas: "aside article";
+    grid-template-columns: minmax(min-content, 20vw) 1fr;
+}
+
+aside-section>article {
+    grid-area: article;
+}
+
+aside-section>aside {
+    grid-area: aside;
+    background-color: var(--background-alt);
+    padding: var(--space-sm);
+}
+
+/* || media-grid */
+
+/* media-grid {
+    --min-pixel-size: 280px;
+    --min-columns: 2;
+    --max-columns: 4;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100% / var(--min-columns), max(var(--min-pixel-size), 100% / var(--max-columns))), 1fr));
+} */
+
+media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+media-grid > a {
+    position: relative;
+    overflow: hidden;
+    /* min-height: 450px; */
+}
+
+article > media-grid > a {
+    --img-ratio: var(--text-scale-ratio);
+    height: calc((var(--article-width) * var(--img-ratio)) / 2);
+}
+
+media-grid > a > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+media-grid > a > h3 {
+    color: var(--color-primary);
+    position: absolute;
+    left: var(--space-xxs);
+    bottom: var(--space-xxs);
+}
+
+/* || filter-section */
+
+filter-section > h2 {
+    margin: unset;
+}
+
+filter-section > h2 + p {
+    margin-top: var(--space-xxxxs);
+}
+
+filter-section > ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xxxs);
+}
+
+filter-section > ul {
+    margin-top: var(--space-xxxxs);
+}
+
+filter-section > ul > li > a {
+    display: inline-block;
+    padding: var(--space-xxxxs) var(--space-xxxs);
+    color: var(--color-secondary);
+    background-color: var(--background);
+    margin: unset;
+}
+
+filter-section > ul > li > a:hover {
+    border-color: var(--color-secondary);
+    text-decoration: none;
+}
+
+/* || map-section */
+
+map-section > iframe {
+    width: 100%;
+    height: 100%;
+}
+
+directory-section {
+    display: block;
+}
+
+directory-section ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+directory-section ul > li {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 100%;
+}
+
+directory-section ul > li > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+directory-section ul > li > :is(h1, h2, h3, h4, h5, h6) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0 0 var(--space-xxxs) var(--space-xxxs);
+    color: var(--color-primary);
+}

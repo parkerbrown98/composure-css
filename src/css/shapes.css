@@ -1,0 +1,135 @@
+html {
+    scrollbar-width: thin;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 12px;
+    margin-top: 24px;
+}
+
+q::before {
+    content: none;
+}
+
+q::after {
+    content: none;
+}
+
+blockquote {
+    margin: 1.5em 0;
+    padding: 0.5em 1em;
+}
+
+q {
+    margin: 1.5em 0;
+    padding: 0.5em 1em;
+}
+
+mark {
+    padding: 0 2px 0 2px;
+}
+
+a>code,
+button {
+    padding: 10px;
+    outline: none;
+}
+
+button {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+fieldset {
+    margin: 0;
+    margin-bottom: 12px;
+    padding: 10px;
+}
+
+code {
+    padding: 2.5px 5px;
+}
+
+samp {
+    padding: 2.5px 5px;
+}
+
+time {
+    padding: 2.5px 5px;
+}
+
+pre>code {
+    padding: 10px;
+    display: block;
+    overflow-x: auto;
+}
+
+kbd {
+    padding: 2px 4px 2px 4px;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+}
+
+details {
+    padding: 10px;
+}
+
+details> :last-child {
+    margin-bottom: 0;
+}
+
+details[open] summary {
+    margin-bottom: 10px;
+}
+
+summary {
+    display: list-item;
+    padding: 10px;
+    margin: -10px -10px 0;
+    cursor: pointer;
+    outline: none;
+}
+
+details menu * {
+    max-width: 100%;
+}
+
+details> :not(summary) {
+    margin-top: 0;
+}
+
+dialog {
+    padding: 10px 30px;
+}
+
+dialog>header:first-child {
+    margin: -10px -30px 10px;
+    padding: 10px;
+}
+
+footer {
+    padding-top: 10px;
+}
+
+body>footer {
+    margin-top: 40px;
+    padding: var(--space-sm) 0;
+}

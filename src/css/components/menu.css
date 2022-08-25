@@ -1,0 +1,81 @@
+menu-wrapper {
+    --local-space-sm: var(--space-xxxxs);
+    --local-space-md: var(--space-xxxs);
+    --local-space-lg: var(--space-xs);
+    /* --local-width: max(var(--space-xxxxl), 160px); */
+    --local-width: max(160px,var(--space-xxxl));
+    --menu-button-width: var(--space-xxxl);
+}
+
+menu-wrapper {
+    display: block;
+    position: relative;
+    width: auto;
+    justify-self: end;
+    height: min-content;
+}
+
+menu-wrapper details summary {
+    display: list-item;
+    list-style: none;  /* remove the arrow ::marker */
+    width: var(--menu-button-width);
+    margin: 0;
+    padding: var(--local-space-sm) var(--local-space-md);
+    background-color: var(--background);
+    cursor: pointer;
+    outline: none;
+    box-shadow: var(--box-shadow-sm);
+    text-align: center;
+}
+
+menu-wrapper details menu {
+    position: absolute;
+    top: 100%;
+    left: calc(0px - var(--local-width) + var(--menu-button-width)); /* right align the dropdown with the button  */
+    z-index: 100;
+    width: var(--local-width);
+    margin-top: 0;
+    padding-bottom: var(--local-space-lg);
+    list-style: none;
+    background-clip: padding-box;
+    background-color: var(--background);
+    border-top: none;
+    box-shadow: var(--box-shadow-sm);
+}
+
+menu-wrapper menu li a {
+    display: block;
+    margin: 0;
+    padding: var(--local-space-sm) var(--local-space-lg);
+    color: var(--text-main);
+}
+
+menu-wrapper menu li:hover {
+    background-color: var(--color-accent);
+}
+
+menu-wrapper details,
+menu-wrapper details[open] {
+    padding: 0;
+}
+
+menu-wrapper details[open] summary {
+    margin-bottom: 0px;
+}
+
+menu-wrapper summary:hover,
+menu-wrapper summary:focus,
+menu-wrapper details menu li a:hover,
+menu-wrapper details menu li a:focus,
+menu-wrapper details menu li a:visited {
+    text-decoration: none;
+}
+
+menu-wrapper details> :not(summary) {
+    margin-top: 0;
+}
+
+menu-wrapper details > summary::-webkit-details-marker {
+    color: #363636;
+    color: var(--text-main);
+}

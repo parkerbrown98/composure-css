@@ -1,0 +1,102 @@
+/* body grid */
+body {
+    display: grid;
+    grid-template-areas: "head head""main main""foot foot";
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: min-content 1fr min-content;
+}
+
+body>header {
+    grid-area: head;
+}
+
+body>main {
+    grid-area: main;
+}
+
+body>aside {
+    grid-area: sidebar;
+}
+
+body>footer {
+    grid-area: foot;
+}
+
+/* set sections to block */
+body>header,
+body>footer {
+    padding-left: var(--body-gutters);
+    padding-right: var(--body-gutters);
+}
+
+main>* {
+    padding-left: var(--page-gutters);
+    padding-right: var(--page-gutters);
+}
+
+main>article {
+    padding-left: var(--section-gutters);
+    padding-right: var(--section-gutters);
+}
+
+header>nav {
+    padding-top: var(--space-xxxs);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "regions logo menu""products products products";
+}
+
+header nav figure {
+    text-align: center;
+}
+
+header nav figure img {
+    max-height: 50px;
+    max-width: min(30vw, 320px);
+    height: auto;
+    width: auto;
+}
+
+header nav figure figcaption {
+    font-size: var(--text-sm);
+}
+
+* :not(article) ul > li {
+    list-style-type: none;
+}
+
+header>nav>ul>li>a {
+    display: block;
+    padding: 4px 16px;
+    text-decoration: underline;
+    color: var(--text-main);
+}
+
+header>nav>ul:nth-of-type(1) {
+    grid-area: regions;
+    display: flex;
+}
+
+header>nav>ul:nth-of-type(1)>li>a {
+    font-weight: var(--header-font-weight);
+    /* font-size: var(--text-lg) */
+}
+
+header>nav>ul:nth-of-type(2) {
+    grid-area: products;
+    display: flex;
+    justify-content: center;
+}
+
+header>nav>ul:nth-of-type(2)>li>a {
+    font-weight: var(--header-font-weight);
+    font-size: var(--text-sm)
+}
+
+header>nav>figure {
+    grid-area: logo;
+}
+
+header>nav>menu {
+    grid-area: menu;
+}
