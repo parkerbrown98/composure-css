@@ -67,6 +67,10 @@ product-section ul li a img {
     object-fit: cover;
 }
 
+product-section ul li svg {
+    width: 12px;
+}
+
 product-section>ul h3 {
     font-size: var(--text-lg);
     margin: var(--space-xxs) 0 var(--space-xxxs) 0;
