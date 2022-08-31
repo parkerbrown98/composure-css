@@ -28,9 +28,3 @@ jobs:
 
       - name: Build CSS
         run: npm run build --if-present
-      
-      - name: Archive dist artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: dist-build
-          path: dist
