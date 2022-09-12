@@ -169,6 +169,10 @@ poster-section footer > ul {
     column-gap: var(--space-xs);
 }
 
+poster-section footer > ul a {
+    color: var(--color-primary);
+}
+
 poster-section > img,
 poster-section > iframe {
     width: 100%;
@@ -296,26 +300,37 @@ directory-section ul {
     grid-template-columns: repeat(3, 1fr);
 }
 
-directory-section ul > li {
+directory-section ul > li > a {
+    display: block;
     position: relative;
     overflow: hidden;
     padding-bottom: 100%;
 }
 
-directory-section ul > li > img {
+directory-section ul > li img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 0;
+    z-index: -10;
 }
 
-directory-section ul > li > :is(h1, h2, h3, h4, h5, h6) {
+directory-section ul > li :is(h1, h2, h3, h4, h5, h6) {
     position: absolute;
     bottom: 0;
     left: 0;
     margin: 0 0 var(--space-xxxs) var(--space-xxxs);
     color: var(--color-primary);
+}
+
+feature-grid > ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
+    gap: var(--space-xs);
+}
+
+feature-grid > ul img {
+    width: 100%;
 }
