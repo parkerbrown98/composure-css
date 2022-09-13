@@ -179,5 +179,10 @@ dialog::backdrop {
 
 footer {
     border-top: 1px solid var(--border);
-    color: var(--text-muted);
+    color: var(--color-primary);
+    background-color: var(--color-secondary);
+}
+
+footer :is(h1, h2, h3, h4, h5, h6, p, li, a) {
+    color: var(--color-primary);
 }
