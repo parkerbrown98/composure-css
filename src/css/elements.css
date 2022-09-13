@@ -308,6 +308,8 @@ map-section > iframe {
 
 directory-section {
     display: block;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 directory-section ul {
