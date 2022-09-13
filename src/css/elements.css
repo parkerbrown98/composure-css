@@ -10,7 +10,7 @@ header>alert-banner {
 /* || button links */
 
 article-list header a,
-product-section>ul>li>h2~a,
+product-section>ul>li>:is(h2, h3)~a,
 poster-copy>a {
     font-weight: var(--button-font-weight);
     color: var(--color-secondary);
@@ -76,6 +76,19 @@ product-section>ul h3 {
     margin: var(--space-xxs) 0 var(--space-xxxs) 0;
 }
 
+.feature-list {
+    padding: var(--space-xxs) 0;
+}
+
+.feature-list > li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xxxs);
+}
+
+.feature-list > li p {
+    margin: unset;
+}
 
 /* || article-section */
 
