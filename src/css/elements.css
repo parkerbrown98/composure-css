@@ -304,20 +304,34 @@ map-section > iframe {
     height: 100%;
 }
 
+/* || directory-section */
+
 directory-section {
     display: block;
 }
 
 directory-section ul {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-directory-section ul > li > a {
-    display: block;
+directory-section a {
+    color: var(--color-primary);
+}
+
+directory-section a:hover {
+    text-decoration: none;
+}
+
+directory-section ul > li > :is(a, div) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: relative;
     overflow: hidden;
-    padding-bottom: 100%;
+    min-height: 500px;
+    background-color: rgb(200, 200, 200);
 }
 
 directory-section ul > li img {
@@ -331,11 +345,31 @@ directory-section ul > li img {
 }
 
 directory-section ul > li :is(h1, h2, h3, h4, h5, h6) {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    margin: 0 0 var(--space-xxxs) var(--space-xxxs);
     color: var(--color-primary);
+    font-size: var(--text-xxl);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+directory-section ul > li ul {
+    position: absolute;
+    bottom: var(--space-xs);
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    column-gap: var(--space-xs);
+    row-gap: var(--space-xxxs);
+    padding: 0 var(--space-xs);
+    list-style: none;
+}
+
+directory-section ul > li ul a:hover {
+    text-decoration: underline;
 }
 
 feature-grid > ul {
