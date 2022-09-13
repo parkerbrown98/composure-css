@@ -374,10 +374,21 @@ directory-section ul > li ul a:hover {
     text-decoration: underline;
 }
 
+feature-grid {
+    display: block;
+}
+
 feature-grid > ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
     gap: var(--space-xs);
+}
+
+feature-grid > ul svg {
+    width: var(--text-xl);
+    height: var(--text-xl);
+    color: var(--color-accent);
+    fill: var(--color-accent);
 }
 
 feature-grid > ul img {
