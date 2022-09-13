@@ -131,5 +131,5 @@ footer {
 
 body>footer {
     margin-top: 40px;
-    padding: var(--space-sm) 0;
+    padding: var(--space-md) 0;
 }

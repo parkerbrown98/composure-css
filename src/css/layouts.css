@@ -30,6 +30,12 @@ body>footer {
     padding-right: var(--body-gutters);
 }
 
+body>footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
+    gap: var(--space-xs);
+}
+
 main>* {
     padding-left: var(--page-gutters);
     padding-right: var(--page-gutters);
