@@ -149,10 +149,6 @@ section[alt-background] {
     color: var(--text-bright);
 }
 
-summary {
-    background-color: var(--background);
-}
-
 summary::-webkit-details-marker {
     color: var(--text-main);
 }

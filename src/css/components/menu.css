@@ -18,29 +18,28 @@ menu-wrapper {
 menu-wrapper details summary {
     display: list-item;
     list-style: none;  /* remove the arrow ::marker */
-    width: var(--menu-button-width);
     margin: 0;
-    padding: var(--local-space-sm) var(--local-space-md);
-    background-color: var(--background);
     cursor: pointer;
     outline: none;
-    box-shadow: var(--box-shadow-sm);
     text-align: center;
+    font-weight: var(--button-font-weight);
+}
+
+menu-wrapper details summary:hover {
+    text-decoration: underline;
 }
 
 menu-wrapper details menu {
     position: absolute;
     top: 100%;
-    left: calc(0px - var(--local-width) + var(--menu-button-width)); /* right align the dropdown with the button  */
+    right: 0;
     z-index: 100;
     width: var(--local-width);
     margin-top: 0;
-    padding-bottom: var(--local-space-lg);
     list-style: none;
     background-clip: padding-box;
     background-color: var(--background);
     border-top: none;
-    box-shadow: var(--box-shadow-sm);
 }
 
 menu-wrapper menu li a {
@@ -61,6 +60,7 @@ menu-wrapper details[open] {
 
 menu-wrapper details[open] summary {
     margin-bottom: 0px;
+    background-color: var(--background);
 }
 
 menu-wrapper summary:hover,
