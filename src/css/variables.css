@@ -27,7 +27,9 @@
     
     /* colors */
     --color-primary: white;
+    --color-primary-fade: rgba(255, 255, 255, 0.5);
     --color-secondary: #121510;
+    --color-secondary-fade: rgba(18, 21, 16, 0.5);
     --color-tertiary: #151540;
     --color-accent: #c8aa82;
 

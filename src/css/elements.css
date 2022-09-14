@@ -24,15 +24,22 @@ poster-copy>a {
 
 poster-media {
     position:relative;
-    padding-bottom: 56.25%;
+    padding-bottom: 63%;
     overflow: hidden;
 }
 
 poster-media > :is(img, video) {
     position: absolute;
-    object-fit: fill;
+    object-fit: cover;
     width:100%;
     height:100%;
+}
+
+poster-media > img[fill] {
+    position: absolute;
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
 }
 
 /* || product-section */
@@ -76,6 +83,32 @@ product-section>ul h3 {
     margin: var(--space-xxs) 0 var(--space-xxxs) 0;
 }
 
+/* || product-rows */
+
+product-rows p {
+    margin-bottom: var(--space-xs);
+}
+
+product-rows > ul > li :is(h2, h3, h4, h5) {
+    margin: unset;
+}
+
+product-rows > ul > li > :is(h2, h3, h4, h5) {
+    margin-bottom: var(--space-xxs);
+}
+
+product-rows > ul ul > li {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+}
+
+product-rows > ul ul > li span {
+    font-weight: 600;
+    color: var(--color-secondary);
+}
+
 .feature-list {
     padding: var(--space-xxs) 0;
 }
@@ -112,8 +145,13 @@ article-list {
     overflow: auto hidden;
 }
 
-article-list a>img {
+article-list[small] {
+    --article-width: min(25%, 150px);
+}
+
+article-list article img {
     --img-ratio: var(--text-scale-ratio);
+    display: block;
     width: 100%;
     height: calc(var(--article-width) * var(--img-ratio)); /* use the variable for grid column width to calculate height based on a fixed ratio */
     object-fit: cover;
@@ -124,6 +162,19 @@ article-list article h3 {
     margin: var(--space-xxs) 0 var(--space-xxxs) 0;
 }
 
+/* || collage-section */
+
+collage-section {
+    padding-left: 0;
+    padding-right: 0;
+    display: block;
+}
+
+collage-section ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    line-height: 0;
+}
 
 /* || poster section */
 
@@ -133,6 +184,7 @@ poster-section {
     height: clamp(600px, 35vw, 720px); /* this makes it where the image is horizontal on desktop and vertical on mobile */ 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-md);
     align-items: center;
 }
 
@@ -140,14 +192,25 @@ poster-section[inverted] {
     background: linear-gradient(
         to left,
         hsl(0 0% 0% / 0),
-        hsl(0 0% 0% / 0.2) 70%,
+        hsl(0 0% 0% / 0.2) 50%,
         hsl(0 0% 0% / 0.5)
     );
 }
 
-poster-section[inverted] h1,
-poster-section[inverted] h2,
-poster-section[inverted] p {
+poster-section[floorplan] {
+    color: var(--color-primary);
+    background-color: var(--color-secondary);
+}
+
+poster-section[floorplan] :is(h1, h2, h3, h4, h5, h6) {
+    color: var(--color-primary);
+}
+
+poster-section[inverted] :is(h1, h2, h3, h4, h5, h6, p, li) {
+    color: var(--color-primary);
+}
+
+poster-section[inverted] > poster-card :is(h1, h2, h3, h4, h5, h6, p, li, a) {
     color: var(--color-primary);
 }
 
@@ -201,6 +264,26 @@ poster-section > iframe {
     z-index: unset;
 }
 
+poster-card {
+    display: block;
+    background-color: var(--color-secondary-fade);
+    backdrop-filter: blur(2px);
+    padding: var(--space-sm);
+}
+
+poster-card :is(h1, h2, h3, h4, h5, h6) {
+    margin: unset;
+}
+
+poster-card ul {
+    margin-top: var(--space-xxs);
+    padding-left: var(--space-sm);
+}
+
+poster-card ul li {
+    list-style-type: disc;
+}
+
 
 /* || aside-section */
 
@@ -247,6 +330,15 @@ article > media-grid > a {
     height: calc((var(--article-width) * var(--img-ratio)) / 2);
 }
 
+article > media-grid > a[inverted] {
+    background: linear-gradient(
+        to bottom,
+        hsl(0 0% 0% / 0),
+        hsl(0 0% 0% / 0.2) 70%,
+        hsl(0 0% 0% / 0.4)
+    );
+}
+
 media-grid > a > img {
     position: absolute;
     top: 0;
@@ -262,6 +354,7 @@ media-grid > a > h3 {
     position: absolute;
     left: var(--space-xxs);
     bottom: var(--space-xxs);
+    z-index: 10;
 }
 
 /* || filter-section */
@@ -325,18 +418,22 @@ directory-section a:hover {
     text-decoration: none;
 }
 
-directory-section ul > li > :is(a, div) {
+directory-section ul > li {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     position: relative;
-    overflow: hidden;
     min-height: 500px;
-    background-color: rgb(200, 200, 200);
+    background-color: var(--color-secondary);
 }
 
-directory-section ul > li img {
+directory-section ul > li > :is(a, div) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+}
+
+directory-section > ul > li img {
     position: absolute;
     top: 0;
     left: 0;
@@ -348,31 +445,26 @@ directory-section ul > li img {
 
 directory-section ul > li :is(h1, h2, h3, h4, h5, h6) {
     color: var(--color-primary);
-    font-size: var(--text-xxl);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    font-size: var(--text-xxxl);
 }
 
 directory-section ul > li ul {
-    position: absolute;
-    bottom: var(--space-xs);
-    left: 50%;
-    transform: translate(-50%, 0);
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(4, 1fr);
     width: 100%;
-    justify-content: center;
     column-gap: var(--space-xs);
     row-gap: var(--space-xxxs);
-    padding: 0 var(--space-xs);
     list-style: none;
+    padding: 0 var(--page-gutters);
 }
 
 directory-section ul > li ul a:hover {
     text-decoration: underline;
 }
+
+/* || feature-grid */
 
 feature-grid {
     display: block;
@@ -380,7 +472,7 @@ feature-grid {
 
 feature-grid > ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-xs);
 }
 
@@ -392,5 +484,17 @@ feature-grid > ul svg {
 }
 
 feature-grid > ul img {
+    display: block;
     width: 100%;
+}
+
+.star-row {
+    display: flex;
+    column-gap: var(--space-xxxs);
+}
+
+.star-row svg {
+    width: var(--text-lg);
+    height: var(--text-lg);
+    fill: #faca15;
 }
