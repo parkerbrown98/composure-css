@@ -51,6 +51,7 @@ header>nav {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "regions logo menu""products products products";
+    align-items: center;
 }
 
 header nav figure {
