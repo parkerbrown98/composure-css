@@ -471,9 +471,17 @@ feature-grid {
 }
 
 feature-grid > ul {
+    /* Allows the grid to auto-fill scaling down, but uses a maximum column count when scaling up */
+    --grid-column-count: 2;
+    --grid-item--min-width: 300px;
+    --grid-layout-gap: var(--space-xs);
+    --gap-count: calc(var(--grid-column-count) - 1);
+    --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+    --grid-item--max-width: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
+
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-xs);
+    grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
+    gap: var(--grid-layout-gap);
 }
 
 feature-grid > ul svg {
