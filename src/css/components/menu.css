@@ -23,6 +23,7 @@ menu-wrapper details summary {
     outline: none;
     text-align: center;
     font-weight: var(--button-font-weight);
+    background-color: unset;
 }
 
 menu-wrapper details summary:hover {

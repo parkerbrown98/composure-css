@@ -106,6 +106,7 @@ summary {
     margin: -10px -10px 0;
     cursor: pointer;
     outline: none;
+    background-color: var(--background);
 }
 
 details menu * {
