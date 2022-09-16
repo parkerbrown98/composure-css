@@ -498,3 +498,25 @@ feature-grid > ul img {
     height: var(--text-lg);
     fill: #faca15;
 }
+
+/* || contact-form */
+
+#contact-form {
+    width: min(100%, 40rem);
+}
+
+/* || form-cols */
+
+form-cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-sm);
+}
+
+form-cols :is(input, textarea, select) {
+    width: 100%;
+}
+
+form-cols div[full-width] {
+    grid-column: span 2;
+}
