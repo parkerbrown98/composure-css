@@ -269,11 +269,18 @@ poster-card {
     background-color: var(--color-secondary-fade);
     backdrop-filter: blur(2px);
     padding: var(--space-sm);
+    color: var(--color-primary);
 }
 
 poster-card :is(h1, h2, h3, h4, h5, h6) {
     margin: unset;
 }
+
+poster-card :is(h4, h5, h6) {
+    margin-top: var(--space-xxs);
+}
+
+poster-card time {}
 
 poster-card ul {
     margin-top: var(--space-xxs);
