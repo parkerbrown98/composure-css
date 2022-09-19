@@ -46,12 +46,16 @@ menu-wrapper details menu {
 menu-wrapper menu li a {
     display: block;
     margin: 0;
-    padding: var(--local-space-sm) var(--local-space-lg);
+    padding: var(--local-space-md) var(--local-space-lg);
     color: var(--text-main);
 }
 
 menu-wrapper menu li:hover {
     background-color: var(--color-accent);
+}
+
+menu-wrapper menu li a:hover {
+    color: var(--color-primary);
 }
 
 menu-wrapper details,
