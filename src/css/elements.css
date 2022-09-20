@@ -224,7 +224,7 @@ poster-section[inverted] > poster-card :is(h1, h2, h3, h4, h5, h6, p, li, a) {
     color: var(--color-secondary);
 }
 
-poster-section > poster-copy {
+poster-section > poster-copy p {
     font-size: var(--text-lg);
 }
 
