@@ -151,6 +151,10 @@ article-list > header {
     max-width: 350px;
 }
 
+article-list > header > :is(h1, h2, h3, h4, h5, h6) {
+    margin-top: 0;
+}
+
 article-list[small] {
     --article-width: min(25%, 150px);
 }
@@ -518,8 +522,40 @@ feature-grid > ul img {
 
 /* || contact-form */
 
-#contact-form {
-    width: min(100%, 40rem);
+contact-form {
+    display: block;
+    /* background-color: var(--background-alt); */
+}
+
+contact-form > * {
+    max-width: 45rem;
+    margin: 0 auto;
+}
+
+contact-form > h4 {
+    font-weight: 400;
+    margin-top: var(--space-sm);
+}
+
+contact-form > ul {
+    margin-top: var(--space-sm);
+    padding-left: var(--space-sm);
+}
+
+contact-form > ul > li {
+    list-style-type: disc;
+}
+
+contact-form > ul > li:not(:first-of-type) {
+    margin-top: var(--space-xxs);
+}
+
+contact-form > p {
+    margin-top: var(--space-sm);
+}
+
+contact-form > form {
+    margin-top: var(--space-md);
 }
 
 /* || form-cols */
@@ -528,6 +564,7 @@ form-cols {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--space-sm);
+    width: 100%;
 }
 
 form-cols :is(input, textarea, select) {
@@ -535,5 +572,5 @@ form-cols :is(input, textarea, select) {
 }
 
 form-cols div[full-width] {
-    grid-column: span 2;
+    grid-column: span 2; /* this is causing the columns not to wrap */
 }
