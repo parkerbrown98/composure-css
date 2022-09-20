@@ -147,10 +147,6 @@ article-list {
     overflow: auto hidden;
 }
 
-article-list > header {
-    max-width: 350px;
-}
-
 article-list > header > :is(h1, h2, h3, h4, h5, h6) {
     margin-top: 0;
 }
