@@ -145,6 +145,10 @@ article-list {
     overflow: auto hidden;
 }
 
+article-list > header {
+    max-width: 350px;
+}
+
 article-list[small] {
     --article-width: min(25%, 150px);
 }
@@ -242,7 +246,7 @@ poster-section footer {
 poster-section footer > ul {
     display: flex;
     justify-content: center;
-    column-gap: var(--space-xs);
+    column-gap: var(--space-sm);
 }
 
 poster-section footer > ul a {
