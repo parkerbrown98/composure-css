@@ -574,3 +574,24 @@ form-cols :is(input, textarea, select) {
 form-cols div[full-width] {
     grid-column: span 2; /* this is causing the columns not to wrap */
 }
+
+/* || center-section */
+
+center-section {
+    display: block;
+    background-color: var(--color-secondary);
+}
+
+center-section > ul {
+    display: flex;
+    justify-content: center;
+}
+
+center-section :is(h1, h2, h3, h4, h5, h6) {
+    color: var(--color-primary);
+}
+
+center-section > ul > li {
+    position: relative;
+    width: min(100%, 50rem);
+}
