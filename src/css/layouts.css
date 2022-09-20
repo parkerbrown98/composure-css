@@ -108,7 +108,7 @@ header>nav>figure {
     grid-area: logo;
 }
 
-header>nav>menu {
+header>nav>menu-wrapper {
     grid-area: menu;
 }
 
