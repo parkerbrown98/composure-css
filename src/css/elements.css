@@ -68,14 +68,16 @@ product-section>ul {
     overflow: auto hidden;
 }
 
-product-section ul li a img {
-    --img-ratio: var(--text-scale-ratio);
-    height: calc(var(--article-width) * var(--img-ratio)); /* use the variable for grid column width to calculate height based on a fixed ratio */
-    object-fit: cover;
+product-section > ul svg {
+    width: var(--text-xl);
+    height: var(--text-xl);
+    color: var(--color-accent);
+    fill: var(--color-accent);
 }
 
-product-section ul li svg {
-    width: 12px;
+product-section > ul img {
+    display: block;
+    width: 100%;
 }
 
 product-section>ul h3 {
