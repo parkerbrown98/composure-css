@@ -601,7 +601,9 @@ center-section > ul > li {
 
 breadcrumbs {
     display: block;
-    border-top: thin solid var(--background-alt);
+    position: absolute;
+    top: var(--page-gutters);
+    left: var(--page-gutters);
 }
 
 breadcrumbs > ul {
@@ -609,13 +611,8 @@ breadcrumbs > ul {
     gap: var(--space-xxs);
 }
 
-breadcrumbs > ul > li {
-    padding-top: var(--space-xxxs);
-    padding-bottom: var(--space-xxxs);
-}
-
 breadcrumbs > ul > li a {
-    color: var(--color-secondary);
+    color: var(--color-primary);
 }
 
 breadcrumbs > ul > li a:hover,
