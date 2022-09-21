@@ -9,6 +9,7 @@ header>alert-banner {
 
 /* || button links */
 
+action-list a,
 article-list header a,
 product-section>ul>li>:is(h2, h3)~a,
 poster-copy>a {
@@ -17,6 +18,17 @@ poster-copy>a {
     display: block;
     max-width: max-content;
     background-color: var(--color-primary);
+    padding: var(--space-xxxs) var(--space-sm);
+    box-shadow: var(--box-shadow-sm);
+    margin-bottom: var(--space-xxs);
+}
+
+action-list a[primary] {
+    font-weight: var(--button-font-weight);
+    color: var(--color-primary);
+    display: block;
+    max-width: max-content;
+    background-color: var(--color-accent);
     padding: var(--space-xxxs) var(--space-sm);
     box-shadow: var(--box-shadow-sm);
     margin-bottom: var(--space-xxs);
@@ -136,6 +148,10 @@ article-section {
 
 article-section[alt-background] {
     background-color: var(--background-alt);
+}
+
+article-section > :is(h1, h2, h3, h4, h5, h6) {
+    margin-top: 0;
 }
 
 article-list {
@@ -628,4 +644,67 @@ split-grid {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: var(--space-md);
     align-items: center;
+}
+
+/* || content-divider */
+
+content-divider {
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: var(--background-alt);
+    margin: var(--space-sm) 0;
+}
+
+/* || feature-list */
+
+feature-list {
+    display: block;
+}
+
+feature-list svg {
+    width: 28px;
+    height: 28px;
+    margin-top: -4px;
+}
+
+feature-list ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xxxs);
+}
+
+feature-list ul > li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-xs);
+}
+
+feature-list ul > li p {
+    margin: 0;
+}
+
+/* || action-list */
+
+action-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xxs);
+    margin-top: var(--space-sm);
+}
+
+action-list[row] {
+    flex-direction: row;
+}
+
+media-section {
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+    height: fit-content;
+}
+
+media-section > * {
+    width: 100%;
+    height: auto;
 }
