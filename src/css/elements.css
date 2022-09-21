@@ -595,3 +595,29 @@ center-section > ul > li {
     position: relative;
     width: min(100%, 50rem);
 }
+
+/* || breadcrumbs */
+
+breadcrumbs {
+    display: block;
+    border-top: thin solid var(--background-alt);
+}
+
+breadcrumbs > ul {
+    display: flex;
+    gap: var(--space-xxs);
+}
+
+breadcrumbs > ul > li {
+    padding-top: var(--space-xxxs);
+    padding-bottom: var(--space-xxxs);
+}
+
+breadcrumbs > ul > li a {
+    color: var(--color-secondary);
+}
+
+breadcrumbs > ul > li a:hover,
+breadcrumbs > ul > li a:focus {
+    text-decoration: none;
+}
