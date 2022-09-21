@@ -527,35 +527,36 @@ contact-form {
     /* background-color: var(--background-alt); */
 }
 
-contact-form > * {
+/* contact-form > * {
     max-width: 45rem;
     margin: 0 auto;
-}
+} */
 
-contact-form > h4 {
+contact-form h4 {
     font-weight: 400;
     margin-top: var(--space-sm);
 }
 
-contact-form > ul {
+contact-form ul {
     margin-top: var(--space-sm);
     padding-left: var(--space-sm);
 }
 
-contact-form > ul > li {
+contact-form ul > li {
     list-style-type: disc;
 }
 
-contact-form > ul > li:not(:first-of-type) {
+contact-form ul > li:not(:first-of-type) {
     margin-top: var(--space-xxs);
 }
 
-contact-form > p {
+contact-form p {
     margin-top: var(--space-sm);
 }
 
-contact-form > form {
+contact-form form {
     margin-top: var(--space-md);
+    max-width: 620px;
 }
 
 /* || form-cols */
@@ -620,4 +621,13 @@ breadcrumbs > ul > li a {
 breadcrumbs > ul > li a:hover,
 breadcrumbs > ul > li a:focus {
     text-decoration: none;
+}
+
+/* || split-grid */
+
+split-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--space-md);
+    align-items: center;
 }
