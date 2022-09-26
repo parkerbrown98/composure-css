@@ -7,9 +7,9 @@
     --background: #efefef;
     --background-alt: #dfdfdf;
     --selection: #9e9e9e;
-    --text-main: #363636;
+    --text-main: #2d2925;
     --text-bright: #000;
-    --text-muted: #70777f;
+    --text-muted: #A19B91;
     --links: #0076d1;
     --focus: #0096bfab;
     --border: #dbdbdb;
@@ -31,7 +31,7 @@
     --color-secondary: #121510;
     --color-secondary-fade: rgba(18, 21, 16, 0.5);
     --color-tertiary: #151540;
-    --color-accent: #c8aa82;
+    --color-accent: #c09f72;
 
     /* box shadows */
     --box-shadow-xs: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;;
@@ -52,10 +52,10 @@
     --header-font-weight: 600;
 
     /* headers in relation to each other */
-    --text-scale-ratio: 1.5;  
+    --text-scale-ratio: 1.25;  
 
     /* fluid font sizes */
-    --text-md: calc(var(--text-base-size));
+    --text-md: calc(var(--text-base-size)) * var(--text-scale-ratio));
     --text-lg: calc(var(--header-base-font-size) * var(--text-scale-ratio));
     --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
     --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
