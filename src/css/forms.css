@@ -4,10 +4,10 @@ textarea { transition: background-color 0.1s linear, border-color 0.1s linear, c
 button, select, input[type='submit'], input[type='reset'], input[type='button'], input[type='checkbox'], input[type='range'], input[type='radio'] { cursor: pointer; }
 input, select { display: block; }
 [type='checkbox'], [type='radio'] { display: initial; }
-input { color: var(--form-text); background-color: var(--background); font-family: inherit; font-size: inherit; padding: 10px; border: none; outline: none; }
-button { color: var(--form-text); background-color: var(--background); font-family: inherit; font-size: inherit; padding: 10px; border: none; outline: none; box-shadow: var(--box-shadow-sm); }
-textarea { color: var(--form-text); background-color: var(--background); font-family: inherit; font-size: inherit; padding: 10px; border: none; outline: none; }
-select { color: var(--form-text); background-color: var(--background); font-family: inherit; font-size: inherit; padding: 10px; border: none; outline: none; }
+input { color: var(--form-text); background-color: var(--background); font-family: inherit; font-size: inherit; padding: var(--space-xxs); border: none; outline: none; }
+button { color: var(--form-text); background-color: var(--background); font-family: inherit; font-size: inherit; padding: var(--space-xxs); border: none; outline: none; box-shadow: var(--box-shadow-sm); }
+textarea { color: var(--form-text); background-color: var(--background); font-family: inherit; font-size: inherit; padding: var(--space-xxs); border: none; outline: none; }
+select { color: var(--form-text); background-color: var(--background); font-family: inherit; font-size: inherit; padding: var(--space-xxs); border: none; outline: none; }
 button { background-color: var(--button-base); padding-right: 30px; padding-left: 30px; }
 input[type='submit'] { background-color: var(--button-base); padding-right: 30px; padding-left: 30px; }
 input[type='reset'] { background-color: var(--button-base); padding-right: 30px; padding-left: 30px; }
@@ -19,7 +19,7 @@ input[type='button']:hover { background: var(--button-hover); }
 input[type='color'] { min-height: 2rem; padding: 8px; cursor: pointer; }
 input[type='checkbox'], input[type='radio'] { height: 1em; width: 1em; }
 input[type='radio'] { border-radius: 100%; }
-input { vertical-align: top; }
+input { vertical-align: top;}
 label { vertical-align: middle; margin-bottom: 4px; display: inline-block; }
 input:not([type='checkbox']):not([type='radio']), input[type='range'], select, button, textarea { -webkit-appearance: none; }
 textarea { display: block; margin-right: 0; box-sizing: border-box; resize: vertical; }
@@ -53,3 +53,8 @@ input[type='range']:focus::-ms-fill-lower { background: var(--background); }
 input[type='range']:focus::-ms-fill-upper { background: var(--background); }
 ::-moz-selection { background-color: var(--selection); color: var(--text-bright); }
 ::selection { background-color: var(--selection); color: var(--text-bright); }
+
+input, select, textarea {
+    margin-bottom: var(--space-xxs);
+    width: 100%;
+}
