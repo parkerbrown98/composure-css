@@ -5,7 +5,7 @@
     /* water.css variables */
     --background-body: #fff;
     --background: #efefef;
-    --background-alt: #dfdfdf;
+    --background-alt: #ccb38e;
     --background-contrast: #0b0a09;
     --text-contrast: #fff;
     --selection: #9e9e9e;
@@ -37,8 +37,10 @@
 
     /* box shadows */
     --box-shadow-xs: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;;
-    --box-shadow-sm: 2px 2px 0px var(--color-secondary);
-    --box-shadow-md: 4px 4px 0px var(--color-secondary);
+    --box-shadow-sm: 2px 2px 0px var(--background-contrast);
+    --box-shadow-sm-alt: 2px 2px 0px var(--background-contrast);
+    --box-shadow-md: 4px 4px 0px var(--background-contrast);
+    --box-shadow-md-alt: 4px 4px 0px var(--background-contrast);
     
     /* borders */
     --border-light: 0.25px solid var(--color-secondary);

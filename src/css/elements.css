@@ -13,18 +13,18 @@ action-list a,
 product-section>ul>li>:is(h2, h3)~a,
 poster-copy>a {
     font-weight: var(--button-font-weight);
-    color: var(--color-secondary);
+    color: var(--code);
     display: block;
     max-width: max-content;
-    background-color: var(--color-primary);
+    background-color: var(--background);
     padding: var(--space-xxxs) var(--space-sm);
-    box-shadow: var(--box-shadow-sm);
+    box-shadow: var(--box-shadow-sm-alt);
     margin-bottom: var(--space-xxs);
 }
 
 action-list a[primary] {
     font-weight: var(--button-font-weight);
-    color: var(--color-primary);
+    color: var(--code);
     display: block;
     max-width: max-content;
     background-color: var(--color-accent);
@@ -112,6 +112,26 @@ product-section>ul h3 {
     margin: unset;
 }
 
+*[background-alt] {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    background-color: var(--background-alt);
+}
+
+/* *[background-alt] :is(h1, h2, h3, h4, h5, h6, p, strong, em, i, b, a) {
+} */
+
+*[background-contrast] {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    background-color: var(--background-contrast);
+    color: var(--text-muted);
+}
+
+*[background-contrast] :is(h1, h2, h3, h4, h5, h6, p, strong, em, i, b, a) {
+    color: var(--text-muted)
+}
+
 /* || article-section */
 
 article-section {
@@ -120,34 +140,19 @@ article-section {
     margin: 0;
     padding-bottom: var(--space-md);
     padding-top: var(--space-lg);
-
 }
 
-article-section[alt-background] {
-    background-color: var(--background-alt);
-}
-
-*[contrast-background] {
-    padding-top: var(--space-lg);
-    padding-bottom: var(--space-lg);
-    background-color: var(--background-contrast);
-    color: var(--text-muted);
-}
-
-*[contrast-background] :is(h1, h2, h3, h4, h5, h6, p) {
-    color: var(--text-muted)
-}
 
 article-section > :is(h1, h2, h3, h4, h5, h6, a) {
     margin-top: 0;
 }
 
 article-section h2 {
-    font-size: var(--text-md);
+    font-size: var(--text-lg);
 }
 
 article-section h3 {
-    font-size: var(--text-sm);
+    font-size: var(--text-reg);
     /* padding-bottom: var(--space-xs); */
 }
 
@@ -172,7 +177,9 @@ article-list {
     grid-auto-flow: column;
     gap: var(--space-sm);
     overflow: auto hidden;
+    margin-top: var(--space-xs);
     padding-top: var(--space-xs);
+    margin-bottom: var(--space-md);
     padding-bottom: var(--space-md);
 }
 
@@ -213,11 +220,9 @@ article-list[snippet] > article > a {
 
 article-list[snippet] article[end-card] {
     border: 1px solid var(--color-accent);
-    color: var(--text-bright);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-right: var(--body-gutters);
+    padding: var(--space-xs);
+    margin-right: var(--page-gutters);
+    grid-column: span 2;
 }
 
 article-list[snippet] article img {
@@ -258,7 +263,9 @@ bio-section > ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: var(--space-xs);
-    margin-bottom: var(--space-md);
+    margin-top: var(--space-md);
+    border-top: 1px solid var(--color-accent); 
+    padding-top: var(--space-md);   
 }
 
 bio-section > ul > li {
@@ -273,7 +280,7 @@ bio-section figure img {
 bio-section figcaption {
     text-align: center;
     color: var(--color-accent);
-    border-bottom: 1px solid var(--color-accent);
+    /* border-bottom: 1px solid var(--color-accent); */
     line-height: 1;
 }
 
@@ -521,6 +528,27 @@ map-section > iframe {
     height: 100%;
 }
 
+
+/* || staff-section */
+
+staff-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: var(--space-xxl);
+    margin-bottom: var(--space-xxl);
+}
+
+staff-section figure {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+    align-items: center;
+}
+
+staff-section figcaption h4 {
+    color: var(--text-bright);
+}
+
 /* || directory-section */
 
 directory-section {
@@ -583,15 +611,15 @@ directory-section ul > li ul a:hover {
     text-decoration: underline;
 }
 
-/* || feature-grid */
+/* || feature-section */
 
-feature-grid {
+feature-section {
     display: block;
     padding-top: var(--space-lg);
     padding-bottom: var(--space-lg);
 }
 
-feature-grid > ul {
+feature-section > ul {
     /* Allows the grid to auto-fill scaling down, but uses a maximum column count when scaling up */
     --grid-column-count: 2;
     --grid-item--min-width: 300px;
@@ -605,14 +633,18 @@ feature-grid > ul {
     gap: var(--grid-layout-gap);
 }
 
-feature-grid > ul svg {
+feature-section[offset] > ul li:nth-of-type(even) {
+    margin-top: var(--space-xxxl);
+}
+
+feature-section > ul svg {
     width: var(--text-xl);
     height: var(--text-xl);
     color: var(--color-accent);
     fill: var(--color-accent);
 }
 
-feature-grid > ul img {
+feature-section > ul img {
     display: block;
     width: 100%;
 }
@@ -630,16 +662,17 @@ feature-grid > ul img {
 
 /* || contact-form */
 
-/* contact-form {
-    display: block;
-} */
+contact-form {
+    display: grid;
+    grid-auto-columns: auto;
+}
 
-/* contact-form > * {
+contact-form > * {
     max-width: 45rem;
     margin: 0 auto;
-} */
+}
 
-/* contact-form h4 {
+contact-form h4 {
     font-weight: 400;
     margin-top: var(--space-sm);
 }
@@ -649,9 +682,10 @@ contact-form ul {
     padding-left: var(--space-sm);
 }
 
+
 contact-form ul > li {
     list-style-type: disc;
-}
+} 
 
 contact-form ul > li:not(:first-of-type) {
     margin-top: var(--space-xxs);
@@ -664,7 +698,7 @@ contact-form p {
 contact-form form {
     margin-top: var(--space-md);
     max-width: 620px;
-} */
+} 
 
 /* || center-section */
 
@@ -735,26 +769,18 @@ feature-list {
     display: block;
 }
 
-feature-list svg {
-    width: 28px;
-    height: 28px;
-    margin-top: -4px;
-}
-
-feature-list ul {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xxxs);
-}
-
-feature-list ul > li {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--space-xs);
-}
-
 feature-list ul > li p {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    font-size: var(--text-xs);
     margin: 0;
+}
+
+feature-list svg {
+    width: 1em;
+    height: 1em;
+    /* margin-top: -4px; */
 }
 
 /* || action-list */
@@ -770,11 +796,14 @@ action-list[row] {
     flex-direction: row;
 }
 
+/* || media-section */
+
 media-section {
     display: block;
     padding-left: 0;
     padding-right: 0;
     height: fit-content;
+    overflow: hidden;
 }
 
 media-section > * {
