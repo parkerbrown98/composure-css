@@ -10,7 +10,6 @@ header>alert-banner {
 /* || button links */
 
 action-list a,
-article-list header a,
 product-section>ul>li>:is(h2, h3)~a,
 poster-copy>a {
     font-weight: var(--button-font-weight);
@@ -119,7 +118,9 @@ article-section {
     display: block;
     width: 100%;
     margin: 0;
+    padding-bottom: var(--space-md);
     padding-top: var(--space-lg);
+
 }
 
 article-section[alt-background] {
@@ -130,42 +131,152 @@ article-section[alt-background] {
     padding-top: var(--space-lg);
     padding-bottom: var(--space-lg);
     background-color: var(--background-contrast);
-    color: var(--color-secondary);
+    color: var(--text-muted);
 }
 
-article-section > :is(h1, h2, h3, h4, h5, h6) {
+*[contrast-background] :is(h1, h2, h3, h4, h5, h6, p) {
+    color: var(--text-muted)
+}
+
+article-section > :is(h1, h2, h3, h4, h5, h6, a) {
     margin-top: 0;
 }
 
+article-section h2 {
+    font-size: var(--text-md);
+}
+
+article-section h3 {
+    font-size: var(--text-sm);
+    /* padding-bottom: var(--space-xs); */
+}
+
+article-section h3 img {
+    max-width: 20vw;
+}
+
+article-section header > :is(time, address),
+article-section header a[href^="tel"],
+article-section header a[href^="mailto"] {
+    display: block;
+    font-size: var(--text-xs);
+    margin: 0;
+    padding: 0;
+    line-height: 1.25em;
+}
+
 article-list {
-    --article-width: min(70vw, 400px); /* set a variable to use as column width so the img height can be a calculated ratio */
+    --article-width: min(40vw, 300px); /* set a variable to use as column width so the img height can be a calculated ratio */
     display: grid;
     grid-auto-columns: var(--article-width);
     grid-auto-flow: column;
-    column-gap: var(--space-xs);
+    gap: var(--space-sm);
     overflow: auto hidden;
+    padding-top: var(--space-xs);
+    padding-bottom: var(--space-md);
 }
 
 article-list > header > :is(h1, h2, h3, h4, h5, h6) {
     margin-top: 0;
 }
 
-article-list[small] {
-    --article-width: min(25%, 150px);
-}
-
-article-list article img {
+article-list > article img {
     --img-ratio: var(--text-scale-ratio);
     display: block;
     width: 100%;
-    height: calc(var(--article-width) * var(--img-ratio)); /* use the variable for grid column width to calculate height based on a fixed ratio */
+    /* use the variable for grid column width to calculate height based on a fixed ratio */
+    height: calc(var(--article-width) * var(--img-ratio)); 
     object-fit: cover;
 }
 
-article-list article h3 {
+
+/* This is for making split images in articles, just by adding more images */
+
+article-list[snippet] {
+    --snippet-article-width: clamp(20vw, 150px, 300px);
+    display: grid;
+    grid-auto-columns: var(--snippet-article-width);
+    grid-auto-flow: column;
+    column-gap: var(--space-xxxxs);
+    overflow: auto hidden;
+    padding-top: var(--space-xs);
+    padding-bottom: var(--space-md);
+}
+
+article-list[snippet] > article > a {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: var(--space-xxxxs);
+    overflow: hidden;
+}
+
+article-list[snippet] article[end-card] {
+    border: 1px solid var(--color-accent);
+    color: var(--text-bright);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: var(--body-gutters);
+}
+
+article-list[snippet] article img {
+    --img-ratio: var(--text-scale-ratio);
+    display: block;
+    width: 100%;
+    height: calc((0.5 * var(--snippet-article-width) * var(--img-ratio)) - (0.5 * var(--space-xxxxs))); /* use the variable for grid column width to calculate height based on a fixed ratio */
+    /* height: calc(var(--snippet-article-width) * var(--img-ratio)); use the variable for grid column width to calculate height based on a fixed ratio */
+    object-fit: cover;
+}
+
+article-list[snippet] > article > a > img:only-of-type {
+    --img-ratio: var(--text-scale-ratio);
+    display: block;
+    width: 100%;
+    height: calc(var(--snippet-article-width) * var(--img-ratio)); /* use the variable for grid column width to calculate height based on a fixed ratio */
+    /* height: calc(var(--snippet-article-width) * var(--img-ratio)); use the variable for grid column width to calculate height based on a fixed ratio */
+    object-fit: cover;
+    grid-row: span 2;
+}
+
+article-list[snippet] > article:first-of-type img {
+    border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+} 
+
+article-list[snippet] > article:last-of-type img {
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+} 
+
+article-list[snippet] > article h3 {
     font-size: var(--text-lg);
     margin: var(--space-xxs) 0 var(--space-xxxs) 0;
 }
+
+/* || bio-section */
+
+bio-section > ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--space-xs);
+    margin-bottom: var(--space-md);
+}
+
+bio-section > ul > li {
+    display: inline-block;
+}
+
+bio-section figure img {
+    border-radius: 50%;
+    /* border: 2px solid var(--color-accent); */
+}
+
+bio-section figcaption {
+    text-align: center;
+    color: var(--color-accent);
+    border-bottom: 1px solid var(--color-accent);
+    line-height: 1;
+}
+
 
 /* || collage-section */
 
@@ -373,6 +484,10 @@ media-grid > a > h3 {
 
 /* || filter-section */
 
+filter-section {
+    margin-top: 0;
+}
+
 filter-section > h2 {
     margin: unset;
 }
@@ -381,22 +496,17 @@ filter-section > h2 + p {
     margin-top: var(--space-xxxxs);
 }
 
-filter-section > ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-xxxs);
-}
-
-filter-section > ul {
-    margin-top: var(--space-xxxxs);
+filter-section > ul > li {
+    display: inline-block;
 }
 
 filter-section > ul > li > a {
+    font-size: var(--text-xs);
     display: inline-block;
-    padding: var(--space-xxxxs) var(--space-xxxs);
-    color: var(--color-secondary);
-    background-color: var(--background);
-    margin: unset;
+    padding: var(--space-nano) var(--space-xxs);
+    color: var(--text-contrast);
+    background-color: var(--color-accent);
+    /* margin: 1rem; */
 }
 
 filter-section > ul > li > a:hover {
@@ -428,19 +538,19 @@ directory-section a:hover {
     text-decoration: none;
 }
 
-directory-section ul > li {
+directory-section > ul > li {
     display: flex;
     flex-direction: column;
     position: relative;
     min-height: 500px;
 }
-
-directory-section ul > li > :is(a, div) {
+ 
+directory-section > ul > li > :is(a, div) {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 80%;
-}
+} 
 
 directory-section > ul > li img {
     position: absolute;
@@ -453,7 +563,7 @@ directory-section > ul > li img {
 }
 
 directory-section ul > li :is(h1, h2, h3, h4, h5, h6) {
-    color: var(--color-primary);
+    color: var(--text-bright);
     font-size: var(--text-xxxl);
 }
 
@@ -464,7 +574,7 @@ directory-section ul > li ul {
     grid-template-rows: repeat(4, 1fr);
     width: 100%;
     column-gap: var(--space-xs);
-    row-gap: var(--space-xxxs);
+    /* row-gap: var(--space-xxxs); */
     list-style: none;
     padding: 0 var(--page-gutters);
 }
@@ -477,6 +587,8 @@ directory-section ul > li ul a:hover {
 
 feature-grid {
     display: block;
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
 }
 
 feature-grid > ul {

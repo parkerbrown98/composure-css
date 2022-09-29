@@ -42,16 +42,20 @@
     
     /* borders */
     --border-light: 0.25px solid var(--color-secondary);
+    /* --radius-sm: var(--space-xs); */
+    /* --radius-md: var(--space-md); */
+    /* --radius-lg: var(--space-lg); */
 
     /* body font size */
     --text-base-size: 1em;
+    --line-height: 1.25;
 
     /* links as buttons */
     --button-font-weight: 600;
 
     /* header font size (in relation to base) and weight */
     /* --header-base-font-size: calc(var(--text-base-size) / 2 + 0.390625vw);  */
-    --header-font-weight: 400;
+    --header-font-weight: 600;
 
     /* headers in relation to each other */
     --text-scale-ratio: 1.25;  
@@ -62,9 +66,11 @@
     --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
     --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
     --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
+    --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-ratio));
     
     --text-sm: calc(var(--text-base-size) / var(--text-scale-ratio));
     --text-xs: calc(var(--text-sm) / var(--text-scale-ratio));
+    --text-xxs: calc(var(--text-xs) / var(--text-scale-ratio));
 
     /* fluid spacing */
     --space-unit:  calc(1em / 2 + 1.5625vw);
@@ -76,6 +82,7 @@
     --space-xxxs:  calc(var(--space-xxs)  / var(--space-ratio));
     --space-xxxxs: calc(var(--space-xxxs)  / var(--space-ratio));
     --space-xxxxxs: calc(var(--space-xxxxs)  / var(--space-ratio));
+    --space-nano: calc(var(--space-xxxxxs) / var(--space-ratio) / var(--space-ratio));
 
     --space-md:    calc(var(--space-unit) * var(--space-ratio));
     --space-lg:    calc(var(--space-md) * var(--space-ratio));
