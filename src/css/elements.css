@@ -849,10 +849,6 @@ action-list[row] {
     flex-direction: row;
 }
 
-action-list button,
-action-list a {
-    margin-bottom: unset;
-}
 /* || media-section */
 
 media-section {
