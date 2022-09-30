@@ -1,7 +1,11 @@
 /* body grid */
+
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     display: grid;
-    min-height: 100vh;
     grid-template-areas: "alert alert""head head""main main""foot foot";
     grid-template-columns: min-content 1fr;
     grid-template-rows: min-content 1fr min-content;
@@ -13,7 +17,8 @@ main *::-webkit-scrollbar {
   }
   
   /* Hide scrollbar for IE, Edge and Firefox */
-main * {
+
+  main * {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
@@ -53,6 +58,10 @@ product-section {
     padding-right: 0;
 }
 
+special-section {
+    padding-left: 0;
+}
+
 main>article {
     padding-left: var(--section-gutters);
     padding-right: var(--section-gutters);
@@ -60,19 +69,19 @@ main>article {
 
 site-alert {
     display: block;
+    height: 1.25rem;
     width: 100vw;
     background-color: var(--background-contrast);
     color: var(--text-muted);
     font-size: var(--text-xs);
     text-align: center;
-    margin-bottom: var(--space-nano);
+    margin-bottom: 0.2rem;
 }
 
 site-alert a {
     color: var(--text-muted);
     font-size: var(--text-xs);
     text-align: center;
-
 }
 
 header>nav {
@@ -105,7 +114,7 @@ header nav figure figcaption {
 
 header>nav>ul>li>a {
     display: block;
-    padding: var(--space-xxxxxs) var(--space-xxxs);
+    padding: var(--space-xxxxxs) var(--space-xxxxxs);
     color: var(--text-main);
 }
 
@@ -145,9 +154,15 @@ header>nav>menu-wrapper {
 }
 
 @media (max-width: 600px) {
-    header>nav>ul:nth-of-type(1)>li>a {
+    header>nav {
+        padding-top: 0;
+    }
+
+    header>nav>ul:nth-of-type(1)>li>a,
+    menu-wrapper details summary,
+    menu-wrapper details {
         font-weight: var(--header-font-weight);
-        font-size: var(--text-sm);
+        font-size: var(--text-xs);
     }
 
     header>nav>ul:nth-of-type(2) {

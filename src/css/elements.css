@@ -654,14 +654,13 @@ feature-section {
 feature-section > ul {
     /* Allows the grid to auto-fill scaling down, but uses a maximum column count when scaling up */
     --grid-column-count: 2;
-    --grid-item--min-width: 300px;
+    --grid-col-min: 300px;
     --grid-layout-gap: var(--space-xs);
     --gap-count: calc(var(--grid-column-count) - 1);
     --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
-    --grid-item--max-width: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
-
+    --grid-col-max: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-col-min), var(--grid-col-max)), 1fr));
     gap: var(--grid-layout-gap);
 }
 
@@ -692,45 +691,39 @@ feature-section > ul img {
     fill: #faca15;
 }
 
-/* || contact-form */
+/* || special-section */
 
-contact-form {
+special-section {
+    --grid-col-min: 16rem;
+    --grid-col-max: 40vw;
     display: grid;
-    grid-auto-columns: auto;
+    column-gap: var(--space-lg);
+    grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-col-min), var(--grid-col-max)), 1fr));
+    padding-left: var(--page-gutters);
+    padding-right: var(--page-gutters);
+    padding-top: calc(2 * var(--space-xxxxl));
+    padding-bottom: calc(2 * var(--space-xxxxl));
+    background-color: var(--background-alt);
 }
 
-contact-form > * {
-    max-width: 45rem;
-    margin: 0 auto;
-}
-
-contact-form h4 {
-    font-weight: 400;
+special-section ul {
     margin-top: var(--space-sm);
+    padding: 0 var(--space-xl) var(--space-xl) var(--space-xl) ;
 }
 
-contact-form ul {
-    margin-top: var(--space-sm);
-    padding-left: var(--space-sm);
-}
-
-
-contact-form ul > li {
+special-section ul > li {
     list-style-type: disc;
 } 
 
-contact-form ul > li:not(:first-of-type) {
-    margin-top: var(--space-xxs);
+special-section :is(p, li) {    
+    font-size: var(--text-sm);
 }
 
-contact-form p {
-    margin-top: var(--space-sm);
+special-section form input[type="submit"] {
+    background-color: var(--background-contrast);
+    color: var(--text-contrast);
+    margin: var(--space-lg) 0; 
 }
-
-contact-form form {
-    margin-top: var(--space-md);
-    max-width: 620px;
-} 
 
 /* || center-section */
 
@@ -845,4 +838,23 @@ media-section {
 media-section > * {
     width: 100%;
     height: auto;
+}
+
+
+/* || about-section */
+
+about-section {
+    display: block;
+    border: 2px solid var(--background-alt);
+    padding: calc(2* var(--page-gutters));
+    margin: var(--page-gutters);
+}
+
+about-section h3 {
+    margin-bottom: var(--space-xxxxs);
+    color: var(--text-bright);
+}
+
+about-section p {
+    font-size: var(--text-sm);
 }
