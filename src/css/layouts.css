@@ -2,7 +2,7 @@
 body {
     display: grid;
     min-height: 100vh;
-    grid-template-areas: "head head""main main""foot foot";
+    grid-template-areas: "alert alert""head head""main main""foot foot";
     grid-template-columns: min-content 1fr;
     grid-template-rows: min-content 1fr min-content;
 }
@@ -58,6 +58,23 @@ main>article {
     padding-right: var(--section-gutters);
 }
 
+site-alert {
+    display: block;
+    width: 100vw;
+    background-color: var(--background-contrast);
+    color: var(--text-muted);
+    font-size: var(--text-xs);
+    text-align: center;
+    margin-bottom: var(--space-nano);
+}
+
+site-alert a {
+    color: var(--text-muted);
+    font-size: var(--text-xs);
+    text-align: center;
+
+}
+
 header>nav {
     padding-top: var(--space-xxxxxs);
     display: grid;
@@ -78,7 +95,8 @@ header nav figure img {
 }
 
 header nav figure figcaption {
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
+    color: var(--text-bright);
 }
 
 * :not(article) ul > li {
