@@ -106,6 +106,14 @@ address {
     font-size: var(--text-xs);
 }
 
+address::after {
+    content: var(--directions-arrow);
+    width: var(--text-base-size);
+    height: var(--text-base-size);
+    margin-left: .25rem;
+    display: inline-block;
+}
+
 a[href^='mailto\:']::before {
     content: '🖆 ';
 }
