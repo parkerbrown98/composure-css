@@ -3,7 +3,7 @@ menu-wrapper {
     --local-space-md: var(--space-xxxs);
     --local-space-lg: var(--space-xs);
     /* --local-width: max(var(--space-xxxxl), 160px); */
-    --local-width: max(160px,var(--space-xxxl));
+    --local-width: max(160px,40vw);
     --menu-button-width: var(--space-xxxl);
 }
 
@@ -78,6 +78,7 @@ menu-wrapper details menu li a:visited {
 
 menu-wrapper details> :not(summary) {
     margin-top: 0;
+    /* padding: var(--local-space-md); */
 }
 
 menu-wrapper details > summary::-webkit-details-marker {
