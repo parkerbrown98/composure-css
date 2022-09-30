@@ -29,7 +29,16 @@ h5,
 h6 {
     font-family: 'Poppins', sans-serif;
     line-height: var(--line-height);
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
 }
+
+.begins_with_group_1::first-letter { margin-left: -.03em;}
+.begins_with_group_2::first-letter { margin-left: -.04em;}
+.begins_with_group_3::first-letter { margin-left: -.07em;}
 
 body {
     font-size: var(--text-base-size);
