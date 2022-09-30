@@ -1,6 +1,7 @@
 /* body grid */
 body {
     display: grid;
+    min-height: 100vh;
     grid-template-areas: "head head""main main""foot foot";
     grid-template-columns: min-content 1fr;
     grid-template-rows: min-content 1fr min-content;
