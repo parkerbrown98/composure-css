@@ -17,7 +17,7 @@ poster-copy>a {
     display: block;
     max-width: max-content;
     background-color: var(--background);
-    padding: var(--space-xxxs) var(--space-sm);
+    padding: var(--space-nano) var(--space-sm);
     box-shadow: var(--box-shadow-sm-alt);
     margin-bottom: var(--space-xxs);
 }
@@ -28,7 +28,7 @@ action-list a[primary] {
     display: block;
     max-width: max-content;
     background-color: var(--color-accent);
-    padding: var(--space-xxxs) var(--space-sm);
+    padding: var(--space-nano) var(--space-sm);
     box-shadow: var(--box-shadow-sm);
     margin-bottom: var(--space-xxs);
 }
@@ -152,22 +152,50 @@ article-section h2 {
 }
 
 article-section h3 {
+    font-size: var(--text-base-size);
+}
+
+article-section p {
+    font-size: var(--text-sm);
+}
+
+article-section header h4 {
+    font-size: var(--text-sm);
+    color: var(--text-bright);
+}
+
+article-section header h3 {
     font-size: var(--text-reg);
-    /* padding-bottom: var(--space-xs); */
+    margin-top: var(--space-xxxxs);
+    margin-bottom: var(--space-xxxxs);
+    padding-bottom: var(--space-xxxxs);
+    border-bottom: 2px solid var(--color-accent); 
+}
+
+article-section article-list header {
+    padding-right: var(--space-xxs);
 }
 
 article-section h3 img {
     max-width: 20vw;
 }
 
-article-section header > :is(time, address),
-article-section header a[href^="tel"],
-article-section header a[href^="mailto"] {
-    display: block;
-    font-size: var(--text-xs);
+article-section header a,
+article-section header a:hover,
+article-section header a:visited {
+    text-decoration: none;
+}
+
+
+article-section time, 
+article-section address,
+article-section figcaption,
+article-section a[href^="tel"],
+article-section a[href^="mailto"] {
+    font-size: var(--text-xxs);
     margin: 0;
     padding: 0;
-    line-height: 1.25em;
+    line-height: 1.25;
 }
 
 article-list {
@@ -188,7 +216,7 @@ article-list > header > :is(h1, h2, h3, h4, h5, h6) {
 }
 
 article-list > article img {
-    --img-ratio: var(--text-scale-ratio);
+    --img-ratio: var(--vertical-media-scale-ratio);
     display: block;
     width: 100%;
     /* use the variable for grid column width to calculate height based on a fixed ratio */
@@ -207,7 +235,7 @@ article-list[snippet] {
     column-gap: var(--space-xxxxs);
     overflow: auto hidden;
     padding-top: var(--space-xs);
-    padding-bottom: var(--space-md);
+    padding-bottom: var(--space-xxxl);
 }
 
 article-list[snippet] > article > a {
@@ -226,7 +254,7 @@ article-list[snippet] article[end-card] {
 }
 
 article-list[snippet] article img {
-    --img-ratio: var(--text-scale-ratio);
+    --img-ratio: var(--vertical-media-scale-ratio);
     display: block;
     width: 100%;
     height: calc((0.5 * var(--snippet-article-width) * var(--img-ratio)) - (0.5 * var(--space-xxxxs))); /* use the variable for grid column width to calculate height based on a fixed ratio */
@@ -235,7 +263,7 @@ article-list[snippet] article img {
 }
 
 article-list[snippet] > article > a > img:only-of-type {
-    --img-ratio: var(--text-scale-ratio);
+    --img-ratio: var(--vertical-media-scale-ratio);
     display: block;
     width: 100%;
     height: calc(var(--snippet-article-width) * var(--img-ratio)); /* use the variable for grid column width to calculate height based on a fixed ratio */
@@ -252,20 +280,13 @@ article-list[snippet] > article:last-of-type img {
     border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 } 
 
-article-list[snippet] > article h3 {
-    font-size: var(--text-lg);
-    margin: var(--space-xxs) 0 var(--space-xxxs) 0;
-}
-
 /* || bio-section */
 
 bio-section > ul {
     display: grid;
+    column-gap: var(--space-xxxxxs);
     grid-template-columns: 1fr 1fr;
-    column-gap: var(--space-xs);
     margin-top: var(--space-md);
-    border-top: 1px solid var(--color-accent); 
-    padding-top: var(--space-md);   
 }
 
 bio-section > ul > li {
@@ -336,11 +357,6 @@ poster-section[inverted] :is(h1, h2, h3, h4, h5, h6, p, li) {
 poster-section[inverted] > poster-card :is(h1, h2, h3, h4, h5, h6, p, li, a) {
     color: var(--color-secondary);
 }
-
-poster-section > poster-copy p {
-    font-size: var(--text-lg);
-}
-
 
 /* poster-section + poster-section {
     border-top: 4px solid var(--background);
@@ -458,7 +474,7 @@ media-grid > a {
 }
 
 article > media-grid > a {
-    --img-ratio: var(--text-scale-ratio);
+    --img-ratio: var(--vertical-media-scale-ratio);
     height: calc((var(--article-width) * var(--img-ratio)) / 2);
 }
 
@@ -532,21 +548,37 @@ map-section > iframe {
 /* || staff-section */
 
 staff-section {
+    --local-section-width: 16rem;
+    --grid-col-min: 16rem;
+    --grid-col-max: 40vw;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-bottom: var(--space-xxl);
-    margin-bottom: var(--space-xxl);
+    grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-col-min), var(--grid-col-max)), 1fr));
+    /* grid-template-columns: repeat(auto-fill, minmax(var(--local-section-width), 1fr)); */
+    gap: var(--space-xl);
+    padding-bottom: var(--space-xxxxl);
+    margin-bottom: var(--space-xxxxl);
 }
 
 staff-section figure {
+    --local-element-width: 16rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-md);
+    grid-template-columns: 1fr 1fr  ;
+    column-gap: var(--space-xxs);
+    row-gap: var(--space-md);
     align-items: center;
 }
 
 staff-section figcaption h4 {
+    font-size: var(--text-base-size);
+}
+
+staff-section figcaption h5 {
     color: var(--text-bright);
+    font-size: var(--text-sm);
+}
+
+staff-section figcaption p {
+    font-size: var(--text-sm);
 }
 
 /* || directory-section */
@@ -704,7 +736,7 @@ contact-form form {
 
 center-section {
     display: block;
-    background-color: var(--color-secondary);
+    /* background-color: var(--color-secondary); */
 }
 
 center-section > ul {
@@ -788,8 +820,12 @@ feature-list svg {
 action-list {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xxs);
+    column-gap: var(--space-xxxs);
     margin-top: var(--space-sm);
+}
+
+action-list a::after {
+    content: " ➞"
 }
 
 action-list[row] {

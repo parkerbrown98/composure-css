@@ -35,6 +35,10 @@
     --color-tertiary: #151540;
     --color-accent: #c09f72;
 
+    /* images */
+
+    --vertical-media-scale-ratio: 1.5;
+
     /* box shadows */
     --box-shadow-xs: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;;
     --box-shadow-sm: 2px 2px 0px var(--background-contrast);
@@ -49,28 +53,29 @@
     /* --radius-lg: var(--space-lg); */
 
     /* body font size */
-    --text-base-size: 1em;
+    --text-base-size: 1rem;
     --line-height: 1.25;
 
     /* links as buttons */
-    --button-font-weight: 600;
+    --button-font-weight: 400;
 
     /* header font size (in relation to base) and weight */
-    /* --header-base-font-size: calc(var(--text-base-size) / 2 + 0.390625vw);  */
+    --header-base-font-size: calc(var(--text-base-size) + 0.390625vw); 
+    /* --header-base-font-size: calc((var(--text-base-size) ) + 0.390625vw);  */
     --header-font-weight: 600;
 
     /* headers in relation to each other */
-    --text-scale-ratio: 1.25;  
+    --text-scale-ratio: 1.15;  
 
     /* fluid font sizes */
-    --text-md: calc(var(--text-base-size) * var(--text-scale-ratio));
+    --text-md: calc(var(--header-base-font-size) * var(--text-scale-ratio));
     --text-lg: calc(var(--text-md) * var(--text-scale-ratio));
     --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
     --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
     --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
     --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-ratio));
     
-    --text-sm: calc(var(--text-base-size) / var(--text-scale-ratio));
+    --text-sm: 14px;
     --text-xs: calc(var(--text-sm) / var(--text-scale-ratio));
     --text-xxs: calc(var(--text-xs) / var(--text-scale-ratio));
 

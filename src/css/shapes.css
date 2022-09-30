@@ -130,7 +130,6 @@ footer {
     padding-top: 10px;
 }
 
-body>footer {
-    margin-top: 40px;
-    padding: var(--space-md) 0;
+body > footer {
+    padding-top: var(--space-xxxxl);
 }
