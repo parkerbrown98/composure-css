@@ -7,6 +7,30 @@ header>alert-banner {
     text-align: center;
 }
 
+location-banner {
+    display: block;
+    margin-left: calc(0px - var(--section-gutters));
+    margin-right: calc(0px - var(--section-gutters));
+    background-color: var(--focus);
+    color: var(--color-primary);
+    text-align: center;
+}
+
+location-banner p {
+    padding-top: var(--space-xs);
+    padding-bottom: var(--space-xs);
+    font-size: var(--text-md);
+}
+
+article-list header mark {
+    display: block;
+    margin-top: var(--space-xs);
+    background-color: var(--focus);
+    color: var(--color-primary);
+    padding: 0.5rem;
+    font-size: var(--text-sm);
+}
+
 /* || button links */
 
 action-list a,
@@ -847,7 +871,7 @@ about-section {
     display: block;
     border: 2px solid var(--background-alt);
     padding: calc(2* var(--page-gutters));
-    margin: var(--page-gutters);
+    margin: calc(2 * var(--page-gutters)) var(--page-gutters);
 }
 
 about-section h3 {
