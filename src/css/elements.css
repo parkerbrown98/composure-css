@@ -894,6 +894,16 @@ map-section {
     height: clamp(600px, 35vw, 720px); /* this makes it where the image is horizontal on desktop and vertical on mobile */
 }
 
+map-section[small] {
+    height: clamp(450px, 50vw, 500px);
+}
+
+map-section button {
+    box-shadow: none;
+    font-size: var(--text-md);
+    padding: var(--space-xxxs);
+}
+
 map-section #map {
     position: absolute;
     top: 0;
