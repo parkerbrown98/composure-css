@@ -609,63 +609,44 @@ staff-section figcaption p {
 
 directory-section {
     display: block;
-    padding-left: 0;
-    padding-right: 0;
+    text-align: center;
+    padding-left: var(--page-gutters);
+    padding-right: var(--page-gutters);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
-directory-section ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-directory-section a:hover {
+directory-section > ul > li > a > h2 {
+    text-align: center;
+    color: var(--text-bright);
+    font-size: var(--text-xxxl);
+    line-height: 1.75;
     text-decoration: none;
 }
 
-directory-section > ul > li {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    min-height: 500px;
-}
- 
-directory-section > ul > li > :is(a, div) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 80%;
-} 
-
-directory-section > ul > li img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -10;
-}
-
-directory-section ul > li :is(h1, h2, h3, h4, h5, h6) {
+directory-section > ul > li > a:hover {
+    text-decoration: none;
     color: var(--text-bright);
-    font-size: var(--text-xxxl);
 }
 
-directory-section ul > li ul {
+directory-section > ul {
+    --grid-col-min: 16rem;
+    --grid-col-max: 25vw;
     display: grid;
-    grid-auto-flow: column;
-    grid-template-columns: auto;
-    grid-template-rows: repeat(4, 1fr);
-    width: 100%;
-    column-gap: var(--space-xs);
-    /* row-gap: var(--space-xxxs); */
-    list-style: none;
-    padding: 0 var(--page-gutters);
+    gap: var(--space-lg);
+    grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-col-min), var(--grid-col-max)), 1fr));
 }
 
-directory-section ul > li ul a:hover {
-    text-decoration: underline;
+directory-section > ul > li > ul {
+    margin-bottom: var(--space-lg);
 }
+
+directory-section > ul > li > ul > li > a,
+directory-section > ul > li > ul > li {
+    font-size: var(--text-sm);
+    line-height: 1.5;
+}
+
 
 /* || feature-section */
 

@@ -13,6 +13,7 @@
     --text-muted: #ccb38e;
     --text-bright: #c09f72;
     --links: var(--text-main);
+    --color-contrast: #003544;
     --focus: #003544;
     --border: #dbdbdb;
     --code: #000;
