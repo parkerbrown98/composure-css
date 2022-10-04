@@ -120,7 +120,55 @@ product-section>ul h3 {
     margin: var(--space-xxs) 0 var(--space-xxxs) 0;
 }
 
-/* || product-rows */
+/* || menu-section */
+
+menu-section {
+    display: block;
+    margin: var(--space-xxxl) 0;
+}
+
+menu-section h3 {
+    color: var(--text-bright);
+    font-size: var(--text-md);
+}
+
+menu-section h3:not(:first-of-type) {
+    margin-top: var(--space-md);
+}
+
+menu-section h4 {
+    color: var(--text-bright);
+    font-size: var(--text-sm);
+    width: 100%;
+}
+
+menu-rows li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--background-alt);
+    padding: var(--space-xxs) 0;
+}
+
+menu-rows div {
+    display: inline-flex;
+}
+
+menu-rows div + div {
+    text-align: right;
+}
+
+menu-rows div, menu-rows a {
+    font-size: var(--text-xs);
+}
+
+menu-rows a {
+    color: var(--text-bright);
+}
+
+menu-rows a:after {
+    content: ">";
+}
 
 .feature-list {
     padding: var(--space-xxs) 0;
@@ -645,44 +693,6 @@ directory-section > ul > li > ul > li > a,
 directory-section > ul > li > ul > li {
     font-size: var(--text-sm);
     line-height: 1.5;
-}
-
-
-/* || feature-section */
-
-feature-section {
-    display: block;
-    padding-top: var(--space-lg);
-    padding-bottom: var(--space-lg);
-}
-
-feature-section > ul {
-    /* Allows the grid to auto-fill scaling down, but uses a maximum column count when scaling up */
-    --grid-column-count: 2;
-    --grid-col-min: 300px;
-    --grid-layout-gap: var(--space-xs);
-    --gap-count: calc(var(--grid-column-count) - 1);
-    --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
-    --grid-col-max: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-col-min), var(--grid-col-max)), 1fr));
-    gap: var(--grid-layout-gap);
-}
-
-feature-section[offset] > ul li:nth-of-type(even) {
-    margin-top: var(--space-xxxl);
-}
-
-feature-section > ul svg {
-    width: var(--text-xl);
-    height: var(--text-xl);
-    color: var(--color-accent);
-    fill: var(--color-accent);
-}
-
-feature-section > ul img {
-    display: block;
-    width: 100%;
 }
 
 .star-row {
