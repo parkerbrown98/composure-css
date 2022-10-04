@@ -115,7 +115,7 @@ address {
     font-size: var(--text-xs);
 }
 
-address::after {
+main address::after {
     content: var(--directions-arrow);
     width: var(--text-base-size);
     height: var(--text-base-size);

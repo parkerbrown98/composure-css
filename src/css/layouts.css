@@ -86,6 +86,7 @@ site-alert a {
 
 header>nav {
     padding-top: var(--space-xxxxxs);
+    padding-bottom: var(--space-nano);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "regions logo menu""products products products";
@@ -103,7 +104,8 @@ header nav figure img {
     width: auto;
 }
 
-header nav figure figcaption {
+header nav figure figcaption,
+header nav address {
     font-size: var(--text-xs);
     color: var(--text-bright);
 }
@@ -114,7 +116,7 @@ header nav figure figcaption {
 
 header>nav>ul>li>a {
     display: block;
-    padding: var(--space-xxxxxs) var(--space-xxxxxs);
+    padding: 0 var(--space-xxxxxs);
     color: var(--text-main);
 }
 
@@ -132,7 +134,7 @@ header>nav>ul:nth-of-type(1) {
 }
 
 header>nav>ul:nth-of-type(1)>li>a {
-    font-weight: var(--button-font-weight);
+    font-weight: var(--header-font-weight);
 }
 
 header>nav>ul:nth-of-type(2) {
