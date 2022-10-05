@@ -63,8 +63,15 @@ special-section {
 }
 
 main>article {
+    margin-top: var(--space-xxxxl);
     padding-left: var(--section-gutters);
     padding-right: var(--section-gutters);
+    margin-bottom: var(--space-xxxxl);
+}
+
+main>article>h2 {
+    margin-bottom: var(--space-nano);
+    color: var(--text-bright);
 }
 
 site-alert {
