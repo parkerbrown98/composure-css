@@ -419,14 +419,15 @@ faq-section h2 {
 faq-section summary {
     padding: var(--space-nano);
     background-color: var(--background-body);
-    color: var(--text-bright);
-    font-size: var(--text-md);
+    /* color: var(--text-bright); */
+    font-size: var(--text-reg);
 }
 
 faq-section details {
     margin-top: var(--space-sm);
     margin-bottom: var(--space-sm);
     background-color: var(--background-body);
+    border-bottom: 1px solid var(--text-muted);
 }
 
 
