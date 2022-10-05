@@ -22,7 +22,7 @@ menu-wrapper details summary {
     cursor: pointer;
     outline: none;
     text-align: center;
-    font-weight: var(--button-font-weight);
+    font-weight: var(--header-font-weight);
     background-color: unset;
 }
 

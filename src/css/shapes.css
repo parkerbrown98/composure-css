@@ -102,7 +102,7 @@ details[open] summary {
 
 summary {
     display: list-item;
-    padding: var(--space-xs);
+    padding: 0 var(--space-xxs);
     margin: -10px -10px 0;
     cursor: pointer;
     outline: none;

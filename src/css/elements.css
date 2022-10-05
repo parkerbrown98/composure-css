@@ -126,6 +126,8 @@ menu-section {
     display: block;
     margin: var(--space-xxxl) 0;
     padding-top: var(--space-xxxl);
+    padding-left: var(--section-gutters);
+    padding-right: var(--section-gutters);
 }
 
 menu-section h3 {
@@ -301,7 +303,6 @@ article-list > article img {
     object-fit: cover;
 }
 
-
 /* This is for making split images in articles, just by adding more images */
 
 article-list[snippet] {
@@ -327,7 +328,6 @@ article-list[snippet] article[end-card] {
     border: 1px solid var(--color-accent);
     padding: var(--space-xs);
     margin-right: var(--page-gutters);
-    grid-column: span 2;
 }
 
 article-list[snippet] article img {
@@ -356,6 +356,81 @@ article-list[snippet] > article:first-of-type img {
 article-list[snippet] > article:last-of-type img {
     border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 } 
+
+/* || stat-section */
+
+stat-section {
+    background-color: var(--background-contrast);
+    display: block;
+    padding-top: var(--space-xxxl);
+    padding-bottom: var(--space-xxxl);
+    padding-left: var(--section-gutters);
+    padding-right: var(--section-gutters);
+}
+
+stat-section ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+stat-section h2 {
+    color: var(--text-bright);
+    font-size: var(--text-lg);
+    padding-bottom: var(--space-xxxs);
+}
+
+stat-section ul li h3 {
+    color: var(--text-bright);
+    font-size: var(--text-reg);
+    display: inline;
+}
+
+stat-section li {
+    padding-bottom: var(--space-xxxs);
+    color: var(--text-bright);
+}
+
+stat-section ul li p {
+    font-size: var(--text-xs);
+}
+
+stat-section svg {
+    fill: var(--text-bright);
+    width: 20px;
+    display: inline;
+    margin-right: 0.5rem;
+}
+
+/* || faq-section */
+
+faq-section {
+    display: block;
+    padding-top: var(--space-xxxl);
+    padding-bottom: var(--space-xxxl);
+    padding-left: var(--section-gutters);
+    padding-right: var(--section-gutters);
+}
+
+faq-section h2 {
+    /* padding-bottom: var(--space-sm); */
+    color: var(--text-bright);
+}
+
+faq-section summary {
+    padding: var(--space-nano);
+    background-color: var(--background-body);
+    /* color: var(--text-bright); */
+    font-size: var(--text-reg);
+}
+
+faq-section details {
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-sm);
+    background-color: var(--background-body);
+    border-bottom: 1px solid var(--text-muted);
+}
+
 
 /* || bio-section */
 
