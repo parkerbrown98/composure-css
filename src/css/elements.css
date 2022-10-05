@@ -126,6 +126,8 @@ menu-section {
     display: block;
     margin: var(--space-xxxl) 0;
     padding-top: var(--space-xxxl);
+    padding-left: var(--section-gutters);
+    padding-right: var(--section-gutters);
 }
 
 menu-section h3 {
@@ -326,7 +328,6 @@ article-list[snippet] article[end-card] {
     border: 1px solid var(--color-accent);
     padding: var(--space-xs);
     margin-right: var(--page-gutters);
-    grid-column: span 2;
 }
 
 article-list[snippet] article img {
