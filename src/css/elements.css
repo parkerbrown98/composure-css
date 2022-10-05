@@ -271,7 +271,7 @@ article-section address,
 article-section figcaption,
 article-section a[href^="tel"],
 article-section a[href^="mailto"] {
-    font-size: var(--text-xxs);
+    font-size: var(--text-sm);
     margin: 0;
     padding: 0;
     line-height: 1.25;
@@ -673,7 +673,7 @@ filter-section > h2 {
 }
 
 filter-section > h2 + p {
-    margin-top: var(--space-xxxxs);
+    margin-top: var(--space-nano);
 }
 
 filter-section > ul > li {
@@ -683,9 +683,9 @@ filter-section > ul > li {
 filter-section > ul > li > a {
     font-size: var(--text-xs);
     display: inline-block;
-    padding: var(--space-nano) var(--space-xxs);
-    color: var(--text-contrast);
-    background-color: var(--color-accent);
+    padding: 0.25rem var(--space-nano);
+    color: var(--background);
+    background-color: var(--background-contrast);
     /* margin: 1rem; */
 }
 
