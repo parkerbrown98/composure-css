@@ -294,6 +294,11 @@ article-list > header > :is(h1, h2, h3, h4, h5, h6) {
     margin-top: 0;
 }
 
+article-list article h3 {
+    margin-top: var(--space-nano);
+    margin-bottom: 0.5rem;
+}
+
 article-list > article img {
     --img-ratio: var(--vertical-media-scale-ratio);
     display: block;
