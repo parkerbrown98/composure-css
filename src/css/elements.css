@@ -1025,3 +1025,23 @@ photo-gallery div {
 photo-gallery img:not(:last-of-type) {
     margin-bottom: var(--space-sm);
 }
+
+/* error-section */
+
+error-section {
+    display: block;
+    margin-top: var(--space-xxxxl);
+    padding-left: var(--section-gutters);
+    padding-right: var(--section-gutters);
+    margin-bottom: var(--space-xxxxl);
+}
+
+error-section > h2 {
+    margin-bottom: var(--space-nano);
+    color: var(--text-bright);
+}
+
+error-section > p {
+    margin-top: var(--space-xxxxs);
+    margin-bottom: var(--space-xxxxs);
+}
