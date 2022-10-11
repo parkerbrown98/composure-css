@@ -19,3 +19,7 @@
 .status-cow {
     fill: rgba(153, 50, 204, 0.25);
 }
+
+.status-occ {
+    fill: rgb(40, 255, 40, 0.3);
+}
