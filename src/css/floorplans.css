@@ -8,14 +8,14 @@
 
 .status-ava,
 .status-not {
-    fill: rgba(255, 40, 40, 0.1);
+    fill: rgba(255, 40, 40, 0.3);
 }
 
 .status-pre {
-    fill: rgba(64, 136, 255, 0.15);
+    fill: rgba(64, 136, 255, 0.25);
 }
 
 .status-sta,
 .status-cow {
-    fill: rgba(153, 50, 204, 0.15);
+    fill: rgba(153, 50, 204, 0.25);
 }
