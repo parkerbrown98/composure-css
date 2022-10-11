@@ -2,6 +2,10 @@
     fill: rgb(245, 245, 245);
 }
 
+.alt {
+    fill: rgb(230, 230, 230);
+}
+
 .status-ava,
 .status-not {
     fill: rgba(255, 40, 40, 0.1);
