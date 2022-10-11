@@ -1,3 +1,17 @@
 .base {
-    fill: #fff;
+    fill: rgb(245, 245, 245);
+}
+
+.status-ava,
+.status-not {
+    fill: rgba(255, 40, 40, 0.1);
+}
+
+.status-pre {
+    fill: rgba(64, 136, 255, 0.15);
+}
+
+.status-sta,
+.status-cow {
+    fill: rgba(153, 50, 204, 0.15);
 }
