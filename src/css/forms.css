@@ -49,3 +49,7 @@ input, select, textarea {
     margin-bottom: var(--space-xxs);
     /* width: 100%; */
 }
+
+.form-validate {
+    display: none !important;
+}
