@@ -1076,3 +1076,23 @@ showcase-section > article figure > img {
     object-fit: contain;
     object-position: left;
 }
+
+/* || link-section */
+
+link-section {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+link-section[row] {
+    flex-direction: row;
+    gap: var(--space-xxxs);
+}
+
+link-section[small] {
+    font-size: var(--text-sm);
+}
+
+link-section > a {
+    display: inline-block;
+}
