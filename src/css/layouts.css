@@ -93,15 +93,23 @@ site-alert a {
 
 header>nav {
     padding-top: var(--space-xxxxxs);
-    padding-bottom: var(--space-nano);
+    padding-bottom: var(--space-xxxxxs);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "regions logo menu""products products products";
     align-items: center;
+    row-gap: var(--space-xxxxxs);
 }
 
 header nav figure {
     text-align: center;
+    grid-area: logo;
+}
+
+header nav figure a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 header nav figure img {
@@ -154,17 +162,14 @@ header>nav>ul:nth-of-type(2)>li>a {
     font-size: var(--text-sm);
 }
 
-header>nav>figure {
-    grid-area: logo;
-}
-
 header>nav>menu-wrapper {
     grid-area: menu;
 }
 
 @media (max-width: 600px) {
     header>nav {
-        padding-top: 0;
+        padding-top: var(--space-nano);
+        padding-bottom: 0;
     }
 
     header>nav>ul:nth-of-type(1)>li>a,
