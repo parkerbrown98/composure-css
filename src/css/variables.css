@@ -82,7 +82,7 @@
     --text-xxs: calc(var(--text-xs) / var(--text-scale-ratio));
 
     /* fluid spacing */
-    --space-unit:  calc(1em / 2 + 1.5625vw);
+    --space-unit:  calc(1em / 2 + 1.7vw);
     --space-ratio: var(--text-scale-ratio);
 
     --space-sm:    calc(var(--space-unit) / var(--space-ratio));
