@@ -37,24 +37,29 @@ action-list a,
 product-section>ul>li>:is(h2, h3)~a,
 poster-copy>a {
     font-weight: var(--button-font-weight);
-    color: var(--code);
+    color: rgb(120, 120, 120);
     display: block;
     max-width: max-content;
     background-color: var(--background);
-    padding: var(--space-nano) var(--space-sm);
-    box-shadow: var(--box-shadow-sm-alt);
+    padding: var(--space-nano) var(--space-xs);
     margin-bottom: var(--space-xxs);
+    transition: box-shadow 100ms ease-out;
 }
 
 action-list a[primary] {
     font-weight: var(--button-font-weight);
-    color: var(--code);
+    color: rgb(255, 255, 255, 0.8);
     display: block;
     max-width: max-content;
     background-color: var(--color-accent);
-    padding: var(--space-nano) var(--space-sm);
-    box-shadow: var(--box-shadow-sm);
+    padding: var(--space-nano) var(--space-xs);
     margin-bottom: var(--space-xxs);
+}
+action-list a:hover,
+product-section>ul>li>:is(h2, h3)~a:hover,
+poster-copy a:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    text-decoration: none;
 }
 
 poster-media {
