@@ -289,7 +289,7 @@ article-section a[href^="mailto"] {
 }
 
 article-list {
-    --article-width: min(40vw, 300px); /* set a variable to use as column width so the img height can be a calculated ratio */
+    --article-width: min(80vw, 350px); /* set a variable to use as column width so the img height can be a calculated ratio */
     display: grid;
     grid-auto-columns: var(--article-width);
     grid-auto-flow: column;
@@ -322,7 +322,7 @@ article-list > article img {
 /* This is for making split images in articles, just by adding more images */
 
 article-list[snippet] {
-    --snippet-article-width: clamp(20vw, 150px, 300px);
+    --snippet-article-width: clamp(80vw, 150px, 350px);
     display: grid;
     grid-auto-columns: var(--snippet-article-width);
     grid-auto-flow: column;
@@ -338,6 +338,7 @@ article-list[snippet] > article > a {
     grid-template-rows: 1fr 1fr;
     gap: var(--space-xxxxs);
     overflow: hidden;
+    height: 100%;
 }
 
 article-list[snippet] article[end-card] {
@@ -350,9 +351,15 @@ article-list[snippet] article img {
     --img-ratio: var(--vertical-media-scale-ratio);
     display: block;
     width: 100%;
-    height: calc((0.5 * var(--snippet-article-width) * var(--img-ratio)) - (0.5 * var(--space-xxxxs))); /* use the variable for grid column width to calculate height based on a fixed ratio */
+    height: 100%;
     /* height: calc(var(--snippet-article-width) * var(--img-ratio)); use the variable for grid column width to calculate height based on a fixed ratio */
     object-fit: cover;
+}
+
+article-list > article figcaption {
+    color: rgb(120, 120, 120);
+    font-size: var(--text-sm);
+    font-style: italic;
 }
 
 article-list[snippet] > article > a > img:only-of-type {
