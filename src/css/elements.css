@@ -55,6 +55,7 @@ action-list a[primary] {
     padding: var(--space-nano) var(--space-xs);
     margin-bottom: var(--space-xxs);
 }
+
 action-list a:hover,
 product-section>ul>li>:is(h2, h3)~a:hover,
 poster-copy a:hover {
@@ -63,19 +64,19 @@ poster-copy a:hover {
 }
 
 poster-media {
-    position:relative;
+    position: relative;
     padding-bottom: 63%;
     overflow: hidden;
 }
 
-poster-media > :is(img, video) {
+poster-media> :is(img, video) {
     position: absolute;
     object-fit: cover;
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
 }
 
-poster-media > img[fill] {
+poster-media>img[fill] {
     position: absolute;
     object-fit: fill;
     width: 100%;
@@ -91,8 +92,8 @@ product-section {
     padding-top: var(--space-lg);
 }
 
-article-section article >a,
-article-section article >a:hover,
+article-section article>a,
+article-section article>a:hover,
 product-section ul li a,
 product-section ul li a:hover {
     color: var(--text-main);
@@ -100,7 +101,8 @@ product-section ul li a:hover {
 }
 
 product-section>ul {
-    --article-width: min(70vw, 400px); /* set a variable to use as column width so the img height can be a calculated ratio */
+    --article-width: min(70vw, 400px);
+    /* set a variable to use as column width so the img height can be a calculated ratio */
     display: grid;
     grid-auto-columns: var(--article-width);
     grid-auto-flow: column;
@@ -108,14 +110,14 @@ product-section>ul {
     overflow: auto hidden;
 }
 
-product-section > ul svg {
+product-section>ul svg {
     width: var(--text-xl);
     height: var(--text-xl);
     color: var(--color-accent);
     fill: var(--color-accent);
 }
 
-product-section > ul img {
+product-section>ul img {
     display: block;
     width: 100%;
 }
@@ -172,11 +174,12 @@ menu-rows div {
     display: inline-flex;
 }
 
-menu-rows div + div {
+menu-rows div+div {
     text-align: right;
 }
 
-menu-rows div, menu-rows a {
+menu-rows div,
+menu-rows a {
     font-size: var(--text-xxs);
 }
 
@@ -192,13 +195,13 @@ menu-rows a:after {
     padding: var(--space-xxs) 0;
 }
 
-.feature-list > li {
+.feature-list>li {
     display: flex;
     align-items: center;
     gap: var(--space-xxxs);
 }
 
-.feature-list > li p {
+.feature-list>li p {
     margin: unset;
 }
 
@@ -233,7 +236,7 @@ article-section {
 }
 
 
-article-section > :is(h1, h2, h3, h4, h5, h6, a) {
+article-section> :is(h1, h2, h3, h4, h5, h6, a) {
     margin-top: 0;
 }
 
@@ -259,7 +262,7 @@ article-section header h3 {
     margin-top: var(--space-xxxxs);
     margin-bottom: var(--space-xxxxs);
     padding-bottom: var(--space-xxxxs);
-    border-bottom: 2px solid var(--color-accent); 
+    border-bottom: 2px solid var(--color-accent);
 }
 
 article-section article-list header {
@@ -277,7 +280,7 @@ article-section header a:visited {
 }
 
 
-article-section time, 
+article-section time,
 article-section address,
 article-section figcaption,
 article-section a[href^="tel"],
@@ -289,7 +292,8 @@ article-section a[href^="mailto"] {
 }
 
 article-list {
-    --article-width: min(80vw, 350px); /* set a variable to use as column width so the img height can be a calculated ratio */
+    --article-width: min(80vw, 350px);
+    /* set a variable to use as column width so the img height can be a calculated ratio */
     display: grid;
     grid-auto-columns: var(--article-width);
     grid-auto-flow: column;
@@ -301,7 +305,7 @@ article-list {
     padding-bottom: var(--space-md);
 }
 
-article-list > header > :is(h1, h2, h3, h4, h5, h6) {
+article-list>header> :is(h1, h2, h3, h4, h5, h6) {
     margin-top: 0;
 }
 
@@ -310,12 +314,12 @@ article-list article h3 {
     margin-bottom: 0.5rem;
 }
 
-article-list > article img {
+article-list>article img {
     --img-ratio: var(--vertical-media-scale-ratio);
     display: block;
     width: 100%;
     /* use the variable for grid column width to calculate height based on a fixed ratio */
-    height: calc(var(--article-width) * var(--img-ratio)); 
+    height: calc(var(--article-width) * var(--img-ratio));
     object-fit: cover;
 }
 
@@ -332,7 +336,7 @@ article-list[snippet] {
     padding-bottom: var(--space-xxxl);
 }
 
-article-list[snippet] > article > a {
+article-list[snippet]>article>a {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
@@ -356,29 +360,30 @@ article-list[snippet] article img {
     object-fit: cover;
 }
 
-article-list > article figcaption {
+article-list>article figcaption {
     color: rgb(120, 120, 120);
     font-size: var(--text-sm);
     font-style: italic;
 }
 
-article-list[snippet] > article > a > img:only-of-type {
+article-list[snippet]>article>a>img:only-of-type {
     --img-ratio: var(--vertical-media-scale-ratio);
     display: block;
     width: 100%;
-    height: calc(var(--snippet-article-width) * var(--img-ratio)); /* use the variable for grid column width to calculate height based on a fixed ratio */
+    height: calc(var(--snippet-article-width) * var(--img-ratio));
+    /* use the variable for grid column width to calculate height based on a fixed ratio */
     /* height: calc(var(--snippet-article-width) * var(--img-ratio)); use the variable for grid column width to calculate height based on a fixed ratio */
     object-fit: cover;
     grid-row: span 2;
 }
 
-article-list[snippet] > article:first-of-type img {
+article-list[snippet]>article:first-of-type img {
     border-radius: var(--radius-sm) 0 0 var(--radius-sm);
-} 
+}
 
-article-list[snippet] > article:last-of-type img {
+article-list[snippet]>article:last-of-type img {
     border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-} 
+}
 
 /* || stat-section */
 
@@ -457,14 +462,14 @@ faq-section details {
 
 /* || bio-section */
 
-bio-section > ul {
+bio-section>ul {
     display: grid;
     column-gap: var(--space-xxxxxs);
     grid-template-columns: 1fr 1fr;
     margin-top: var(--space-md);
 }
 
-bio-section > ul > li {
+bio-section>ul>li {
     display: inline-block;
 }
 
@@ -500,7 +505,8 @@ collage-section ul {
 poster-section {
     position: relative;
     overflow: hidden;
-    height: clamp(380px, 35vw, 720px); /* this makes it where the image is horizontal on desktop and vertical on mobile */ 
+    height: clamp(380px, 35vw, 720px);
+    /* this makes it where the image is horizontal on desktop and vertical on mobile */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--space-md);
@@ -508,12 +514,10 @@ poster-section {
 }
 
 poster-section[inverted] {
-    background: linear-gradient(
-        to left,
-        hsl(0 0% 0% / 0),
-        hsl(0 0% 0% / 0.2) 50%,
-        hsl(0 0% 0% / 0.5)
-    );
+    background: linear-gradient(to left,
+            hsl(0 0% 0% / 0),
+            hsl(0 0% 0% / 0.2) 50%,
+            hsl(0 0% 0% / 0.5));
 }
 
 poster-section[floorplan] {
@@ -529,7 +533,7 @@ poster-section[inverted] :is(h1, h2, h3, h4, h5, h6, p, li) {
     color: var(--color-primary);
 }
 
-poster-section[inverted] > poster-card :is(h1, h2, h3, h4, h5, h6, p, li, a) {
+poster-section[inverted]>poster-card :is(h1, h2, h3, h4, h5, h6, p, li, a) {
     color: var(--color-secondary);
 }
 
@@ -558,19 +562,19 @@ poster-section footer {
     width: 100%;
 }
 
-poster-section footer > ul {
+poster-section footer>ul {
     display: flex;
     justify-content: center;
     column-gap: var(--space-sm);
 }
 
-poster-section footer > ul a {
+poster-section footer>ul a {
     color: var(--color-primary);
 }
 
-poster-section > img,
-poster-section > iframe,
-poster-section > video {
+poster-section>img,
+poster-section>iframe,
+poster-section>video {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -580,29 +584,29 @@ poster-section > video {
     object-fit: cover;
 }
 
-poster-section > img[mobile-zoom] {
+poster-section>img[mobile-zoom] {
     transform: scale(1.0);
 }
 
 @media (max-width: 1200px) {
-    poster-section > img[mobile-zoom] {
+    poster-section>img[mobile-zoom] {
         transform: scale(1.3);
     }
 }
 
 @media (max-width: 900px) {
-    poster-section > img[mobile-zoom] {
+    poster-section>img[mobile-zoom] {
         transform: scale(1.5);
     }
 }
 
 @media (max-width: 600px) {
-    poster-section > img[mobile-zoom] {
+    poster-section>img[mobile-zoom] {
         transform: scale(1.7);
     }
 }
 
-poster-section > iframe {
+poster-section>iframe {
     z-index: unset;
 }
 
@@ -664,27 +668,25 @@ media-grid {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
-media-grid > a {
+media-grid>a {
     position: relative;
     overflow: hidden;
     /* min-height: 450px; */
 }
 
-article > media-grid > a {
+article>media-grid>a {
     --img-ratio: var(--vertical-media-scale-ratio);
     height: calc((var(--article-width) * var(--img-ratio)) / 2);
 }
 
-article > media-grid > a[inverted] {
-    background: linear-gradient(
-        to bottom,
-        hsl(0 0% 0% / 0),
-        hsl(0 0% 0% / 0.2) 70%,
-        hsl(0 0% 0% / 0.4)
-    );
+article>media-grid>a[inverted] {
+    background: linear-gradient(to bottom,
+            hsl(0 0% 0% / 0),
+            hsl(0 0% 0% / 0.2) 70%,
+            hsl(0 0% 0% / 0.4));
 }
 
-media-grid > a > img {
+media-grid>a>img {
     position: absolute;
     top: 0;
     left: 0;
@@ -694,7 +696,7 @@ media-grid > a > img {
     z-index: -1;
 }
 
-media-grid > a > h3 {
+media-grid>a>h3 {
     color: var(--color-primary);
     position: absolute;
     left: var(--space-xxs);
@@ -708,19 +710,19 @@ filter-section {
     margin-top: 0;
 }
 
-filter-section > h2 {
+filter-section>h2 {
     margin: unset;
 }
 
-filter-section > h2 + p {
+filter-section>h2+p {
     margin-top: var(--space-nano);
 }
 
-filter-section > ul > li {
+filter-section>ul>li {
     display: inline-block;
 }
 
-filter-section > ul > li > a {
+filter-section>ul>li>a {
     font-size: var(--text-xs);
     display: inline-block;
     padding: 0.25rem var(--space-nano);
@@ -729,14 +731,14 @@ filter-section > ul > li > a {
     /* margin: 1rem; */
 }
 
-filter-section > ul > li > a:hover {
+filter-section>ul>li>a:hover {
     border-color: var(--color-secondary);
     text-decoration: none;
 }
 
 /* || map-section */
 
-map-section > iframe {
+map-section>iframe {
     width: 100%;
     height: 100%;
 }
@@ -759,7 +761,7 @@ staff-section {
 staff-section figure {
     --local-element-width: 16rem;
     display: grid;
-    grid-template-columns: 1fr 1fr  ;
+    grid-template-columns: 1fr 1fr;
     column-gap: var(--space-xxs);
     row-gap: var(--space-md);
     align-items: center;
@@ -789,7 +791,7 @@ directory-section {
     padding-bottom: 5rem;
 }
 
-directory-section > ul > li > a > h2 {
+directory-section>ul>li>a>h2 {
     text-align: center;
     color: var(--text-bright);
     font-size: var(--text-xxxl);
@@ -797,12 +799,12 @@ directory-section > ul > li > a > h2 {
     text-decoration: none;
 }
 
-directory-section > ul > li > a:hover {
+directory-section>ul>li>a:hover {
     text-decoration: none;
     color: var(--text-bright);
 }
 
-directory-section > ul {
+directory-section>ul {
     --grid-col-min: 16rem;
     --grid-col-max: 25vw;
     display: grid;
@@ -810,12 +812,12 @@ directory-section > ul {
     grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-col-min), var(--grid-col-max)), 1fr));
 }
 
-directory-section > ul > li > ul {
+directory-section>ul>li>ul {
     margin-bottom: var(--space-lg);
 }
 
-directory-section > ul > li > ul > li > a,
-directory-section > ul > li > ul > li {
+directory-section>ul>li>ul>li>a,
+directory-section>ul>li>ul>li {
     font-size: var(--text-sm);
     line-height: 1.5;
 }
@@ -848,21 +850,21 @@ special-section {
 
 special-section ul {
     margin-top: var(--space-sm);
-    padding: 0 var(--space-xl) var(--space-xl) var(--space-xl) ;
+    padding: 0 var(--space-xl) var(--space-xl) var(--space-xl);
 }
 
-special-section ul > li {
+special-section ul>li {
     list-style-type: disc;
-} 
+}
 
-special-section :is(p, li) {    
+special-section :is(p, li) {
     font-size: var(--text-sm);
 }
 
 special-section form input[type="submit"] {
     background-color: var(--background-contrast);
     color: var(--text-contrast);
-    margin: var(--space-lg) 0; 
+    margin: var(--space-lg) 0;
 }
 
 /* || center-section */
@@ -872,7 +874,7 @@ center-section {
     /* background-color: var(--color-secondary); */
 }
 
-center-section > ul {
+center-section>ul {
     display: flex;
     justify-content: center;
 }
@@ -881,7 +883,7 @@ center-section :is(h1, h2, h3, h4, h5, h6) {
     color: var(--color-primary);
 }
 
-center-section > ul > li {
+center-section>ul>li {
     position: relative;
     width: min(100%, 50rem);
 }
@@ -895,17 +897,17 @@ breadcrumbs {
     left: var(--page-gutters);
 }
 
-breadcrumbs > ul {
+breadcrumbs>ul {
     display: flex;
     gap: var(--space-xxs);
 }
 
-breadcrumbs > ul > li a {
+breadcrumbs>ul>li a {
     color: var(--color-primary);
 }
 
-breadcrumbs > ul > li a:hover,
-breadcrumbs > ul > li a:focus {
+breadcrumbs>ul>li a:hover,
+breadcrumbs>ul>li a:focus {
     text-decoration: none;
 }
 
@@ -934,7 +936,7 @@ feature-list {
     display: block;
 }
 
-feature-list ul > li p {
+feature-list ul>li p {
     display: flex;
     /* justify-content: center; */
     align-items: center;
@@ -975,7 +977,7 @@ media-section {
     overflow: hidden;
 }
 
-media-section > * {
+media-section>* {
     width: 100%;
     height: auto;
 }
@@ -1007,7 +1009,8 @@ map-section {
     overflow: hidden;
     margin: 0;
     padding: 0;
-    height: clamp(600px, 35vw, 720px); /* this makes it where the image is horizontal on desktop and vertical on mobile */
+    height: clamp(600px, 35vw, 720px);
+    /* this makes it where the image is horizontal on desktop and vertical on mobile */
 }
 
 map-section[small] {
@@ -1070,12 +1073,12 @@ error-section {
     margin-bottom: var(--space-xxxxl);
 }
 
-error-section > h2 {
+error-section>h2 {
     margin-bottom: var(--space-nano);
     color: var(--text-bright);
 }
 
-error-section > p {
+error-section>p {
     margin-top: var(--space-xxxxs);
     margin-bottom: var(--space-xxxxs);
 }
@@ -1090,18 +1093,18 @@ showcase-section {
     margin-top: var(--space-lg);
 }
 
-showcase-section > article > a:first-of-type {
+showcase-section>article>a:first-of-type {
     display: block;
 }
 
-showcase-section > article figure {
+showcase-section>article figure {
     position: relative;
     overflow: hidden;
     aspect-ratio: 16 / 9;
     margin-bottom: var(--space-xxxs);
 }
 
-showcase-section > article figure > img {
+showcase-section>article figure>img {
     position: absolute;
     top: 0;
     left: 0;
@@ -1127,7 +1130,7 @@ link-section[small] {
     font-size: var(--text-sm);
 }
 
-link-section > a {
+link-section>a {
     display: inline-block;
 }
 
@@ -1137,12 +1140,12 @@ trust-section {
     max-width: 1850px;
 }
 
-trust-section > :is(h1, h2, h3, h4, h5, h6) {
+trust-section> :is(h1, h2, h3, h4, h5, h6) {
     text-align: center;
     margin-bottom: var(--space-xs);
 }
 
-trust-section > div {
+trust-section>div {
     margin: 0 auto;
     width: 150px;
     height: 2px;
@@ -1162,14 +1165,14 @@ trust-banner {
     gap: var(--space-md);
 }
 
-trust-banner > figure {
+trust-banner>figure {
     flex-grow: 1;
     position: relative;
     overflow: hidden;
     aspect-ratio: 21 / 9;
 }
 
-trust-banner > figure > img {
+trust-banner>figure>img {
     position: absolute;
     top: 0;
     left: 0;
@@ -1182,7 +1185,7 @@ trust-banner > figure > img {
 /* || mapbox-popup */
 
 .mapbox-popup {
-    width: min(20vw, 300px);
+    width: min(60vw, 300px);
 }
 
 .mapbox-popup h5 {
@@ -1197,8 +1200,18 @@ trust-banner > figure > img {
     content: "";
 }
 
-.mapbox-popup > div {
+.mapbox-popup>div {
     padding: var(--space-nano) var(--space-nano) 0 var(--space-nano);
+}
+
+.mapbox-popup>div>a {
+    font-weight: var(--button-font-weight);
+    color: rgb(120, 120, 120);
+    display: block;
+    max-width: max-content;
+    background-color: var(--background);
+    padding: var(--space-nano) var(--space-xs);
+    transition: box-shadow 100ms ease-out;
 }
 
 .mapbox-popup figure {
