@@ -48,6 +48,12 @@ body>footer {
     padding-right: var(--body-gutters);
 }
 
+@media (max-width: 600px) {
+    body>footer {
+        padding-bottom: 50px;
+    }
+}
+
 main>* {
     padding-left: var(--page-gutters);
     padding-right: var(--page-gutters);
