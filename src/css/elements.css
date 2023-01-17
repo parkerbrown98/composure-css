@@ -918,6 +918,7 @@ split-grid {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: var(--space-md);
     align-items: center;
+    margin: 0 auto;
 }
 
 /* || content-divider */
@@ -1182,6 +1183,8 @@ trust-banner>figure>img {
     filter: grayscale(1) opacity(0.45);
 }
 
+
+
 /* || mapbox-popup */
 
 .mapbox-popup {
@@ -1228,4 +1231,31 @@ trust-banner>figure>img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* || brand-section */
+
+brand-section {
+    display: block;
+    color: var(--text-bright);
+    background-color: var(--background-contrast);
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-lg);
+    font-size: var(--text-sm);
+}
+
+brand-section :is(h1, h2, h3, h4, h5, h6) {
+    color: var(--text-bright);
+}
+
+brand-section h5 {
+    margin-top: var(--space-xs);
+}
+
+brand-section :is(ol, ul) {
+    padding-left: var(--space-xxxs);
+}
+
+brand-section :is(ol, ul, p) {
+    margin-top: var(--space-xxxs);
 }
