@@ -1233,6 +1233,37 @@ trust-banner>figure>img {
     object-fit: cover;
 }
 
+/* || sticky-bar */
+
+sticky-bar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--space-nano);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 50px;
+    background-color: var(--background-contrast);
+    padding: var(--space-nano);
+}
+
+sticky-bar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    background: transparent;
+    color: var(--text-contrast);
+    border: thin solid var(--text-contrast);
+    border-radius: 4px;
+}
+
+sticky-bar a[primary] {
+    border: thin solid var(--text-bright);
+    color: var(--text-bright);
+}
+
 /* || brand-section */
 
 brand-section {
