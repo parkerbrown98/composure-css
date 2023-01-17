@@ -326,7 +326,7 @@ article-list>article img {
 /* This is for making split images in articles, just by adding more images */
 
 article-list[snippet] {
-    --snippet-article-width: clamp(80vw, 150px, 350px);
+    --snippet-article-width: min(80vw, 350px);
     display: grid;
     grid-auto-columns: var(--snippet-article-width);
     grid-auto-flow: column;
@@ -1256,12 +1256,32 @@ sticky-bar a {
     background: transparent;
     color: var(--text-contrast);
     border: thin solid var(--text-contrast);
-    border-radius: 4px;
 }
 
 sticky-bar a[primary] {
     border: thin solid var(--text-bright);
     color: var(--text-bright);
+}
+
+sticky-bar a:hover {
+    text-decoration: none;
+}
+
+sticky-bar a::before {
+    content: '' !important;
+}
+
+sticky-bar a svg {
+    width: 16px;
+    height: 16px;
+    margin-right: var(--space-nano);
+}
+
+@media (min-width: 600px) {
+    sticky-bar {
+        display: none;
+        height: 0;
+    }
 }
 
 /* || brand-section */
@@ -1270,8 +1290,8 @@ brand-section {
     display: block;
     color: var(--text-bright);
     background-color: var(--background-contrast);
-    padding-top: var(--space-md);
-    padding-bottom: var(--space-lg);
+    padding-top: calc(2 * var(--space-xxxl));
+    padding-bottom: calc(2 * var(--space-xxxl));
     font-size: var(--text-sm);
 }
 
