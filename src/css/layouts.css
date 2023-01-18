@@ -39,6 +39,9 @@ body>aside {
 
 body>footer {
     grid-area: foot;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-xxxs);
 }
 
 /* set sections to block */
