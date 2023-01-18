@@ -918,7 +918,6 @@ split-grid {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: var(--space-md);
     align-items: center;
-    margin: 0 auto;
 }
 
 /* || content-divider */
@@ -1288,15 +1287,25 @@ sticky-bar a svg {
 
 brand-section {
     display: block;
-    color: var(--text-bright);
-    background-color: var(--background-contrast);
     padding-top: calc(2 * var(--space-xxxl));
     padding-bottom: calc(2 * var(--space-xxxl));
-    font-size: var(--text-sm);
+    padding-left: var(--section-gutters);
+    padding-right: var(--section-gutters);
+}
+
+brand-section[dark] {
+    background-color: var(--background-contrast);
+    color: var(--text-bright);
 }
 
 brand-section :is(h1, h2, h3, h4, h5, h6) {
     color: var(--text-bright);
+}
+
+brand-section h3 {
+    text-transform: uppercase;
+    font-size: var(--text-sm);
+    letter-spacing: 1px;
 }
 
 brand-section h5 {
@@ -1309,6 +1318,7 @@ brand-section :is(ol, ul) {
 
 brand-section :is(ol, ul, p) {
     margin-top: var(--space-xxxs);
+    font-size: var(--text-sm);
 }
 
 /* || thanks-section */
@@ -1317,4 +1327,6 @@ thanks-section {
     display: block;
     padding-top: calc(2 * var(--space-xxxl));
     padding-bottom: calc(2 * var(--space-xxxl));
+    padding-left: var(--section-gutters);
+    padding-right: var(--section-gutters);
 }
