@@ -1024,18 +1024,33 @@ media-section>* {
 /* || about-section */
 
 about-section {
-    display: block;
-    border: 2px solid var(--background-alt);
-    padding: calc(2* var(--page-gutters));
-    margin: calc(2 * var(--page-gutters)) var(--page-gutters);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    padding: var(--page-gutters);
+}
+
+about-section > #about {
+    display: grid;
+    place-items: center;
+    padding: calc(2 * var(--page-gutters));
+}
+
+about-section > #about > article {
+    max-width: 100ch;
+}
+
+about-section > #map {
+    min-height: clamp(450px, 35vw, 600px);
+    border: 20px solid var(--background-contrast);
 }
 
 about-section h3 {
-    margin-bottom: var(--space-xxxxs);
-    color: var(--text-bright);
+    padding-bottom: var(--space-xxxxxs);
+    border-bottom: 2px solid var(--text-bright);
 }
 
 about-section p {
+    padding-top: var(--space-xxxxxs);
     font-size: var(--text-sm);
 }
 
