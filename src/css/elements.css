@@ -1027,16 +1027,16 @@ about-section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     padding: var(--page-gutters);
+    gap: calc(2 * var(--page-gutters));
 }
 
 about-section > #about {
     display: grid;
     place-items: center;
-    padding: calc(2 * var(--page-gutters));
 }
 
 about-section > #about > article {
-    max-width: 100ch;
+    max-width: 75ch;
 }
 
 about-section > #map {
