@@ -1,9 +1,5 @@
 /* body grid */
 
-html, body {
-    overflow-x: hidden;
-}
-
 body {
     display: grid;
     grid-template-areas: "alert alert""head head""main main""foot foot";
@@ -30,7 +26,6 @@ body>header {
 
 body>main {
     grid-area: main;
-    overflow: hidden;
 }
 
 body>aside {
