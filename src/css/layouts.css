@@ -1,9 +1,5 @@
 /* body grid */
 
-html, body {
-    overflow-x: hidden;
-}
-
 body {
     display: grid;
     grid-template-areas: "alert alert""head head""main main""foot foot";
@@ -30,7 +26,6 @@ body>header {
 
 body>main {
     grid-area: main;
-    overflow: hidden;
 }
 
 body>aside {
@@ -39,6 +34,9 @@ body>aside {
 
 body>footer {
     grid-area: foot;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-xxxs);
 }
 
 /* set sections to block */
@@ -46,6 +44,12 @@ body>header,
 body>footer {
     padding-left: var(--body-gutters);
     padding-right: var(--body-gutters);
+}
+
+@media (max-width: 600px) {
+    body>footer {
+        padding-bottom: 50px;
+    }
 }
 
 main>* {
@@ -93,15 +97,23 @@ site-alert a {
 
 header>nav {
     padding-top: var(--space-xxxxxs);
-    padding-bottom: var(--space-nano);
+    padding-bottom: var(--space-xxxxxs);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "regions logo menu""products products products";
     align-items: center;
+    row-gap: var(--space-xxxxxs);
 }
 
 header nav figure {
     text-align: center;
+    grid-area: logo;
+}
+
+header nav figure a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 header nav figure img {
@@ -154,17 +166,14 @@ header>nav>ul:nth-of-type(2)>li>a {
     font-size: var(--text-sm);
 }
 
-header>nav>figure {
-    grid-area: logo;
-}
-
 header>nav>menu-wrapper {
     grid-area: menu;
 }
 
 @media (max-width: 600px) {
     header>nav {
-        padding-top: 0;
+        padding-top: var(--space-nano);
+        padding-bottom: 0;
     }
 
     header>nav>ul:nth-of-type(1)>li>a,

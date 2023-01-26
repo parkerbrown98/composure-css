@@ -9,8 +9,6 @@ header>alert-banner {
 
 location-banner {
     display: block;
-    margin-left: calc(0px - var(--section-gutters));
-    margin-right: calc(0px - var(--section-gutters));
     background-color: var(--focus);
     color: var(--color-primary);
     text-align: center;
@@ -37,40 +35,46 @@ action-list a,
 product-section>ul>li>:is(h2, h3)~a,
 poster-copy>a {
     font-weight: var(--button-font-weight);
-    color: var(--code);
+    color: rgb(120, 120, 120);
     display: block;
     max-width: max-content;
     background-color: var(--background);
-    padding: var(--space-nano) var(--space-sm);
-    box-shadow: var(--box-shadow-sm-alt);
+    padding: var(--space-nano) var(--space-xs);
     margin-bottom: var(--space-xxs);
+    transition: box-shadow 100ms ease-out;
 }
 
 action-list a[primary] {
     font-weight: var(--button-font-weight);
-    color: var(--code);
+    color: rgb(255, 255, 255, 0.8);
     display: block;
     max-width: max-content;
     background-color: var(--color-accent);
-    padding: var(--space-nano) var(--space-sm);
-    box-shadow: var(--box-shadow-sm);
+    padding: var(--space-nano) var(--space-xs);
     margin-bottom: var(--space-xxs);
 }
 
+action-list a:hover,
+product-section>ul>li>:is(h2, h3)~a:hover,
+poster-copy a:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    text-decoration: none;
+}
+
 poster-media {
-    position:relative;
+    position: relative;
     padding-bottom: 63%;
     overflow: hidden;
 }
 
-poster-media > :is(img, video) {
+poster-media> :is(img, video) {
     position: absolute;
     object-fit: cover;
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
 }
 
-poster-media > img[fill] {
+poster-media>img[fill] {
     position: absolute;
     object-fit: fill;
     width: 100%;
@@ -83,11 +87,12 @@ product-section {
     display: block;
     width: 100%;
     margin: 0;
-    padding-top: var(--space-lg);
+    padding-left: var(--section-gutters);
+    padding-right: var(--section-gutters);
 }
 
-article-section article >a,
-article-section article >a:hover,
+article-section article>a,
+article-section article>a:hover,
 product-section ul li a,
 product-section ul li a:hover {
     color: var(--text-main);
@@ -95,29 +100,67 @@ product-section ul li a:hover {
 }
 
 product-section>ul {
-    --article-width: min(70vw, 400px); /* set a variable to use as column width so the img height can be a calculated ratio */
     display: grid;
-    grid-auto-columns: var(--article-width);
-    grid-auto-flow: column;
-    column-gap: var(--space-xs);
-    overflow: auto hidden;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    column-gap: var(--space-xxxxs);
 }
 
-product-section > ul svg {
+@media (max-width: 800px) {
+    /* product-section {
+        text-align: center;
+    } */
+
+    product-section>ul {
+        grid-template-columns: 1fr;
+        /* justify-items: center; */
+    }
+
+    /* product-section action-list {
+        align-items: center;
+    } */
+}
+
+product-section>ul>li span {
+    font-size: var(--text-sm);
+    font-style: italic;
+}
+
+product-section>ul>li>ul {
+    padding-left: var(--space-xxxxxs);
+}
+
+product-section>ul>li>ul>li {
+    list-style: circle outside;
+}
+
+product-section[background-contrast]>ul>li :is(a, button) {
+    background-color: transparent;
+    border: 2px solid var(--text-bright);
+}
+
+product-section[background-contrast]>ul>li :is(a, button):hover {
+    color: var(--text-contrast);
+    background-color: var(--text-bright);
+}
+
+product-section>ul svg {
     width: var(--text-xl);
     height: var(--text-xl);
     color: var(--color-accent);
     fill: var(--color-accent);
 }
 
-product-section > ul img {
+product-section>ul img {
     display: block;
     width: 100%;
 }
 
 product-section>ul h3 {
+    display: inline-block;
     font-size: var(--text-lg);
     margin: var(--space-xxs) 0 var(--space-xxxs) 0;
+    border-bottom: 2px solid var(--text-bright);
+    padding-bottom: var(--space-xxxs);
 }
 
 /* || menu-section */
@@ -167,11 +210,12 @@ menu-rows div {
     display: inline-flex;
 }
 
-menu-rows div + div {
+menu-rows div+div {
     text-align: right;
 }
 
-menu-rows div, menu-rows a {
+menu-rows div,
+menu-rows a {
     font-size: var(--text-xxs);
 }
 
@@ -187,13 +231,13 @@ menu-rows a:after {
     padding: var(--space-xxs) 0;
 }
 
-.feature-list > li {
+.feature-list>li {
     display: flex;
     align-items: center;
     gap: var(--space-xxxs);
 }
 
-.feature-list > li p {
+.feature-list>li p {
     margin: unset;
 }
 
@@ -210,11 +254,11 @@ menu-rows a:after {
     padding-top: var(--space-lg);
     padding-bottom: var(--space-lg);
     background-color: var(--background-contrast);
-    color: var(--text-muted);
+    color: var(--text-bright);
 }
 
 *[background-contrast] :is(h1, h2, h3, h4, h5, h6, p, strong, em, i, b, a) {
-    color: var(--text-muted)
+    color: var(--text-bright);
 }
 
 /* || article-section */
@@ -228,7 +272,7 @@ article-section {
 }
 
 
-article-section > :is(h1, h2, h3, h4, h5, h6, a) {
+article-section> :is(h1, h2, h3, h4, h5, h6, a) {
     margin-top: 0;
 }
 
@@ -254,7 +298,7 @@ article-section header h3 {
     margin-top: var(--space-xxxxs);
     margin-bottom: var(--space-xxxxs);
     padding-bottom: var(--space-xxxxs);
-    border-bottom: 2px solid var(--color-accent); 
+    border-bottom: 2px solid var(--color-accent);
 }
 
 article-section article-list header {
@@ -272,7 +316,7 @@ article-section header a:visited {
 }
 
 
-article-section time, 
+article-section time,
 article-section address,
 article-section figcaption,
 article-section a[href^="tel"],
@@ -284,7 +328,8 @@ article-section a[href^="mailto"] {
 }
 
 article-list {
-    --article-width: min(40vw, 300px); /* set a variable to use as column width so the img height can be a calculated ratio */
+    --article-width: min(80vw, 350px);
+    /* set a variable to use as column width so the img height can be a calculated ratio */
     display: grid;
     grid-auto-columns: var(--article-width);
     grid-auto-flow: column;
@@ -296,7 +341,7 @@ article-list {
     padding-bottom: var(--space-md);
 }
 
-article-list > header > :is(h1, h2, h3, h4, h5, h6) {
+article-list>header> :is(h1, h2, h3, h4, h5, h6) {
     margin-top: 0;
 }
 
@@ -305,19 +350,19 @@ article-list article h3 {
     margin-bottom: 0.5rem;
 }
 
-article-list > article img {
+article-list>article img {
     --img-ratio: var(--vertical-media-scale-ratio);
     display: block;
     width: 100%;
     /* use the variable for grid column width to calculate height based on a fixed ratio */
-    height: calc(var(--article-width) * var(--img-ratio)); 
+    height: calc(var(--article-width) * var(--img-ratio));
     object-fit: cover;
 }
 
 /* This is for making split images in articles, just by adding more images */
 
 article-list[snippet] {
-    --snippet-article-width: clamp(20vw, 150px, 300px);
+    --snippet-article-width: min(80vw, 350px);
     display: grid;
     grid-auto-columns: var(--snippet-article-width);
     grid-auto-flow: column;
@@ -327,12 +372,13 @@ article-list[snippet] {
     padding-bottom: var(--space-xxxl);
 }
 
-article-list[snippet] > article > a {
+article-list[snippet]>article>a {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     gap: var(--space-xxxxs);
     overflow: hidden;
+    height: 100%;
 }
 
 article-list[snippet] article[end-card] {
@@ -345,28 +391,35 @@ article-list[snippet] article img {
     --img-ratio: var(--vertical-media-scale-ratio);
     display: block;
     width: 100%;
-    height: calc((0.5 * var(--snippet-article-width) * var(--img-ratio)) - (0.5 * var(--space-xxxxs))); /* use the variable for grid column width to calculate height based on a fixed ratio */
+    height: 100%;
     /* height: calc(var(--snippet-article-width) * var(--img-ratio)); use the variable for grid column width to calculate height based on a fixed ratio */
     object-fit: cover;
 }
 
-article-list[snippet] > article > a > img:only-of-type {
+article-list>article figcaption {
+    color: rgb(120, 120, 120);
+    font-size: var(--text-sm);
+    font-style: italic;
+}
+
+article-list[snippet]>article>a>img:only-of-type {
     --img-ratio: var(--vertical-media-scale-ratio);
     display: block;
     width: 100%;
-    height: calc(var(--snippet-article-width) * var(--img-ratio)); /* use the variable for grid column width to calculate height based on a fixed ratio */
+    height: calc(var(--snippet-article-width) * var(--img-ratio));
+    /* use the variable for grid column width to calculate height based on a fixed ratio */
     /* height: calc(var(--snippet-article-width) * var(--img-ratio)); use the variable for grid column width to calculate height based on a fixed ratio */
     object-fit: cover;
     grid-row: span 2;
 }
 
-article-list[snippet] > article:first-of-type img {
+article-list[snippet]>article:first-of-type img {
     border-radius: var(--radius-sm) 0 0 var(--radius-sm);
-} 
+}
 
-article-list[snippet] > article:last-of-type img {
+article-list[snippet]>article:last-of-type img {
     border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-} 
+}
 
 /* || stat-section */
 
@@ -445,14 +498,14 @@ faq-section details {
 
 /* || bio-section */
 
-bio-section > ul {
+bio-section>ul {
     display: grid;
     column-gap: var(--space-xxxxxs);
     grid-template-columns: 1fr 1fr;
     margin-top: var(--space-md);
 }
 
-bio-section > ul > li {
+bio-section>ul>li {
     display: inline-block;
 }
 
@@ -488,7 +541,8 @@ collage-section ul {
 poster-section {
     position: relative;
     overflow: hidden;
-    height: clamp(600px, 35vw, 720px); /* this makes it where the image is horizontal on desktop and vertical on mobile */ 
+    height: clamp(380px, 35vw, 720px);
+    /* this makes it where the image is horizontal on desktop and vertical on mobile */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--space-md);
@@ -496,12 +550,10 @@ poster-section {
 }
 
 poster-section[inverted] {
-    background: linear-gradient(
-        to left,
-        hsl(0 0% 0% / 0),
-        hsl(0 0% 0% / 0.2) 50%,
-        hsl(0 0% 0% / 0.5)
-    );
+    background: linear-gradient(to left,
+            hsl(0 0% 0% / 0),
+            hsl(0 0% 0% / 0.2) 50%,
+            hsl(0 0% 0% / 0.5));
 }
 
 poster-section[floorplan] {
@@ -517,7 +569,7 @@ poster-section[inverted] :is(h1, h2, h3, h4, h5, h6, p, li) {
     color: var(--color-primary);
 }
 
-poster-section[inverted] > poster-card :is(h1, h2, h3, h4, h5, h6, p, li, a) {
+poster-section[inverted]>poster-card :is(h1, h2, h3, h4, h5, h6, p, li, a) {
     color: var(--color-secondary);
 }
 
@@ -546,19 +598,19 @@ poster-section footer {
     width: 100%;
 }
 
-poster-section footer > ul {
+poster-section footer>ul {
     display: flex;
     justify-content: center;
     column-gap: var(--space-sm);
 }
 
-poster-section footer > ul a {
+poster-section footer>ul a {
     color: var(--color-primary);
 }
 
-poster-section > img,
-poster-section > iframe,
-poster-section > video {
+poster-section>img,
+poster-section>iframe,
+poster-section>video {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -568,7 +620,29 @@ poster-section > video {
     object-fit: cover;
 }
 
-poster-section > iframe {
+poster-section>img[mobile-zoom] {
+    transform: scale(1.0);
+}
+
+@media (max-width: 1200px) {
+    poster-section>img[mobile-zoom] {
+        transform: scale(1.3);
+    }
+}
+
+@media (max-width: 900px) {
+    poster-section>img[mobile-zoom] {
+        transform: scale(1.5);
+    }
+}
+
+@media (max-width: 600px) {
+    poster-section>img[mobile-zoom] {
+        transform: scale(1.7);
+    }
+}
+
+poster-section>iframe {
     z-index: unset;
 }
 
@@ -630,27 +704,25 @@ media-grid {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
-media-grid > a {
+media-grid>a {
     position: relative;
     overflow: hidden;
     /* min-height: 450px; */
 }
 
-article > media-grid > a {
+article>media-grid>a {
     --img-ratio: var(--vertical-media-scale-ratio);
     height: calc((var(--article-width) * var(--img-ratio)) / 2);
 }
 
-article > media-grid > a[inverted] {
-    background: linear-gradient(
-        to bottom,
-        hsl(0 0% 0% / 0),
-        hsl(0 0% 0% / 0.2) 70%,
-        hsl(0 0% 0% / 0.4)
-    );
+article>media-grid>a[inverted] {
+    background: linear-gradient(to bottom,
+            hsl(0 0% 0% / 0),
+            hsl(0 0% 0% / 0.2) 70%,
+            hsl(0 0% 0% / 0.4));
 }
 
-media-grid > a > img {
+media-grid>a>img {
     position: absolute;
     top: 0;
     left: 0;
@@ -660,7 +732,7 @@ media-grid > a > img {
     z-index: -1;
 }
 
-media-grid > a > h3 {
+media-grid>a>h3 {
     color: var(--color-primary);
     position: absolute;
     left: var(--space-xxs);
@@ -674,19 +746,25 @@ filter-section {
     margin-top: 0;
 }
 
-filter-section > h2 {
+filter-section>h2 {
     margin: unset;
 }
 
-filter-section > h2 + p {
+filter-section>h2+p {
     margin-top: var(--space-nano);
 }
 
-filter-section > ul > li {
+filter-section>ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-nano);
+}
+
+filter-section>ul>li {
     display: inline-block;
 }
 
-filter-section > ul > li > a {
+filter-section>ul>li>a {
     font-size: var(--text-xs);
     display: inline-block;
     padding: 0.25rem var(--space-nano);
@@ -695,14 +773,14 @@ filter-section > ul > li > a {
     /* margin: 1rem; */
 }
 
-filter-section > ul > li > a:hover {
+filter-section>ul>li>a:hover {
     border-color: var(--color-secondary);
     text-decoration: none;
 }
 
 /* || map-section */
 
-map-section > iframe {
+map-section>iframe {
     width: 100%;
     height: 100%;
 }
@@ -725,7 +803,7 @@ staff-section {
 staff-section figure {
     --local-element-width: 16rem;
     display: grid;
-    grid-template-columns: 1fr 1fr  ;
+    grid-template-columns: 1fr 1fr;
     column-gap: var(--space-xxs);
     row-gap: var(--space-md);
     align-items: center;
@@ -755,7 +833,7 @@ directory-section {
     padding-bottom: 5rem;
 }
 
-directory-section > ul > li > a > h2 {
+directory-section>ul>li>a>h2 {
     text-align: center;
     color: var(--text-bright);
     font-size: var(--text-xxxl);
@@ -763,12 +841,12 @@ directory-section > ul > li > a > h2 {
     text-decoration: none;
 }
 
-directory-section > ul > li > a:hover {
+directory-section>ul>li>a:hover {
     text-decoration: none;
     color: var(--text-bright);
 }
 
-directory-section > ul {
+directory-section>ul {
     --grid-col-min: 16rem;
     --grid-col-max: 25vw;
     display: grid;
@@ -776,12 +854,12 @@ directory-section > ul {
     grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-col-min), var(--grid-col-max)), 1fr));
 }
 
-directory-section > ul > li > ul {
+directory-section>ul>li>ul {
     margin-bottom: var(--space-lg);
 }
 
-directory-section > ul > li > ul > li > a,
-directory-section > ul > li > ul > li {
+directory-section>ul>li>ul>li>a,
+directory-section>ul>li>ul>li {
     font-size: var(--text-sm);
     line-height: 1.5;
 }
@@ -814,21 +892,21 @@ special-section {
 
 special-section ul {
     margin-top: var(--space-sm);
-    padding: 0 var(--space-xl) var(--space-xl) var(--space-xl) ;
+    padding: 0 var(--space-xl) var(--space-xl) var(--space-xl);
 }
 
-special-section ul > li {
+special-section ul>li {
     list-style-type: disc;
-} 
+}
 
-special-section :is(p, li) {    
+special-section :is(p, li) {
     font-size: var(--text-sm);
 }
 
 special-section form input[type="submit"] {
     background-color: var(--background-contrast);
     color: var(--text-contrast);
-    margin: var(--space-lg) 0; 
+    margin: var(--space-lg) 0;
 }
 
 /* || center-section */
@@ -838,7 +916,7 @@ center-section {
     /* background-color: var(--color-secondary); */
 }
 
-center-section > ul {
+center-section>ul {
     display: flex;
     justify-content: center;
 }
@@ -847,7 +925,7 @@ center-section :is(h1, h2, h3, h4, h5, h6) {
     color: var(--color-primary);
 }
 
-center-section > ul > li {
+center-section>ul>li {
     position: relative;
     width: min(100%, 50rem);
 }
@@ -861,27 +939,47 @@ breadcrumbs {
     left: var(--page-gutters);
 }
 
-breadcrumbs > ul {
+breadcrumbs>ul {
     display: flex;
     gap: var(--space-xxs);
 }
 
-breadcrumbs > ul > li a {
+breadcrumbs>ul>li a {
     color: var(--color-primary);
 }
 
-breadcrumbs > ul > li a:hover,
-breadcrumbs > ul > li a:focus {
+breadcrumbs>ul>li a:hover,
+breadcrumbs>ul>li a:focus {
     text-decoration: none;
+}
+
+/* || split-section */
+
+split-section {
+    display: block;
+    padding-left: var(--page-gutters);
+    padding-right: var(--page-gutters);
+    padding-bottom: var(--page-gutters);
 }
 
 /* || split-grid */
 
 split-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: var(--space-md);
     align-items: center;
+}
+
+split-grid[for-locations] {
+    align-items: start;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 900px) {
+    split-grid[for-locations] {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* || content-divider */
@@ -900,7 +998,7 @@ feature-list {
     display: block;
 }
 
-feature-list ul > li p {
+feature-list ul>li p {
     display: flex;
     /* justify-content: center; */
     align-items: center;
@@ -941,7 +1039,7 @@ media-section {
     overflow: hidden;
 }
 
-media-section > * {
+media-section>* {
     width: 100%;
     height: auto;
 }
@@ -950,18 +1048,33 @@ media-section > * {
 /* || about-section */
 
 about-section {
-    display: block;
-    border: 2px solid var(--background-alt);
-    padding: calc(2* var(--page-gutters));
-    margin: calc(2 * var(--page-gutters)) var(--page-gutters);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    padding: var(--page-gutters);
+    gap: calc(2 * var(--page-gutters));
+}
+
+about-section > #about {
+    display: grid;
+    place-items: center;
+}
+
+about-section > #about > article {
+    max-width: 75ch;
+}
+
+about-section > #map {
+    min-height: clamp(450px, 35vw, 600px);
+    border: 20px solid var(--background-contrast);
 }
 
 about-section h3 {
-    margin-bottom: var(--space-xxxxs);
-    color: var(--text-bright);
+    padding-bottom: var(--space-xxxxxs);
+    border-bottom: 2px solid var(--text-bright);
 }
 
 about-section p {
+    padding-top: var(--space-xxxxxs);
     font-size: var(--text-sm);
 }
 
@@ -973,7 +1086,8 @@ map-section {
     overflow: hidden;
     margin: 0;
     padding: 0;
-    height: clamp(600px, 35vw, 720px); /* this makes it where the image is horizontal on desktop and vertical on mobile */
+    height: clamp(600px, 35vw, 720px);
+    /* this makes it where the image is horizontal on desktop and vertical on mobile */
 }
 
 map-section[small] {
@@ -1036,12 +1150,12 @@ error-section {
     margin-bottom: var(--space-xxxxl);
 }
 
-error-section > h2 {
+error-section>h2 {
     margin-bottom: var(--space-nano);
     color: var(--text-bright);
 }
 
-error-section > p {
+error-section>p {
     margin-top: var(--space-xxxxs);
     margin-bottom: var(--space-xxxxs);
 }
@@ -1056,18 +1170,18 @@ showcase-section {
     margin-top: var(--space-lg);
 }
 
-showcase-section > article > a:first-of-type {
+showcase-section>article>a:first-of-type {
     display: block;
 }
 
-showcase-section > article figure {
+showcase-section>article figure {
     position: relative;
     overflow: hidden;
     aspect-ratio: 16 / 9;
     margin-bottom: var(--space-xxxs);
 }
 
-showcase-section > article figure > img {
+showcase-section>article figure>img {
     position: absolute;
     top: 0;
     left: 0;
@@ -1093,6 +1207,328 @@ link-section[small] {
     font-size: var(--text-sm);
 }
 
-link-section > a {
+link-section>a {
     display: inline-block;
+}
+
+/* || trust-section */
+
+trust-section {
+    max-width: 1850px;
+}
+
+trust-section> :is(h1, h2, h3, h4, h5, h6) {
+    text-align: center;
+    margin-bottom: var(--space-xs);
+}
+
+trust-section>div {
+    margin: 0 auto;
+    width: 150px;
+    height: 2px;
+    background-color: var(--color-accent);
+    margin-bottom: var(--space-sm);
+}
+
+/* || trust-banner */
+
+trust-banner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1850px;
+    margin: 0 auto;
+    gap: var(--space-md);
+}
+
+trust-banner>figure {
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 21 / 9;
+}
+
+trust-banner>figure>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: grayscale(1) opacity(0.45);
+}
+
+
+
+/* || mapbox-popup */
+
+.mapbox-popup {
+    width: min(60vw, 300px);
+}
+
+.mapbox-popup h5 {
+    font-size: var(--text-sm);
+}
+
+.mapbox-popup address {
+    font-size: var(--text-xs);
+}
+
+.mapbox-popup address::after {
+    content: "";
+}
+
+.mapbox-popup>div {
+    padding: var(--space-nano) var(--space-nano) 0 var(--space-nano);
+}
+
+.mapbox-popup>div>a {
+    font-weight: var(--button-font-weight);
+    color: rgb(120, 120, 120);
+    display: block;
+    max-width: max-content;
+    background-color: var(--background);
+    padding: var(--space-nano) var(--space-xs);
+    transition: box-shadow 100ms ease-out;
+}
+
+.mapbox-popup figure {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+}
+
+.mapbox-popup figure img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* || sticky-bar */
+
+sticky-bar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--space-nano);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 50px;
+    background-color: var(--background-contrast);
+    padding: var(--space-nano);
+}
+
+sticky-bar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    background: transparent;
+    color: var(--text-contrast);
+    border: thin solid var(--text-contrast);
+}
+
+sticky-bar a[primary] {
+    border: thin solid var(--text-bright);
+    color: var(--text-bright);
+}
+
+sticky-bar a:hover {
+    text-decoration: none;
+}
+
+sticky-bar a::before {
+    content: '' !important;
+}
+
+sticky-bar a svg {
+    width: 16px;
+    height: 16px;
+    margin-right: var(--space-nano);
+}
+
+@media (min-width: 600px) {
+    sticky-bar {
+        display: none;
+        height: 0;
+    }
+}
+
+/* || brand-section */
+
+brand-section {
+    display: block;
+    padding-top: calc(2 * var(--space-xxxl));
+    padding-bottom: calc(2 * var(--space-xxxl));
+    padding-left: var(--section-gutters);
+    padding-right: var(--section-gutters);
+}
+
+brand-section[dark] {
+    background-color: var(--background-contrast);
+    color: var(--text-bright);
+}
+
+brand-section :is(h1, h2, h3, h4, h5, h6) {
+    color: var(--text-bright);
+}
+
+brand-section h3 {
+    text-transform: uppercase;
+    font-size: var(--text-sm);
+    letter-spacing: 1px;
+}
+
+brand-section h5 {
+    margin-top: var(--space-xs);
+}
+
+brand-section :is(ol, ul) {
+    padding-left: var(--space-xxxs);
+}
+
+brand-section :is(ol, ul, p) {
+    margin-top: var(--space-xxxs);
+    font-size: var(--text-sm);
+}
+
+/* || thanks-section */
+
+thanks-section {
+    display: block;
+    padding-top: calc(2 * var(--space-xxxl));
+    padding-bottom: calc(2 * var(--space-xxxl));
+    padding-left: var(--section-gutters);
+    padding-right: var(--section-gutters);
+}
+
+.full-height {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    width: 100%;
+}
+
+.full-height :is(img, video) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.no-icon::before {
+    content: '';
+    display: none;
+}
+
+.location-card-list {
+    margin-top: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-xxxs);
+}
+
+.location-card {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: var(--border-light);
+}
+
+.location-card > .location-card--photo {
+    display: block;
+    grid-column: span 2;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.location-card > .location-card--photo > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.location-card > .location-card--details {
+    padding: var(--space-xxxxxs);
+    grid-column: span 2;
+}
+
+.location-card > .location-card--details > h5 {
+    font-weight: 500;
+}
+
+.location-card > .location-card--details > a:hover {
+    text-decoration: none;
+}
+
+.location-card .location-card--city {
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--text-bright);
+    font-size: var(--text-sm);
+}
+
+.location-card .location-card--blurb {
+    font-size: var(--text-sm);
+    font-style: italic;
+}
+
+.location-card .location-card--note {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    z-index: 10;
+    padding: var(--space-nano);
+    font-size: var(--text-sm);
+    color: var(--text-contrast);
+    text-align: center;
+}
+
+.locations-map {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.locations-map > #map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 900px) {
+    .locations-map {
+        position: relative;
+        grid-row: 1;
+        height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .location-card {
+        grid-template-columns: 1fr;
+    }
+
+    .location-card > .location-card--photo {
+        aspect-ratio: 16 / 9;
+    }
 }

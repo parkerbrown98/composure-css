@@ -39,10 +39,10 @@
 
     /* images */
 
-    --vertical-media-scale-ratio: 1.5;
+    --vertical-media-scale-ratio: 0.7;
 
     /* box shadows */
-    --box-shadow-xs: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;;
+    --box-shadow-xs: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
     --box-shadow-sm: 2px 2px 0px var(--background-contrast);
     --box-shadow-sm-alt: 2px 2px 0px var(--background-contrast);
     --box-shadow-md: 4px 4px 0px var(--background-contrast);
@@ -82,7 +82,7 @@
     --text-xxs: calc(var(--text-xs) / var(--text-scale-ratio));
 
     /* fluid spacing */
-    --space-unit:  calc(1em / 2 + 1.5625vw);
+    --space-unit:  calc(1em / 2 + 1.7vw);
     --space-ratio: var(--text-scale-ratio);
 
     --space-sm:    calc(var(--space-unit) / var(--space-ratio));

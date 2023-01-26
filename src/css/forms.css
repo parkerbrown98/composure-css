@@ -47,7 +47,7 @@ input:disabled, select:disabled, button:disabled, textarea:disabled { cursor: no
 
 input, select, textarea {
     margin-bottom: var(--space-xxs);
-    /* width: 100%; */
+    max-width: 100%;
 }
 
 .form-validate {
