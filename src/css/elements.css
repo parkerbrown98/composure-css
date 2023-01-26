@@ -966,7 +966,7 @@ split-section {
 
 split-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: var(--space-md);
     align-items: center;
 }
@@ -1049,7 +1049,7 @@ media-section>* {
 
 about-section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     padding: var(--page-gutters);
     gap: calc(2 * var(--page-gutters));
 }
