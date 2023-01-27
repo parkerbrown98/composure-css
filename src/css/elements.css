@@ -1322,6 +1322,7 @@ sticky-bar {
     min-height: 50px;
     background-color: var(--background-contrast);
     padding: var(--space-nano);
+    z-index: 99;
 }
 
 sticky-bar a {
