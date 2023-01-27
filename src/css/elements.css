@@ -1473,7 +1473,7 @@ thanks-section {
     border: var(--border-light);
 }
 
-.location-card > .location-card--photo {
+.location-card .location-card--photo {
     display: block;
     grid-column: span 2;
     position: relative;
@@ -1482,7 +1482,7 @@ thanks-section {
     width: 100%;
 }
 
-.location-card > .location-card--photo > img {
+.location-card .location-card--photo > img {
     position: absolute;
     top: 0;
     left: 0;
@@ -1559,7 +1559,7 @@ thanks-section {
         grid-template-columns: 1fr;
     }
 
-    .location-card > .location-card--photo {
+    .location-card .location-card--photo {
         aspect-ratio: 16 / 9;
     }
 }
