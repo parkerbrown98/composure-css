@@ -1551,3 +1551,9 @@ thanks-section {
         aspect-ratio: 16 / 9;
     }
 }
+
+@media (max-width: 600px) {
+    .no-mobile {
+        display: none;
+    }
+}
