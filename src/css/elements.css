@@ -1474,12 +1474,9 @@ thanks-section {
 }
 
 .location-card .location-card--photo {
-    display: block;
     grid-column: span 2;
     position: relative;
     overflow: hidden;
-    height: 100%;
-    width: 100%;
 }
 
 .location-card .location-card--photo > img {
