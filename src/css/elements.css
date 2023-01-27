@@ -1029,6 +1029,24 @@ action-list[row] {
     flex-direction: row;
 }
 
+action-list[fill] {
+    flex-wrap: wrap;
+    row-gap: var(--space-nano);
+}
+
+action-list[fill] a {
+    max-width: unset;
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+}
+
+action-list a[outline][primary] {
+    border: 2px solid var(--text-bright);
+    color: var(--text-bright);
+    background-color: transparent;
+}
+
 /* || media-section */
 
 media-section {
