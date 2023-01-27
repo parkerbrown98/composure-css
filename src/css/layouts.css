@@ -117,7 +117,7 @@ header nav figure a {
 }
 
 header nav figure img {
-    max-height: 28px;
+    max-height: 34px;
     max-width: min(30vw, 320px);
     height: auto;
     width: auto;
