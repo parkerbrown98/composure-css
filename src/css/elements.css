@@ -1394,8 +1394,12 @@ brand-section[dark] {
     color: var(--text-bright);
 }
 
-brand-section :is(h1, h2, h3, h4, h5, h6) {
+brand-section[dark] :is(h1, h2, h3, h4, h5, h6) {
     color: var(--text-bright);
+}
+
+brand-section :is(h1, h2, h3, h4, h5, h6) {
+    color: #000;
 }
 
 brand-section h3 {
@@ -1423,8 +1427,8 @@ thanks-section {
     display: block;
     padding-top: var(--space-md);
     padding-bottom: var(--space-md);
-    padding-left: var(--section-gutters);
-    padding-right: var(--section-gutters);
+    padding-left: var(--page-gutters);
+    padding-right: var(--page-gutters);
 }
 
 .full-height {
