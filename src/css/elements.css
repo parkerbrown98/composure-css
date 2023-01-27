@@ -1041,6 +1041,14 @@ action-list[fill] a {
     margin: 0;
 }
 
+action-list[no-margin] {
+    margin-top: var(--space-nano);
+}
+
+action-list[no-margin] a {
+    margin: 0;
+}
+
 action-list a[outline][primary] {
     border: 2px solid var(--text-bright);
     color: var(--text-bright);
