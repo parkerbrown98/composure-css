@@ -1402,8 +1402,8 @@ brand-section :is(ol, ul, p) {
 
 thanks-section {
     display: block;
-    padding-top: calc(2 * var(--space-xxxl));
-    padding-bottom: calc(2 * var(--space-xxxl));
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
     padding-left: var(--section-gutters);
     padding-right: var(--section-gutters);
 }
