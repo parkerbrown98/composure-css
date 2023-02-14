@@ -915,6 +915,14 @@ special-section form input[type="submit"] {
     margin: var(--space-lg) 0;
 }
 
+special-section form.hidden {
+    display: none;
+}
+
+special-section form .hidden {
+    display: none;
+}
+
 /* || center-section */
 
 center-section {
@@ -1627,4 +1635,18 @@ thanks-section {
     padding-bottom: var(--space-xxxxxs);
     text-transform: none;
     letter-spacing: initial;
+}
+
+form-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-nano);
+}
+
+form-section *[grid-cols-2] {
+    grid-column: span 2;
+}
+
+form-section * {
+    grid-column: span 1;
 }
