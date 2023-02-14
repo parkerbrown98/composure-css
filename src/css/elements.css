@@ -247,6 +247,12 @@ menu-rows a:after {
     background-color: var(--background-alt);
 }
 
+*[background-light] {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    background-color: var(--background);
+}
+
 /* *[background-alt] :is(h1, h2, h3, h4, h5, h6, p, strong, em, i, b, a) {
 } */
 
@@ -1565,4 +1571,60 @@ thanks-section {
     .no-mobile {
         display: none;
     }
+}
+
+/* || furniture-banner */
+
+.furniture-banner {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-xxxs);
+    padding-top: var(--space-xxxl);
+    padding-left: var(--section-gutters);
+    padding-right: var(--section-gutters);
+}
+
+.furniture-banner h5 {
+    color: var(--text-bright);
+    font-size: calc(var(--text-sm) * 1.2);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.furniture-banner--grid {
+    display: grid;
+    gap: var(--space-sm);
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.furniture-banner--grid > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.furniture-banner--grid > div > figure {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+
+.furniture-banner--grid > div > figure > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.furniture-banner--grid > div > article {
+    padding-top: var(--space-xs);
+}
+
+.furniture-banner--grid > div > article > h5 {
+    font-size: calc(var(--text-sm) * 1.4);
+    color: var(--text-main);
+    padding-bottom: var(--space-xxxxxs);
+    text-transform: none;
+    letter-spacing: initial;
 }
