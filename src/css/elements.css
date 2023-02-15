@@ -1254,7 +1254,10 @@ link-section>a {
 /* || trust-section */
 
 trust-section {
+    display: block;
     max-width: 1850px;
+    margin-top: calc(-1 * var(--space-xl));
+    margin-bottom: var(--space-md);
 }
 
 trust-section> :is(h1, h2, h3, h4, h5, h6) {
@@ -1287,6 +1290,12 @@ trust-banner>figure {
     position: relative;
     overflow: hidden;
     aspect-ratio: 21 / 9;
+}
+
+@media (max-width: 900px) {
+    trust-banner>figure {
+        aspect-ratio: 16 / 9;
+    }
 }
 
 trust-banner>figure>img {
