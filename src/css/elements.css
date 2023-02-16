@@ -427,6 +427,21 @@ article-list[snippet]>article:last-of-type img {
     border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
+article-list>article>button {
+    all: unset;
+    cursor: pointer;
+}
+
+article-list>article>button:hover {
+    all: unset;
+    cursor: pointer;
+}
+
+article-list>article>button:focus {
+    outline: none;
+    border: none;
+}
+
 /* || stat-section */
 
 stat-section {
@@ -1658,4 +1673,57 @@ form-section *[grid-cols-2] {
 
 form-section * {
     grid-column: span 1;
+}
+
+#modal {
+    position: fixed;
+    visibility: hidden;
+    display: grid;
+    place-items: center;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    backdrop-filter: blur(4px);
+    z-index: 99;
+    transition: all 300ms ease-out;
+}
+
+#modal.open {
+    visibility: visible;
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+}
+
+#modal > button {
+    all: unset;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#modal > button:focus {
+    border: 2px solid #fff;
+}
+
+#modal .inner-modal {
+    position: relative;
+    width: min(95%, 55rem);
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#modal .inner-modal > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
