@@ -57,10 +57,10 @@ special-section {
 }
 
 main>article {
-    margin-top: var(--space-xxxxl);
+    margin-top: var(--space-xl);
     padding-left: var(--section-gutters);
     padding-right: var(--section-gutters);
-    margin-bottom: var(--space-xxxxl);
+    margin-bottom: var(--space-xl);
 }
 
 main>article>h2 {
