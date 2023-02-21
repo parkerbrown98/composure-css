@@ -1727,3 +1727,13 @@ form-section * {
     height: 100%;
     object-fit: cover;
 }
+
+/* || call-section */
+
+call-section {
+    display: block;
+}
+
+call-section a {
+    color: rgb(64, 136, 255);
+}
