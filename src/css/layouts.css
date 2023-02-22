@@ -68,6 +68,10 @@ main>article>h2 {
     color: var(--text-bright);
 }
 
+main>poster-section+poster-section {
+    margin-top: 4px;
+}
+
 site-alert {
     display: block;
     height: 1.25rem;
