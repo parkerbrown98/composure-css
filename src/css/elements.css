@@ -430,11 +430,13 @@ article-list[snippet]>article:last-of-type img {
 article-list>article>button {
     all: unset;
     cursor: pointer;
+    width: 100%;
 }
 
 article-list>article>button:hover {
     all: unset;
     cursor: pointer;
+    width: 100%;
 }
 
 article-list>article>button:focus {
