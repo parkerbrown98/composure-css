@@ -901,16 +901,12 @@ directory-section>ul>li>ul>li {
 /* || special-section */
 
 special-section {
-    --grid-col-min: 16rem;
-    --grid-col-max: 40vw;
-    display: grid;
-    column-gap: var(--space-lg);
-    grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-col-min), var(--grid-col-max)), 1fr));
-    padding-left: var(--page-gutters);
-    padding-right: var(--page-gutters);
-    padding-top: calc(2 * var(--space-xxxxl));
-    padding-bottom: calc(2 * var(--space-xxxxl));
-    background-color: var(--background-alt);
+    display: block;
+    padding-left: var(--section-gutters);
+    padding-right: var(--section-gutters);
+    padding-top: calc(2 * var(--space-lg));
+    padding-bottom: calc(2 * var(--space-lg));
+    background-color: var(--background);
 }
 
 special-section ul {
@@ -929,7 +925,10 @@ special-section :is(p, li) {
 special-section form input[type="submit"] {
     background-color: var(--background-contrast);
     color: var(--text-contrast);
-    margin: var(--space-lg) 0;
+}
+
+special-section form input[type="submit"]:hover {
+    background-color: var(--background-contrast);
 }
 
 special-section form.hidden {

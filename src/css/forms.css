@@ -1,9 +1,9 @@
 button, select, input[type='submit'], input[type='reset'], input[type='button'], input[type='checkbox'], input[type='range'], input[type='radio'] { cursor: pointer; }
 /* input, select { display: block; } */
 [type='checkbox'], [type='radio'] { display: initial; }
-input { color: var(--form-text); background-color: var(--background); font-family: inherit; font-size: inherit; padding: var(--space-xxs); border: none; outline: none; }
-textarea { color: var(--form-text); background-color: var(--background); font-family: inherit; font-size: inherit; padding: var(--space-xxs); border: none; outline: none; }
-select { color: var(--form-text); background-color: var(--background); font-family: inherit; font-size: inherit; padding: var(--space-xxs); border: none; outline: none; }
+input { color: var(--form-text); background-color: var(--background-body); font-family: inherit; font-size: inherit; padding: var(--space-xxxxxs); border: none; outline: none; }
+textarea { color: var(--form-text); background-color: var(--background-body); font-family: inherit; font-size: inherit; padding: var(--space-xxxxxs); border: none; outline: none; }
+select { color: var(--form-text); background-color: var(--background-body); font-family: inherit; font-size: inherit; padding: var(--space-xxxxxs); border: none; outline: none; }
 
 
 button { color: var(--form-text); background-color: var(--background); font-family: inherit; font-size: inherit; padding: var(--space-xxs); border: none; outline: none; box-shadow: var(--box-shadow-sm); }
@@ -28,7 +28,7 @@ textarea { display: block; margin-right: 0; box-sizing: border-box; resize: vert
 /* textarea:not([cols]) { width: 100%; } */
 textarea:not([rows]) { min-height: 40px; height: 140px; }
 
-select { background: url("data:image/svg+xml;charset=utf-8,%3C?xml version='1.0' encoding='utf-8'?%3E %3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' height='62.5' width='116.9' fill='%23161f27'%3E %3Cpath d='M115.3,1.6 C113.7,0 111.1,0 109.5,1.6 L58.5,52.7 L7.4,1.6 C5.8,0 3.2,0 1.6,1.6 C0,3.2 0,5.8 1.6,7.4 L55.5,61.3 C56.3,62.1 57.3,62.5 58.4,62.5 C59.4,62.5 60.5,62.1 61.3,61.3 L115.2,7.4 C116.9,5.8 116.9,3.2 115.3,1.6Z'/%3E %3C/svg%3E") calc(100% - 12px) 50% / 12px no-repeat; background: var(--background) var(--select-arrow) calc(100% - 12px) 50% / 12px no-repeat; padding-right: 35px; }
+select { background: url("data:image/svg+xml;charset=utf-8,%3C?xml version='1.0' encoding='utf-8'?%3E %3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' height='62.5' width='116.9' fill='%23161f27'%3E %3Cpath d='M115.3,1.6 C113.7,0 111.1,0 109.5,1.6 L58.5,52.7 L7.4,1.6 C5.8,0 3.2,0 1.6,1.6 C0,3.2 0,5.8 1.6,7.4 L55.5,61.3 C56.3,62.1 57.3,62.5 58.4,62.5 C59.4,62.5 60.5,62.1 61.3,61.3 L115.2,7.4 C116.9,5.8 116.9,3.2 115.3,1.6Z'/%3E %3C/svg%3E") calc(100% - 12px) 50% / 12px no-repeat; background: var(--background-body) var(--select-arrow) calc(100% - 12px) 50% / 12px no-repeat; padding-right: 35px; }
 select::-ms-expand { display: none; }
 select[multiple] { padding-right: 10px; background-image: none; overflow-y: auto; }
 input:focus { box-shadow: 0 0 0 2px var(--focus); }
