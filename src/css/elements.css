@@ -35,10 +35,10 @@ action-list a,
 product-section>ul>li>:is(h2, h3)~a,
 poster-copy>a {
     font-weight: var(--button-font-weight);
-    color: rgb(120, 120, 120);
+    color: #fff;
     display: block;
     max-width: max-content;
-    background-color: var(--background);
+    background-color: var(--color-btn-secondary);
     padding: var(--space-nano) var(--space-xs);
     margin-bottom: var(--space-xxs);
     transition: box-shadow 100ms ease-out;
@@ -46,10 +46,10 @@ poster-copy>a {
 
 action-list a[primary] {
     font-weight: var(--button-font-weight);
-    color: rgb(255, 255, 255, 0.8);
+    color: #fff;
     display: block;
     max-width: max-content;
-    background-color: var(--color-accent);
+    background-color: var(--text-muted);
     padding: var(--space-nano) var(--space-xs);
     margin-bottom: var(--space-xxs);
 }
@@ -1078,12 +1078,6 @@ action-list[no-margin] {
 
 action-list[no-margin] a {
     margin: 0;
-}
-
-action-list a[outline][primary] {
-    border: 2px solid var(--text-bright);
-    color: var(--text-bright);
-    background-color: transparent;
 }
 
 /* || media-section */

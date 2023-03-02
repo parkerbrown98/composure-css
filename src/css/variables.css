@@ -37,6 +37,9 @@
     --color-tertiary: #151540;
     --color-accent: #c09f72;
 
+    --color-btn-primary: #fff;
+    --color-btn-secondary: #000;
+
     /* images */
 
     --vertical-media-scale-ratio: 0.7;
@@ -59,7 +62,7 @@
     --line-height: 1.25;
 
     /* links as buttons */
-    --button-font-weight: 400;
+    --button-font-weight: 600;
 
     /* header font size (in relation to base) and weight */
     --header-base-font-size: calc(var(--text-base-size) + 0.390625vw); 
