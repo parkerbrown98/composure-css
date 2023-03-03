@@ -92,9 +92,7 @@ product-section {
 }
 
 article-section article>a,
-article-section article>a:hover,
-product-section ul li a,
-product-section ul li a:hover {
+article-section article>a:hover {
     color: var(--text-main);
     text-decoration: none;
 }
@@ -102,7 +100,29 @@ product-section ul li a:hover {
 product-section>ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    column-gap: var(--space-xxxxs);
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+product-section>ul>li>figure {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+}
+
+product-section>ul>li>figure>img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+product-section>small {
+    display: inline-block;
+    padding-bottom: var(--space-md);
+    border-bottom: 2px solid var(--text-bright);
+    font-style: italic;
 }
 
 @media (max-width: 800px) {
@@ -126,11 +146,11 @@ product-section>ul>li span {
 }
 
 product-section>ul>li>ul {
-    padding-left: var(--space-xxxxxs);
+    padding-left: var(--space-xxxs);
 }
 
 product-section>ul>li>ul>li {
-    list-style: circle outside;
+    list-style: disc outside;
 }
 
 product-section[background-contrast]>ul>li :is(a, button) {
@@ -159,8 +179,12 @@ product-section>ul h3 {
     display: inline-block;
     font-size: var(--text-lg);
     margin: var(--space-xxs) 0 var(--space-xxxs) 0;
-    border-bottom: 2px solid var(--text-bright);
-    padding-bottom: var(--space-xxxs);
+}
+
+product-section>ul h4 {
+    font-size: var(--text-reg);
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-nano);
 }
 
 /* || menu-section */
