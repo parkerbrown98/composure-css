@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,400,500,600,700');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
 html {
     font-size: 100%;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     word-wrap: break-word;
     text-rendering: optimizeLegibility;
     color: var(--text-main);
