@@ -42,6 +42,7 @@ poster-copy>a {
     padding: var(--space-nano) var(--space-xs);
     margin-bottom: var(--space-xxs);
     transition: box-shadow 100ms ease-out;
+    border-radius: 3px;
 }
 
 action-list a[primary] {
@@ -52,6 +53,7 @@ action-list a[primary] {
     background-color: var(--text-muted);
     padding: var(--space-nano) var(--space-xs);
     margin-bottom: var(--space-xxs);
+    border-radius: 3px;
 }
 
 action-list a:hover,
@@ -949,6 +951,10 @@ special-section :is(p, li) {
 special-section form input[type="submit"] {
     background-color: var(--background-contrast);
     color: var(--text-contrast);
+    font-weight: var(--button-font-weight);
+    max-width: max-content;
+    transition: box-shadow 100ms ease-out;
+    border-radius: 3px;
 }
 
 special-section form input[type="submit"]:hover {
