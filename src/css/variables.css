@@ -67,7 +67,7 @@
     /* header font size (in relation to base) and weight */
     --header-base-font-size: calc(var(--text-base-size) + 0.390625vw); 
     /* --header-base-font-size: calc((var(--text-base-size) ) + 0.390625vw);  */
-    --header-font-weight: 600;
+    --header-font-weight: 700;
 
     /* headers in relation to each other */
     --text-scale-ratio: 1.15;  
