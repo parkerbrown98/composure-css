@@ -1298,6 +1298,8 @@ trust-section {
     max-width: 1850px;
     margin-top: calc(-1 * var(--space-xl));
     margin-bottom: var(--space-md);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 trust-section > :is(h1, h2, h3, h4, h5, h6),
