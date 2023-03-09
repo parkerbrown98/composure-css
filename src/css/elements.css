@@ -43,6 +43,8 @@ poster-copy>a {
     margin-bottom: var(--space-xxs);
     transition: box-shadow 100ms ease-out;
     border-radius: 3px;
+    transition: all 200ms ease-in-out;
+    outline-offset: 2px;
 }
 
 action-list a[primary] {
@@ -54,12 +56,14 @@ action-list a[primary] {
     padding: var(--space-nano) var(--space-xs);
     margin-bottom: var(--space-xxs);
     border-radius: 3px;
+    transition: all 200ms ease-in-out;
+    outline-offset: 2px;
 }
 
 action-list a:hover,
 product-section>ul>li>:is(h2, h3)~a:hover,
 poster-copy a:hover {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    outline: 2px solid rgb(220, 220, 220);
     text-decoration: none;
 }
 
