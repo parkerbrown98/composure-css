@@ -167,6 +167,30 @@ header>nav>ul:nth-of-type(2)>li>a {
 
 header>nav>menu-wrapper {
     grid-area: menu;
+    display: flex;
+    gap: var(--space-xxxs);
+}
+
+header>nav>menu-wrapper>a {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+}
+
+@media (max-width: 780px) {
+    header>nav>menu-wrapper>a {
+        display: none;
+    }
+}
+
+header>nav>menu-wrapper>a>svg {
+    width: 16px;
+    height: 16px;
+}
+
+header>nav>menu-wrapper>a::before {
+    display: none;
 }
 
 @media (max-width: 600px) {
