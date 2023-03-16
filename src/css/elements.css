@@ -952,7 +952,8 @@ special-section :is(p, li) {
     font-size: var(--text-sm);
 }
 
-special-section form input[type="submit"] {
+special-section form input[type="submit"],
+thanks-section form input[type="submit"] {
     background-color: var(--background-contrast);
     color: var(--text-contrast);
     font-weight: var(--button-font-weight);
@@ -961,7 +962,8 @@ special-section form input[type="submit"] {
     border-radius: 3px;
 }
 
-special-section form input[type="submit"]:hover {
+special-section form input[type="submit"]:hover,
+thanks-section form input[type="submit"]:hover {
     background-color: var(--background-contrast);
 }
 
@@ -1525,9 +1527,36 @@ brand-section :is(ol, ul, p) {
 thanks-section {
     display: block;
     padding-top: var(--space-md);
-    padding-bottom: var(--space-md);
-    padding-left: var(--page-gutters);
-    padding-right: var(--page-gutters);
+    padding-left: var(--section-gutters);
+    padding-right: var(--section-gutters);
+}
+
+thanks-section form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xxxs);
+    margin-top: var(--space-xxxs);
+}
+
+thanks-section form :is(input:not([type="submit"]), select, textarea) {
+    box-shadow: 0 0 0 2px var(--focus);
+    margin: 0;
+}
+
+thanks-section form :is(input:not([type="submit"]), select, textarea):focus {
+    box-shadow: 0 0 0 2px var(--text-bright);
+}
+
+thanks-section .hidden {
+    display: none;
+}
+
+thanks-section form .col-span-2 {
+    grid-column: span 2;
+}
+
+thanks-section #confirm-submit {
+    margin-top: var(--space-sm);
 }
 
 .full-height {
