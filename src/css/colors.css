@@ -201,7 +201,3 @@ body > footer > section {
 body > footer {
     background-color: var(--background-contrast);
 }
-
-body > footer img {
-    max-width: 40vw;
-}

@@ -29,6 +29,11 @@ body>footer {
     gap: var(--space-xxxs);
 }
 
+body>footer img {
+    max-height: 34px;
+    max-width: min(100%, 220px);
+}
+
 /* set sections to block */
 body>header,
 body>footer {
