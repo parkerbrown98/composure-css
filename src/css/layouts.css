@@ -79,11 +79,11 @@ main>poster-section+poster-section {
 
 site-alert {
     display: block;
-    height: 1.25rem;
+    padding: 0.3rem 0;
     width: 100vw;
     background-color: var(--background-contrast);
     color: var(--text-muted);
-    font-size: var(--text-xs);
+    font-size: var(--text-sm);
     text-align: center;
     margin-bottom: 0.2rem;
 }
