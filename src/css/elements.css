@@ -1037,6 +1037,10 @@ split-grid {
     align-items: center;
 }
 
+split-grid[align-start] {
+    align-items: start;
+}
+
 split-grid[for-locations] {
     align-items: start;
     grid-template-columns: repeat(2, 1fr);
@@ -1819,4 +1823,40 @@ call-section {
 
 call-section a {
     color: rgb(64, 136, 255);
+}
+
+/* || amenity-section */
+
+amenity-section {
+    display: block;
+    padding-left: var(--section-gutters);
+    padding-right: var(--section-gutters);
+    padding-top: var(--space-xxxl);
+    padding-bottom: var(--space-xxxl);
+}
+
+amenity-section > h2 {
+    padding-bottom: var(--space-sm);
+    text-align: center;
+}
+
+amenity-section > ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+}
+
+amenity-section > ul > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+amenity-section > ul > li > svg {
+    width: 58px;
+    aspect-ratio: 1 / 1;
+    fill: var(--text-bright);
+    margin-bottom: var(--space-xxxxxs);
 }
