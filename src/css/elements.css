@@ -1037,6 +1037,12 @@ split-grid {
     align-items: center;
 }
 
+@media (max-width: 755px) {
+    split-grid[mobile-reverse] > figure {
+        grid-row: 1;
+    }
+}
+
 split-grid[align-start] {
     align-items: start;
 }
@@ -1859,4 +1865,27 @@ amenity-section > ul > li > svg {
     aspect-ratio: 1 / 1;
     fill: var(--text-bright);
     margin-bottom: var(--space-xxxxxs);
+}
+
+feature-section {
+    display: block;
+    padding-left: var(--section-gutters);
+    padding-right: var(--section-gutters);
+    padding-top: var(--space-xxxl);
+    padding-bottom: var(--space-xxxl);
+}
+
+.aspect-4-3 {
+    display: block;
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+
+.aspect-4-3 > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
