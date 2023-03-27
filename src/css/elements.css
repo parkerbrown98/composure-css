@@ -1062,6 +1062,10 @@ split-grid[for-locations] {
     }
 }
 
+split-grid figure + h4 {
+    padding: var(--space-nano) 0;
+}
+
 /* || content-divider */
 
 content-divider {
