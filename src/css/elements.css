@@ -97,6 +97,10 @@ product-section {
     padding-right: var(--section-gutters);
 }
 
+product-section[pad-top] {
+    padding-top: var(--space-xl);
+}
+
 article-section article>a,
 article-section article>a:hover {
     color: var(--text-main);
