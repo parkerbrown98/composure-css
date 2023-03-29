@@ -114,6 +114,16 @@ product-section>ul {
     margin-top: var(--space-md);
 }
 
+product-section[col-2]>ul {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 680px) {
+    product-section[col-2]>ul {
+        grid-template-columns: 1fr;
+    }
+}
+
 product-section>ul>li>figure {
     position: relative;
     overflow: hidden;
@@ -195,6 +205,10 @@ product-section>ul h4 {
     font-size: var(--text-reg);
     margin-top: var(--space-xs);
     margin-bottom: var(--space-nano);
+}
+
+product-section>ul h3 + h4 {
+    margin-top: 0;
 }
 
 /* || menu-section */
