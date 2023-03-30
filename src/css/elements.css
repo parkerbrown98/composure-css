@@ -1889,6 +1889,8 @@ amenity-section > ul > li > svg {
     margin-bottom: var(--space-xxxxxs);
 }
 
+/* || feature-section */
+
 feature-section {
     display: block;
     padding-left: var(--section-gutters);
@@ -1896,6 +1898,8 @@ feature-section {
     padding-top: var(--space-xxxl);
     padding-bottom: var(--space-xxxl);
 }
+
+
 
 .aspect-4-3 {
     display: block;
