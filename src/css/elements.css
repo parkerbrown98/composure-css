@@ -201,6 +201,17 @@ product-section>ul h3 {
     margin: var(--space-xxs) 0 var(--space-xxxs) 0;
 }
 
+product-section>ul h5 {
+    color: var(--text-bright);
+    font-size: var(--text-reg);
+    font-weight: 600;
+    margin-top: var(--space-xxs);
+}
+
+product-section>ul h5 + h3 {
+    margin-top: 0;
+}
+
 product-section>ul h4 {
     font-size: var(--text-reg);
     margin-top: var(--space-xs);
@@ -1899,7 +1910,93 @@ feature-section {
     padding-bottom: var(--space-xxxl);
 }
 
+/* || slideshow */
 
+slideshow {
+    display: block;
+    position: relative;
+}
+
+slideshow ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    column-gap: var(--space-xs);
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding-bottom: var(--space-xs);
+}
+
+slideshow ul > li {
+    position: relative;
+    flex-shrink: 0;
+    width: min(calc(100% - 10vw), 450px);
+    aspect-ratio: 16 / 9;
+    white-space: normal;
+    scroll-snap-align: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+slideshow ul > li > span {
+    display: block;
+    position: absolute;
+    font-size: var(--text-xs);
+    color: var(--text-contrast);
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+    z-index: 10;
+}
+
+slideshow ul > li > :is(img, video) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+slideshow > .left,
+slideshow > .right {
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background: rgb(250, 250, 250);
+    outline: none;
+    z-index: 11;
+    cursor: pointer;
+    border: 2px solid #000;
+    transition: transform 0.2s ease-out;
+}
+
+slideshow > .left {
+    left: var(--space-sm);
+    transform: translate(0, -50%);
+  }
+
+slideshow > .right {
+    right: var(--space-sm);
+    transform: translate(0, -50%);
+}
+
+@media (max-width: 525px) {
+    slideshow > .left,
+    slideshow > .right {
+        display: none;
+    }
+}
 
 .aspect-4-3 {
     display: block;
