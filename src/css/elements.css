@@ -1910,6 +1910,46 @@ feature-section {
     padding-bottom: var(--space-xxxl);
 }
 
+/* || detail-section */
+
+detail-section {
+    display: block;
+    padding-left: var(--section-gutters);
+    padding-right: var(--section-gutters);
+    padding-top: var(--space-xxxl);
+    padding-bottom: var(--space-xxxl);
+}
+
+detail-section address {
+    color: var(--text-bright);
+}
+
+detail-section #map {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+detail-section ul {
+    margin-top: var(--space-xxxs);
+}
+
+detail-section ul > li {
+    margin-top: var(--space-xxxxxs);
+}
+
+detail-section ul > li > div {
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    column-gap: var(--space-nano);
+}
+
+detail-section ul > li > div > svg {
+    width: 28px;
+    aspect-ratio: 1 / 1;
+    color: var(--text-bright);
+}
+
 /* || slideshow */
 
 slideshow {
