@@ -1187,6 +1187,20 @@ action-list[no-margin] a {
     margin: 0;
 }
 
+action-list a[link] {
+    background-color: unset;
+    border: unset;
+    color: var(--text-main);
+    text-decoration: underline;
+    padding: unset;
+    margin-top: calc(-1 * var(--space-nano));
+}
+
+action-list a[link]:hover {
+    border: unset;
+    outline: unset;
+}
+
 /* || media-section */
 
 media-section {
