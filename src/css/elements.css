@@ -101,6 +101,10 @@ product-section[pad-top] {
     padding-top: var(--space-xl);
 }
 
+product-section[pad-bottom] {
+    padding-bottom: var(--space-xl);
+}
+
 article-section article>a,
 article-section article>a:hover {
     color: var(--text-main);
@@ -336,6 +340,11 @@ article-section {
     padding-top: var(--space-lg);
 }
 
+article-section[container] {
+    padding-left: var(--section-gutters);
+    padding-right: var(--section-gutters);
+}
+
 
 article-section> :is(h1, h2, h3, h4, h5, h6, a) {
     margin-top: 0;
@@ -404,6 +413,11 @@ article-list {
     padding-top: var(--space-xs);
     margin-bottom: var(--space-md);
     padding-bottom: var(--space-md);
+}
+
+article-list[no-bpad] {
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 article-list>header> :is(h1, h2, h3, h4, h5, h6) {
@@ -871,37 +885,52 @@ map-section>iframe {
 /* || staff-section */
 
 staff-section {
-    --local-section-width: 16rem;
-    --grid-col-min: 16rem;
-    --grid-col-max: 28vw;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-col-min), var(--grid-col-max)), 1fr));
-    /* grid-template-columns: repeat(auto-fill, minmax(var(--local-section-width), 1fr)); */
-    gap: var(--space-xl);
-    padding-bottom: var(--space-xxxxl);
-    margin-bottom: var(--space-xxxxl);
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-sm);
 }
 
-staff-section figure {
-    --local-element-width: 16rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: var(--space-xxs);
-    row-gap: var(--space-md);
-    align-items: center;
+staff-section > div {
+    grid-column: span 4;
 }
 
-staff-section figcaption h4 {
-    font-size: var(--text-base-size);
+staff-section > figure {
+    display: block;
+    width: 100%;
 }
 
-staff-section figcaption h5 {
+staff-section > figure > div {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+staff-section > figure > div > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+staff-section > figure > figcaption {
+    margin-top: var(--space-nano);
+}
+
+staff-section > figure > figcaption > h5 {
     color: var(--text-bright);
     font-size: var(--text-sm);
 }
 
-staff-section figcaption p {
+staff-section > figure > figcaption > h4 {
     font-size: var(--text-sm);
+}
+
+@media (max-width: 768px) {
+    staff-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* || directory-section */
@@ -1913,11 +1942,21 @@ feature-section {
 /* || detail-section */
 
 detail-section {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-md);
     padding-left: var(--section-gutters);
     padding-right: var(--section-gutters);
     padding-top: var(--space-xxxl);
     padding-bottom: var(--space-xxxl);
+}
+
+detail-section[border-top] {
+    border-top: 2px solid var(--background);
+}
+
+detail-section[top] {
+    padding-top: var(--space-xxxl);
 }
 
 detail-section address {
@@ -1948,6 +1987,16 @@ detail-section ul > li > div > svg {
     width: 28px;
     aspect-ratio: 1 / 1;
     color: var(--text-bright);
+}
+
+detail-section > slideshow {
+    margin-top: var(--space-md);
+}
+
+detail-section .subheading {
+    display: block;
+    font-weight: 700;
+    font-size: var(--text-reg);
 }
 
 /* || slideshow */
