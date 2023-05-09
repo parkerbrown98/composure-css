@@ -1756,15 +1756,17 @@ thanks-section #confirm-submit {
 
 .location-card .location-card--note {
     position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    left: 0.6rem;
+    top: 0.6rem;
+    background-color: rgba(255, 255, 255, 1);
     backdrop-filter: blur(2px);
     z-index: 10;
-    padding: var(--space-nano);
-    font-size: var(--text-sm);
-    color: var(--text-contrast);
+    padding: 0.3rem 0.5rem;
+    font-size: var(--text-xs);
+    font-weight: 700;
+    color: var(--text-main);
+    border-radius: 2px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     text-align: center;
 }
 
