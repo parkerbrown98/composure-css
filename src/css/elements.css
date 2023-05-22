@@ -1136,6 +1136,10 @@ split-grid {
     }
 }
 
+split-grid[cols-4] {
+    grid-template-columns: repeat(4, 1fr);
+}
+
 split-grid[align-start] {
     align-items: start;
 }
@@ -1436,7 +1440,8 @@ news-section > :is(h1, h2, h3, h4, h5, h6) {
 }
 
 trust-section>div,
-news-section>div {
+news-section>div,
+.break-line {
     margin: 0 auto;
     width: 150px;
     height: 2px;
@@ -1990,6 +1995,36 @@ feature-section {
     padding-bottom: var(--space-xxxl);
 }
 
+feature-section > h2 {
+    line-height: 1.1;
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-sm);
+    text-align: center;
+}
+
+feature-section article > figure {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    margin-bottom: var(--space-xxxxxs);
+}
+
+feature-section article > figure > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+feature-section article > h3 {
+    font-size: var(--text-md);
+}
+
+feature-section article > h3 + p {
+    margin-top: var(--space-nano);
+}
+
 /* || detail-section */
 
 detail-section {
@@ -2069,6 +2104,10 @@ slideshow ul {
     padding-bottom: var(--space-xs);
 }
 
+slideshow[inline] ul {
+    column-gap: var(--space-sm);
+}
+
 slideshow ul > li {
     position: relative;
     flex-shrink: 0;
@@ -2078,6 +2117,59 @@ slideshow ul > li {
     scroll-snap-align: center;
     overflow: hidden;
     cursor: pointer;
+}
+
+slideshow[inline] ul > li {
+    width: calc(100% - 6vw);
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: unset;
+}
+
+slideshow[inline] ul > li > div {
+    margin-top: var(--space-nano);
+}
+
+slideshow[inline] ul > li > div > h3 {
+    line-height: 1.05;
+    font-size: var(--text-md);
+    margin-top: var(--space-nano);
+}
+
+slideshow[inline] ul > li > div > p {
+    margin-top: var(--space-nano);
+}
+
+slideshow[pad-bottom] { margin-bottom: var(--space-md); }
+
+@media (min-width: 768px) {
+    slideshow[inline] ul > li {
+        width: 100%;
+    }
+
+    slideshow[inline] ul > li > div {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: absolute;
+        z-index: 10;
+        inset: 0;
+        max-width: 30rem;
+        margin-top: 0;
+        padding: var(--space-sm);
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0));
+        backdrop-filter: blur(2px);
+    }
+
+    slideshow[inline] ul > li > div > h3 {
+        margin-top: 0;
+        color: #fff;
+    }
+
+    slideshow[inline] ul > li > div > p {
+        color: #fff;
+    }
 }
 
 slideshow ul > li > span {
@@ -2094,7 +2186,14 @@ slideshow ul > li > span {
     z-index: 10;
 }
 
-slideshow ul > li > :is(img, video) {
+slideshow ul > li > figure {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+
+slideshow ul > li > :is(img, video),
+slideshow ul > li > figure > :is(img, video) {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -2121,6 +2220,15 @@ slideshow > .right {
     transition: transform 0.2s ease-out;
 }
 
+slideshow[inline] > .left,
+slideshow[inline] > .right {
+    width: 50px;
+    color: #fff;
+    background: none;
+    border: none;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
 slideshow > .left {
     left: var(--space-sm);
     transform: translate(0, -50%);
@@ -2131,7 +2239,7 @@ slideshow > .right {
     transform: translate(0, -50%);
 }
 
-@media (max-width: 525px) {
+@media (max-width: 768px) {
     slideshow > .left,
     slideshow > .right {
         display: none;
