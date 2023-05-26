@@ -2275,3 +2275,95 @@ slideshow > .right {
     height: 100%;
     object-fit: cover;
 }
+
+team-divider > team-section:not(:first-of-type) {
+    border-top: 2px solid var(--background);
+}
+
+team-section {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-md);
+    align-items: center;
+    padding-left: var(--section-gutters);
+    padding-right: var(--section-gutters);
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
+}
+
+team-section h3 {
+    font-size: var(--text-xl);
+    /* font-style: italic; */
+    color: var(--text-bright);
+    text-align: center;
+}
+
+team-section h4 {
+    font-weight: 600;
+    font-size: var(--text-md);
+    color: var(--text-main);
+    text-align: center;
+    letter-spacing: 0.01rem;
+}
+
+team-section split-grid figcaption {
+    text-align: center;
+    font-size: var(--text-sm);
+    font-weight: 600;
+}
+
+team-section included-section {
+    max-width: 48rem;
+}
+
+team-section included-section h5 {
+    font-size: var(--text-md);
+    font-weight: 600;
+}
+
+team-section included-section ul {
+    margin-top: var(--space-nano);
+}
+
+team-section included-section ul li {
+    list-style: disc;
+    margin-left: var(--space-xs);
+}
+
+team-section price-tag,
+team-section split-grid h5 {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+team-section action-list {
+    margin: unset;
+}
+
+team-section split-grid figure {
+    aspect-ratio: 1 / 1;
+}
+
+team-section split-grid figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    team-section split-grid figure {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+team-section split-grid > div {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-xxxs);
+}
+
+team-section split-grid > div > ul > li {
+    list-style: disc;
+    margin-left: var(--space-xxxxxs);
+}
