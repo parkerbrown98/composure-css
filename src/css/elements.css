@@ -1442,31 +1442,32 @@ link-section>a {
 
 trust-section {
     display: block;
-    max-width: 1850px;
     margin-top: calc(-1 * var(--space-xl));
     margin-bottom: var(--space-md);
-    margin-left: auto;
-    margin-right: auto;
 }
 
 trust-section[fixed] {
-    margin: 0 auto;
+    margin: unset;
     padding-top: var(--space-md);
     padding-bottom: var(--space-md);
     background-color: var(--background);
+}
+
+trust-section > center-block {
+    max-width: 1850px;
 }
 
 trust-section[fixed] h2 {
     font-size: var(--text-lg);
 }
 
-trust-section > :is(h1, h2, h3, h4, h5, h6),
+trust-section :is(h1, h2, h3, h4, h5, h6),
 news-section > :is(h1, h2, h3, h4, h5, h6) {
     text-align: center;
     margin-bottom: var(--space-xs);
 }
 
-trust-section>div,
+trust-section div,
 news-section>div,
 .break-line {
     margin: 0 auto;
@@ -2454,4 +2455,9 @@ landing-image-section > ul > li > div {
 landing-image-section > ul > li h3 {
     font-size: var(--text-md);
     color: var(--text-bright);
+}
+
+center-block {
+    margin-left: auto;
+    margin-right: auto;
 }
