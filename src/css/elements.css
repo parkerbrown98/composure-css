@@ -672,7 +672,7 @@ collage-section ul {
 poster-section {
     position: relative;
     overflow: hidden;
-    height: clamp(380px, 35vw, 720px);
+    min-height: clamp(380px, 35vw, 720px);
     /* this makes it where the image is horizontal on desktop and vertical on mobile */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -685,6 +685,22 @@ poster-section[inverted] {
             hsl(0 0% 0% / 0),
             hsl(0 0% 0% / 0.2) 50%,
             hsl(0 0% 0% / 0.5));
+}
+
+poster-section[landing] {
+    background: var(--background-contrast-light);
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
+}
+
+poster-section[landing] h1 {
+    font-size: var(--text-lg);
+    line-height: 1.1;
+}
+
+poster-section[landing] h1 + p {
+    margin-top: var(--space-nano);
+    color: var(--text-bright);
 }
 
 poster-section[floorplan] {
@@ -1431,6 +1447,17 @@ trust-section {
     margin-bottom: var(--space-md);
     margin-left: auto;
     margin-right: auto;
+}
+
+trust-section[fixed] {
+    margin: 0 auto;
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
+    background-color: var(--background);
+}
+
+trust-section[fixed] h2 {
+    font-size: var(--text-lg);
 }
 
 trust-section > :is(h1, h2, h3, h4, h5, h6),
@@ -2366,4 +2393,65 @@ team-section split-grid > div {
 team-section split-grid > div > ul > li {
     list-style: disc;
     margin-left: var(--space-xxxxxs);
+}
+
+landing-image-section {
+    display: block;
+    padding-left: var(--section-gutters);
+    padding-right: var(--section-gutters);
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
+}
+
+landing-image-section > h2 {
+    text-align: center;
+    margin-bottom: var(--space-nano);
+    font-size: var(--text-lg);
+}
+
+landing-image-section > p {
+    text-align: center;
+}
+
+landing-image-section > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: var(--space-xxxs);
+    column-gap: var(--space-xxxs);
+    margin-top: var(--space-xxxl);
+}
+
+landing-image-section ul > li {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-lg);
+}
+
+landing-image-section ul > li:not(:last-of-type) {
+    padding-bottom: var(--space-sm);
+    border-bottom: thin solid var(--border);
+}
+
+landing-image-section > ul > li:not(:first-of-type) {
+    padding-top: var(--space-nano);
+}
+
+landing-image-section > ul > li > figure {
+    aspect-ratio: 16 / 9;
+    background: rgb(245, 245, 245);
+    width: 100%;
+}
+
+landing-image-section > ul > li > div {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-xxxs);
+}
+
+landing-image-section > ul > li h3 {
+    font-size: var(--text-md);
+    color: var(--text-bright);
 }

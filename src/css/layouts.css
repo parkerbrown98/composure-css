@@ -33,7 +33,6 @@ body>footer img {
     max-height: 34px;
     max-width: min(100%, 220px);
 }
-
 /* set sections to block */
 body>header,
 body>footer {
@@ -41,9 +40,27 @@ body>footer {
     padding-right: var(--body-gutters);
 }
 
+body>footer[cta] {
+    gap: unset;
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
+    padding-left: var(--section-gutters);
+    padding-right: var(--section-gutters);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: var(--space-nano);
+    text-align: center;
+}
+
+
 @media (max-width: 600px) {
     body>footer {
         padding-bottom: 50px;
+    }
+
+    body>footer[cta] {
+        padding-bottom: var(--space-md);
     }
 }
 
