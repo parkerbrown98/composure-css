@@ -2461,3 +2461,13 @@ center-block {
     margin-left: auto;
     margin-right: auto;
 }
+
+.space-y {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-sm);
+}
+
+.space-y > * {
+    margin: unset;
+}
