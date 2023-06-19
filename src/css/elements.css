@@ -2667,12 +2667,6 @@ hero-section {
     padding-right: var(--section-gutters);
 }
 
-@media (max-width: 768px) {
-    hero-section {
-        grid-template-columns: 1fr;
-    }
-}
-
 hero-section > #map {
     aspect-ratio: 4 / 3;
 }
@@ -2681,6 +2675,16 @@ hero-section > div > p {
     font-size: 1.1rem;
     line-height: 1.5;
     margin-top: var(--space-xxxs);
+}
+
+@media (max-width: 768px) {
+    hero-section {
+        grid-template-columns: 1fr;
+    }
+
+    hero-section > #map {
+        aspect-ratio: 16 / 9;
+    }
 }
 
 .leading-tall {
