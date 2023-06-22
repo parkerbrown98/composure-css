@@ -67,6 +67,10 @@ poster-copy a:hover {
     text-decoration: none;
 }
 
+poster-copy {
+    max-width: 75ch;
+}
+
 poster-media {
     position: relative;
     padding-bottom: 63%;
