@@ -2358,11 +2358,11 @@ team-section h3 {
 }
 
 team-section h4 {
-    font-weight: 600;
-    font-size: var(--text-md);
-    color: var(--text-main);
+    font-weight: 500;
+    font-size: 1.4rem;
     text-align: center;
     letter-spacing: 0.01rem;
+    margin-bottom: var(--space-nano);
 }
 
 team-section split-grid figcaption {
@@ -2675,6 +2675,11 @@ hero-section > #map {
     aspect-ratio: 4 / 3;
 }
 
+hero-section > div:nth-of-type(2) > h4 {
+    font-size: 1.2rem;
+    margin-bottom: var(--space-xxxs);
+}
+
 hero-section > div > p {
     font-size: 1.1rem;
     line-height: 1.5;
@@ -2689,6 +2694,38 @@ hero-section > div > p {
     hero-section > #map {
         aspect-ratio: 16 / 9;
     }
+}
+
+ul.icon-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-xxxs);
+}
+
+ul.icon-list > li {
+    display: flex;
+    column-gap: var(--space-xxxs);
+    align-items: start;
+}
+
+ul.icon-list > li > p {
+    font-weight: 500;
+}
+
+ul.icon-list > li > div {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.4rem;
+    background: var(--background-alt);
+    color: #fff;
+    border-radius: 4px;
+    /* margin-top: 4px; */
+}
+
+ul.icon-list > li > div > svg {
+    width: 24px;
+    height: 24px;
 }
 
 .leading-tall {
