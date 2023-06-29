@@ -2664,7 +2664,7 @@ location-list-map > ul > li > img {
 hero-section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-md);
+    gap: var(--space-xl);
     padding-top: var(--space-md);
     padding-bottom: var(--space-md);
     padding-left: var(--section-gutters);
