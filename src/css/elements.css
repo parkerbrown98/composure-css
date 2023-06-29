@@ -2400,6 +2400,11 @@ team-section action-list {
     margin: unset;
 }
 
+team-section split-grid {
+    width: 100%;
+    align-items: start;
+}
+
 team-section split-grid figure {
     aspect-ratio: 1 / 1;
 }
