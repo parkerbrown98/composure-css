@@ -2705,6 +2705,11 @@ hero-section > div > p {
     margin-top: var(--space-xxxs);
 }
 
+hero-section > div > h1.hero-title-sm {
+    font-size: 1.8rem;
+    line-height: 1.2;
+}
+
 @media (max-width: 768px) {
     hero-section {
         grid-template-columns: 1fr;
