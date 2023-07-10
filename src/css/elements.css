@@ -2407,12 +2407,16 @@ team-section split-grid {
 team-section split-grid figure {
     display: flex;
     flex-direction: column;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 4 / 3;
 }
 
 team-section split-grid figure > img {
     flex: 1;
     object-fit: cover;
+}
+
+team-section split-grid figure.square {
+    aspect-ratio: 1 / 1;
 }
 
 team-section split-grid figure > .image-square {
