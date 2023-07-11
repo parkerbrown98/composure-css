@@ -2736,6 +2736,10 @@ hero-section[stylized] > div:nth-of-type(2) > img {
     object-fit: cover;
 }
 
+hero-section[stylized] action-list > a {
+    margin-bottom: 0;
+}
+
 hero-section > #map {
     aspect-ratio: 4 / 3;
 }
