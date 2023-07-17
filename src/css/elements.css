@@ -1022,9 +1022,9 @@ directory-section>ul>li>a:hover {
 
 directory-section>ul {
     --grid-col-min: 16rem;
-    --grid-col-max: 25vw;
+    --grid-col-max: 20vw;
     display: grid;
-    gap: var(--space-lg);
+    gap: var(--space-md);
     grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-col-min), var(--grid-col-max)), 1fr));
 }
 
