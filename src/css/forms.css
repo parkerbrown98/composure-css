@@ -6,10 +6,7 @@ textarea { color: var(--form-text); background-color: var(--background-body); fo
 select { color: var(--form-text); background-color: var(--background-body); font-family: inherit; font-size: inherit; padding: var(--space-xxxxxs); border: none; outline: none; }
 
 
-button { color: var(--form-text); background-color: var(--background); font-family: inherit; font-size: inherit; padding: var(--space-xxs); border: none; outline: none; box-shadow: var(--box-shadow-sm); }
 
-button { background-color: var(--button-base); padding-right: 30px; padding-left: 30px; }
-button:hover { background: var(--button-hover); }
 input[type='submit'] { background-color: var(--button-base); padding-right: 30px; padding-left: 30px; }
 input[type='reset'] { background-color: var(--button-base); padding-right: 30px; padding-left: 30px; }
 input[type='button'] { background-color: var(--button-base); padding-right: 30px; padding-left: 30px; }
@@ -33,7 +30,6 @@ select::-ms-expand { display: none; }
 select[multiple] { padding-right: 10px; background-image: none; overflow-y: auto; }
 input:focus { box-shadow: 0 0 0 2px var(--focus); }
 select:focus { box-shadow: 0 0 0 2px var(--focus); }
-button:focus { box-shadow: 0 0 0 2px var(--focus); }
 textarea:focus { box-shadow: 0 0 0 2px var(--focus); }
 input[type='checkbox']:active, input[type='radio']:active, input[type='submit']:active, input[type='reset']:active, input[type='button']:active, input[type='range']:active, button:active { transform: translateY(2px); }
 input:disabled, select:disabled, button:disabled, textarea:disabled { cursor: not-allowed; opacity: 0.5; }

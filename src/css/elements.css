@@ -33,7 +33,8 @@ article-list header mark {
 
 action-list a,
 product-section>ul>li>:is(h2, h3)~a,
-poster-copy>a {
+poster-copy>a,
+form button {
     font-weight: var(--button-font-weight);
     color: #fff;
     display: block;
@@ -45,6 +46,7 @@ poster-copy>a {
     border-radius: 3px;
     transition: all 200ms ease-in-out;
     outline-offset: 2px;
+    border: none;
 }
 
 action-list a[primary] {
@@ -62,7 +64,8 @@ action-list a[primary] {
 
 action-list a:hover,
 product-section>ul>li>:is(h2, h3)~a:hover,
-poster-copy a:hover {
+poster-copy a:hover,
+form button:hover {
     outline: 2px solid rgb(220, 220, 220);
     text-decoration: none;
 }
@@ -1932,7 +1935,7 @@ thanks-section #confirm-submit {
 
 form-section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-nano);
 }
 
@@ -1942,6 +1945,27 @@ form-section *[grid-cols-2] {
 
 form-section * {
     grid-column: span 1;
+}
+
+form-section input {
+    margin-bottom: 0;
+    width: 100%;
+}
+
+form > #form-error {
+    color: rgb(200, 0, 0);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-xxxxxs);
+}
+
+@media (max-width: 768px) {
+    form-section {
+        grid-template-columns: 1fr;
+    }
+
+    form-section *[grid-cols-2] {
+        grid-column: span 1;
+    }
 }
 
 #modal {

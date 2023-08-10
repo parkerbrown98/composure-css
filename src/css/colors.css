@@ -61,10 +61,6 @@ button {
     background-color: var(--button-base);
 }
 
-button:hover {
-    background: var(--button-hover);
-}
-
 button:focus {
     box-shadow: 0 0 0 2px var(--focus);
 }
