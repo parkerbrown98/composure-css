@@ -9,15 +9,18 @@ header>alert-banner {
 
 location-banner {
     display: block;
-    background-color: #000;
-    color: var(--text-bright);
-    text-align: center;
+    color: var(--text-main);
+    padding-left: var(--section-gutters);
+    padding-right: var(--section-gutters);
+    padding-top: var(--space-md);
+    margin-bottom: calc(-1 * var(--space-md));
 }
 
 location-banner p {
-    padding-top: var(--space-xs);
-    padding-bottom: var(--space-xs);
-    font-size: var(--text-md);
+    color: var(--text-bright);
+    background-color: #000;
+    padding: var(--space-xxxxxs);
+    border-radius: 0.25rem;
 }
 
 article-list header mark {
@@ -1061,6 +1064,10 @@ special-section {
     padding-top: calc(2 * var(--space-lg));
     padding-bottom: calc(2 * var(--space-lg));
     background-color: var(--background);
+}
+
+special-section h2 {
+    margin-bottom: var(--space-sm);
 }
 
 special-section ul {
@@ -2861,4 +2868,45 @@ ul.icon-list > li > div > svg {
     background: #000;
     border-radius: 1.5rem;
     color: #fff;
+}
+
+/* || promo-popup */
+
+promo-popup {
+    display: block;
+    position: fixed;
+    right: var(--space-xxxs);
+    bottom: var(--space-xxxs);
+    background-color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    z-index: 40;
+    padding: 1rem;
+}
+
+promo-popup > h5 {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+}
+
+promo-popup > button.close {
+    all: unset;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem;
+    color: #000;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+promo-popup > a.cta {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #000;
+    color: #fff;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    text-decoration: none;
 }
