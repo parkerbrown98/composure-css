@@ -96,19 +96,17 @@ main>poster-section+poster-section {
 
 site-alert {
     display: block;
-    padding: 0.3rem 0;
+    padding: 0.6rem 0;
     width: 100vw;
     background-color: var(--background-contrast);
     color: var(--text-muted);
     font-size: var(--text-sm);
     text-align: center;
-    margin-bottom: 0.2rem;
 }
 
 site-alert a {
     color: var(--text-muted);
-    font-size: var(--text-xs);
-    text-align: center;
+    font-weight: 600;
 }
 
 header>nav {
