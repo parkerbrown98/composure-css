@@ -98,14 +98,14 @@ site-alert {
     display: block;
     padding: 0.6rem 0;
     width: 100vw;
-    background-color: var(--background-contrast);
-    color: var(--text-muted);
+    background-color: var(--background-alt);
+    color: #fff;
     font-size: var(--text-sm);
     text-align: center;
 }
 
 site-alert a {
-    color: var(--text-muted);
+    color: #fff;
     font-weight: 600;
 }
 
